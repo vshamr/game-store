@@ -4,8 +4,9 @@ import { Component, StrictMode } from "react";
 import ReactDom from "react-dom";
 import { BrowserRouter, Route, Redirect } from "react-router-dom";
 import someTypeScript from "./someTypeScript";
-import Header, { about, home, products } from "./components/header/header";
+import Header from "./components/header";
 import Footer from "./components/footer/footer";
+import { Routes } from "./constants/Routes";
 
 interface AppProps {
   nothing: boolean;
@@ -35,10 +36,10 @@ class AppContainer extends Component<AppProps, AppState> {
         <BrowserRouter>
           <Header />
 
-          <Route path={home} render={() => "This is home page"} />
-          <Route path={products} render={() => "All products are presented on this page"} />
-          <Route path={about} render={() => "About"} />
-          <Redirect from="/" to={home} />
+          <Route path={Routes.HOME} render={() => "This is home page"} />
+          <Route path={Routes.PRODUCTS} render={() => "All products are presented on this page"} />
+          <Route path={Routes.ABOUT} render={() => "About"} />
+          <Redirect from="/" to={Routes.HOME} />
 
           <Footer />
         </BrowserRouter>
