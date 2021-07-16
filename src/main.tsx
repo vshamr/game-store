@@ -31,13 +31,7 @@ class AppContainer extends Component<AppProps, AppState> {
     this.setState({ hasError: true });
     alert(error);
     console.error("error Info", errorInfo.componentStack);
-  }
-
-  errorMessage(component: JSX.Element) {
-    if (this.state.hasError) {
-      return component;
-    }
-    return <Redirect push to={Routes.HOME} />;
+    <Redirect push to={Routes.HOME} />;
   }
 
   render() {
