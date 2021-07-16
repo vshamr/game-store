@@ -47,4 +47,3 @@ Webpack version: 5+
 - replace Prettier by better alternative (Prettier works bad)
 - add icomoon to fonts
 - Path autocomplete doesn't read path-alias-config from tsconfig.json
-# my-itechart-project
