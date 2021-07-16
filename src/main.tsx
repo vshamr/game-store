@@ -1,12 +1,12 @@
 import "./styles/main.css";
 import "./styles/main.scss";
-// watch: native intellisense and file-peek for aliases from jsconfig.json and with none-js files doesn't work: https://github.com/microsoft/TypeScript/issues/29334
-import imgSmall from "images/testSmall.png"; // start-path is 'images' because we have an alias 'images' in webpack.common.js
-import imgCamera from "images/camera.svg";
 import { Component, StrictMode } from "react";
 import ReactDom from "react-dom";
-import style from "./styles/main.module.css";
+import { BrowserRouter, Route, Redirect } from "react-router-dom";
 import someTypeScript from "./someTypeScript";
+import Header from "./components/header";
+import Footer from "./components/footer/footer";
+import { Routes } from "./constants/Routes";
 
 interface AppProps {
   nothing: boolean;
@@ -33,7 +33,16 @@ class AppContainer extends Component<AppProps, AppState> {
   render() {
     return (
       <StrictMode>
-        <h2>Hello!</h2>
+        <BrowserRouter>
+          <Header />
+
+          <Route path={Routes.HOME} render={() => "This is home page"} />
+          <Route path={Routes.PRODUCTS} render={() => "All products are presented on this page"} />
+          <Route path={Routes.ABOUT} render={() => "About"} />
+          <Redirect from="/" to={Routes.HOME} />
+
+          <Footer />
+        </BrowserRouter>
       </StrictMode>
     );
   }
