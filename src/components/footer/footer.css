@@ -1,0 +1,17 @@
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  height: 200px;
+}
+
+.footer_image img {
+  width: 100px;
+  height: 100px;
+}
+
+.footer_image {
+  margin: 30px 50px 0px 20px;
+}
