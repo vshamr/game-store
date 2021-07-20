@@ -1,6 +1,7 @@
 import "./searchBar.css";
 import { ChangeEvent, useState } from "react";
 import _ from "lodash";
+import axios from "axios";
 
 type SearchBarType = {
   onSearch: (search: string) => void;
@@ -15,11 +16,23 @@ const SearchBar = (props: SearchBarType): JSX.Element => {
     setSearch(e.target.value);
   }
 
+  async function getSearch() {
+    try {
+      const response = await axios.get(`http://localhost:3000/api/search/${search}`);
+      console.log(response);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
   function handleSearch() {
+    alert("got product");
     props.onSearch(search);
     setIsSearching(true);
+    getSearch();
     falseSearch();
   }
+
   return (
     <div className="searchBar">
       <input className="searchBar_input" type="text" placeholder="Search..." value={search} onChange={handleChange} />

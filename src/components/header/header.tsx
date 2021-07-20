@@ -3,7 +3,7 @@ import { Routes } from "@/constants/Routes";
 import { NavLink } from "react-router-dom";
 import SearchBar from "@/components/searchBar/searchBar";
 import { useState } from "react";
-import ProductsDropDown from "@/components/header/products/productsDropDown";
+import ProductsDropDown from "@/components/products/productsDropDown/productsDropDown";
 
 function Header(): JSX.Element {
   const [showDropdown, setShowDropdown] = useState(false);

@@ -5,6 +5,8 @@
 body {
   font-family: "OpenSans-Regular", sans-serif;
   position: relative;
+  min-height: 90vh;
+
 }
 
 h1 {

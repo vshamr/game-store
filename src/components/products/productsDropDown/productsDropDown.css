@@ -26,23 +26,3 @@
   color: #ef4545;
   border-bottom-color: #d50b0b;
 }
-
-
-
-
-
-
-/*@keyframes drop-down-open{
-  from{
-    opacity: 0;
-    display: none;
-  }
-  to{
-    display: flex;
-    opacity: 1;
-  }
-}*/
-
-/*.drop-down li:not(:last-child){
-  padding-bottom: 0.2rem;
-}*/

@@ -4,9 +4,9 @@ a {
   color: #1b1b1b;
 }
 
-.header {
+/*.header {
   min-height: 90vh;
-}
+}*/
 
 .header_container {
   display: flex;
