@@ -1,6 +1,6 @@
 import "./styles/main.css";
 import "./styles/main.scss";
-import { Component, StrictMode } from "react";
+import { Component, ErrorInfo, StrictMode } from "react";
 import ReactDom from "react-dom";
 import { BrowserRouter, Route, Redirect } from "react-router-dom";
 import someTypeScript from "./someTypeScript";
@@ -13,6 +13,7 @@ interface AppProps {
 }
 interface AppState {
   title: string;
+  hasError: boolean;
 }
 
 class AppContainer extends Component<AppProps, AppState> {
@@ -22,12 +23,15 @@ class AppContainer extends Component<AppProps, AppState> {
     super(props);
     this.state = {
       title: someTypeScript("Test-block for css-modules"),
+      hasError: false,
     };
-    // test class-dead-code
-    const goExlcude = true;
-    if (!goExlcude) {
-      console.warn("class-dead-code doesn't work");
-    }
+  }
+
+  componentDidCatch(error: Error, errorInfo: ErrorInfo) {
+    this.setState({ hasError: true });
+    alert(error);
+    console.error("error Info", errorInfo.componentStack);
+    <Redirect push to={Routes.HOME} />;
   }
 
   render() {
