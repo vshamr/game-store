@@ -2,6 +2,7 @@ import "./searchBar.css";
 import { ChangeEvent, useState } from "react";
 import _ from "lodash";
 import axios from "axios";
+import Loader from "@/components/searchBar/loader/loader";
 
 type SearchBarType = {
   onSearch: (search: string) => void;
@@ -39,7 +40,7 @@ const SearchBar = (props: SearchBarType): JSX.Element => {
       <button className="searchBar_button" type="submit" onClick={handleSearch}>
         Click
       </button>
-      {isSearching && <div>Searching ...</div>}
+      {isSearching && <Loader />}
     </div>
   );
 };

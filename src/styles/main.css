@@ -2,22 +2,17 @@
 @import "sanitize.css";
 @import "fontface.css";
 
+
 body {
   font-family: "OpenSans-Regular", sans-serif;
   position: relative;
   min-height: 90vh;
-
 }
+
 
 h1 {
   font-size: 3vh;
   margin: 30px;
-}
-
-h2 {
-  font-size: 50px;
-  display: block;
-  background-color: white;
 }
 
 ::placeholder {
@@ -36,5 +31,7 @@ h2 {
 .test-block + .test-block {
   margin-top: 20px;
 }
+
+
 
 

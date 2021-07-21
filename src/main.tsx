@@ -5,9 +5,9 @@ import ReactDom from "react-dom";
 import { BrowserRouter, Route, Redirect } from "react-router-dom";
 import Products from "@/components/products/products";
 import HomePage from "@/components/homePage/homePage";
+import Footer from "@/components/footer/footer";
 import someTypeScript from "./someTypeScript";
 import Header from "./components/header/header";
-import Footer from "./components/footer/footer";
 import { Routes } from "./constants/Routes";
 
 interface AppProps {

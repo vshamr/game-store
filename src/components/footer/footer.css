@@ -1,17 +1,28 @@
-.footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: 0;
-
+.footer{
+  margin-top: 2rem;
+  border: 2px solid white;
+  box-shadow: 0 1px 11px 1px black;
 }
 
-.footer_image img {
-  width: 100px;
-  height: 100px;
+.footer_title{
+  padding-top: 0.5rem;
+  text-align: center;
 }
+
 
 .footer_image {
-  margin: 30px 50px 0px 20px;
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
+
+.footer_image a{
+  transition: 0.2s ease;
+}
+
+.footer_image a:hover{
+  color: #363682;
+  transform: scale(1.2);
+}
+

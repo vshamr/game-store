@@ -6,20 +6,20 @@
 .searchBar_input{
   padding: 0.5rem 1.2rem;
   font-size: 1.2rem;
-  border: 2px solid #bf2222;
+  border: 2px solid #363682;
   border-radius: 1rem;
-  color:#bf2222;
+  color:#363682;
   background-color: transparent;
   outline: 0;
 }
 
 .searchBar_input:focus{
-  border: 2px solid palevioletred;
-  box-shadow: 0 0 2px 1px #bf2222;
+  border: 2px solid #b3b3cd;
+  box-shadow: 0 0 2px 1px #363682;
 }
 
 .searchBar_input::placeholder{
-  color: #bf2222;
+  color: #363682;
   text-align: center;
   text-transform: capitalize;
 }
@@ -27,9 +27,9 @@
 .searchBar_button {
   padding: 0.5rem 1.2rem;
   font-size: 1.2rem;
-  border: 2px solid #bf2222;
+  border: 2px solid #363682;
   border-radius: 1rem;
-  color:#bf2222;
+  color:#363682;
   background-color: transparent;
   outline: 0;
 }

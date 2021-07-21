@@ -25,16 +25,17 @@ a {
 .header_nav-link a {
   line-height: 36px;
   border: 1px solid transparent;
+  border-radius: 1rem;
   padding: 0px 16px;
   transition: all .3s;
 }
 
 .header_nav-link a.header_nav-activeLink {
-  color: #bf2222;
+  color: #363682;
 }
 
 .header_nav-link a:hover {
-  border-color: #bf2222;
+  border-color: #363682;
 }
 
 /*.header_searchBar {

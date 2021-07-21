@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import ProductsData from "./productsData";
+import { ProductsData } from "@/constants/data";
 import "./productsDropDown.css";
 
 function ProductsDropDown(): JSX.Element {

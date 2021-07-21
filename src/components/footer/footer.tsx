@@ -1,22 +1,22 @@
-import { data } from "./data";
+import { FooterData } from "@/constants/data";
 import "./footer.css";
 
-type DataType = {
-  href: string;
-  imageSrc: string;
-};
 
-const Footer = (): JSX.Element => (
+const Footer: React.FC = () => (
   <footer className="footer">
-    <h3 className="footer_title">Incredible convenient</h3>
-    <div>
-      <ul className="footer_image">
-        {data.map(({ href, imageSrc }: DataType) => {
-          <li key={href}>
-            <a href={href}>{imageSrc}</a>
-          </li>;
-        })}
-      </ul>
+    <div className="footer_container">
+      <h3 className="footer_title">Incredible convenient</h3>
+
+      <div className="footer_content">
+        <ul className="footer_image">
+          {
+            FooterData.map(({ href, img }) =>  (
+              <li key={href}>
+                <a href={href}>{img}</a>
+            </li>
+            )}
+        </ul>
+      </div>
     </div>
   </footer>
 );

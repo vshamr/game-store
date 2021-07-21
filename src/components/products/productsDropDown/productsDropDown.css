@@ -17,12 +17,12 @@
 .drop-down a{
   border: none;
   width: 100%;
-  border-bottom: 2px solid #ef4545;
+  border-bottom: 2px solid #363682;
   transition: 0.2s ease;
   padding: 0;
 }
 
 .drop-down a:hover{
-  color: #ef4545;
-  border-bottom-color: #d50b0b;
+  color: #363682;
+  border-bottom-color: #363682;
 }
