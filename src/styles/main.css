@@ -2,19 +2,17 @@
 @import "sanitize.css";
 @import "fontface.css";
 
+
 body {
   font-family: "OpenSans-Regular", sans-serif;
   position: relative;
+  min-height: 90vh;
 }
+
 
 h1 {
+  font-size: 3vh;
   margin: 30px;
-}
-
-h2 {
-  font-size: 50px;
-  display: block;
-  background-color: white;
 }
 
 ::placeholder {
@@ -34,57 +32,6 @@ h2 {
   margin-top: 20px;
 }
 
-a {
-  text-decoration: none;
-  display: inline-block;
-  color: #1b1b1b;
-}
-.header {
-  min-height: 90vh;
-}
-.header_container {
-  display: flex;
-  justify-content: space-between;
-}
 
-.header_nav {
 
-  margin: 30px;
-}
 
-.header_nav-link {
-  margin: 20px;
-}
-
-.header_nav-link a {
-  line-height: 36px;
-  border: 1px solid transparent;
-  padding: 0px 16px;
-  transition: all .3s;
-}
-
-.header_nav-link a.header_nav-activeLink {
-  color: #bf2222;
-}
-
-.header_nav-link a:hover {
-  border-color: #bf2222;
-}
-
-.footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: 0;
-  height: 200px;
-}
-
-.footer_image img {
-  width: 100px;
-  height: 100px;
-}
-
-.footer_image {
-  margin: 30px 50px 0px 20px;
-}

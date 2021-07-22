@@ -1,0 +1,44 @@
+.gameCards {
+  max-width: 400px;
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: box-shadow 0.2s ease;
+  border: 2px solid white;
+  box-shadow: 0 1px 11px 1px black;
+}
+
+.gameCards :hover{
+  box-shadow: 0 0 5px 2px #363682;
+}
+
+.gameCards_container {
+  display: flex;
+  justify-content: space-around;
+  margin: 80px 0px 50px 50px;
+  text-align: center;
+}
+
+.gameCards_content{
+  margin-bottom: 0.5rem;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.gameCards-img img{
+  width: 310px;
+  height: 400px;
+}
+
+.gameCards-about {
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.gameCards-title{
+  margin-bottom: 1rem;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

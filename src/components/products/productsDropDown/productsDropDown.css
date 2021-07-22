@@ -1,0 +1,28 @@
+.drop-down{
+  display: flex;
+  font-size: 2vh;
+  flex-direction: column;
+  position: absolute;
+  top: 50px;
+  opacity: 1;
+  overflow: hidden;
+}
+
+.drop-down.visible{
+  display: flex;
+  opacity: 1;
+  animation: drop-down-open 0.5s ease;
+}
+
+.drop-down a{
+  border: none;
+  width: 100%;
+  border-bottom: 2px solid #363682;
+  transition: 0.2s ease;
+  padding: 0;
+}
+
+.drop-down a:hover{
+  color: #363682;
+  border-bottom-color: #363682;
+}
