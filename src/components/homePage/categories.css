@@ -1,12 +1,15 @@
 .categories{
   margin-bottom: 2rem;
+  border-bottom: 2px solid #2b2828;
+  box-shadow: 0 1px 11px 1px black;
 }
 
 .categories-title{
+  font-size: 48px;
   text-align: center;
-  margin-bottom: 1rem;
+  color: #ffffffc7;
+  margin-top: 100px;
   padding: 1rem 0;
-  border-bottom: 2px solid #2b2828;
 }
 
 .categories-content{
@@ -33,10 +36,14 @@
 
 .categories-item:hover{
   transform: scale(1.2);
-  color: white;
-  background-color: #363682;
-  border: 3px solid black;
-  box-shadow: 0 0 7px 4px white;
+  color: #ffc010;
+  background-color:  transparent;
+  border: 3px solid #ffc010;
+  box-shadow: 0 0 7px 4px #ffc010;
+}
+
+.categories-item div {
+  font-size: 4rem;
 }
 
 

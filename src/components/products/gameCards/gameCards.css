@@ -1,14 +1,14 @@
 .gameCards {
-  max-width: 400px;
+  max-width: 320px;
   border-radius: 1rem;
   overflow: hidden;
   transition: box-shadow 0.2s ease;
-  border: 2px solid white;
+  border: 2px solid #ffffffc7;
   box-shadow: 0 1px 11px 1px black;
 }
 
 .gameCards :hover{
-  box-shadow: 0 0 5px 2px #363682;
+  box-shadow: 0 0 5px 2px #ffc010;
 }
 
 .gameCards_container {
@@ -26,13 +26,14 @@
 }
 
 .gameCards-img img{
-  width: 310px;
-  height: 400px;
+  width: 200px;
+  height: 270px;
 }
 
 .gameCards-about {
   margin-top: 20px;
   padding: 10px;
+  color: #ffffffc7;
 }
 
 .gameCards-title{
@@ -41,4 +42,5 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: #ffffffc7;
 }

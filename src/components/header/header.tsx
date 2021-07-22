@@ -10,7 +10,9 @@ function Header(): JSX.Element {
   return (
     <header>
       <div className="header_container">
-        <h1>Best Games Market</h1>
+        <h1>
+          <span>Best Games</span> Market
+        </h1>
         <nav className="header_nav">
           <span className="header_nav-link">
             <NavLink to={Routes.HOME} activeClassName="header_nav-activeLink">

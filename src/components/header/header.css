@@ -1,9 +1,13 @@
+
 a {
   text-decoration: none;
   display: inline-block;
-  color: #1b1b1b;
+  color: #ffffffc7
 }
 
+span {
+  color: #ffc010;
+}
 
 .header_container {
   display: flex;
@@ -20,17 +24,18 @@ a {
 }
 
 .header_nav-link a {
-  line-height: 36px;
-  border: 1px solid transparent;
-  border-radius: 1rem;
-  padding: 0px 16px;
+  font-size: 25px;
+  font-family: 'Teko', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1.7px;
+  padding: 0px 50px;
   transition: all .3s;
 }
 
 .header_nav-link a.header_nav-activeLink {
-  color: #363682;
+  color: #ffc010;
 }
 
 .header_nav-link a:hover {
-  border-color: #363682;
+  color: #ffc010;
 }
