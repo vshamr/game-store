@@ -1,25 +1,21 @@
 import "./searchBar.css";
 import { ChangeEvent, useState } from "react";
 import _ from "lodash";
-import axios from "axios";
 import Loader from "@/components/searchBar/loader/loader";
+import { URL } from "@/api/api";
 
-type SearchBarType = {
-  onSearch: (search: string) => void;
-};
-
-const SearchBar = (props: SearchBarType): JSX.Element => {
-  const [search, setSearch] = useState("");
+const SearchBar = (): JSX.Element => {
+  const [searchTerm, setSearchTerm] = useState("");
   const [isSearching, setIsSearching] = useState(false);
-  const falseSearch = _.debounce(() => setIsSearching(false), 200);
+  const debouncedSearchTerm = _.debounce(() => setIsSearching(false), 200);
 
   function handleChange(e: ChangeEvent<HTMLInputElement>) {
-    setSearch(e.target.value);
+    setSearchTerm(e.target.value);
   }
 
   async function getSearch() {
     try {
-      const response = await axios.get(`http://localhost:3000/api/search/${search}`);
+      const response = await URL.search(searchTerm);
       console.log(response);
     } catch (error) {
       console.error(error);
@@ -27,18 +23,22 @@ const SearchBar = (props: SearchBarType): JSX.Element => {
   }
 
   function handleSearch() {
-    alert("got product");
-    props.onSearch(search);
     setIsSearching(true);
     getSearch();
-    falseSearch();
+    debouncedSearchTerm();
   }
 
   return (
     <div className="searchBar">
-      <input className="searchBar_input" type="text" placeholder="Search..." value={search} onChange={handleChange} />
+      <input
+        className="searchBar_input"
+        type="text"
+        placeholder="Search..."
+        value={searchTerm}
+        onChange={handleChange}
+      />
       <button className="searchBar_button" type="submit" onClick={handleSearch}>
-        Click
+        Search
       </button>
       {isSearching && <Loader />}
     </div>

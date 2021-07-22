@@ -1,7 +1,7 @@
 import { FaWindows, FaXbox, FaPlaystation } from "react-icons/fa";
 import { SiNintendo, SiSega, SiUbisoft, SiXbox } from "react-icons/all";
 
-export const FooterData = [
+export const FOOTER_DATA = [
   {
     href: "https://www.xbox.com/en-US/games",
     img: SiXbox(),
@@ -20,7 +20,7 @@ export const FooterData = [
   },
 ];
 
-export const ProductsData = [
+export const PRODUCTS_DATA = [
   {
     title: "Playstation",
     path: "/products/Playstation",
@@ -35,7 +35,7 @@ export const ProductsData = [
   },
 ];
 
-export const CategoriesData = [
+export const CATEGORIES_DATA = [
   {
     id: "1",
     category: "pc",
@@ -55,3 +55,4 @@ export const CategoriesData = [
     icon: FaPlaystation(),
   },
 ];
+

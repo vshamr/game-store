@@ -4,9 +4,6 @@ a {
   color: #1b1b1b;
 }
 
-/*.header {
-  min-height: 90vh;
-}*/
 
 .header_container {
   display: flex;
@@ -37,7 +34,3 @@ a {
 .header_nav-link a:hover {
   border-color: #363682;
 }
-
-/*.header_searchBar {
-  margin: 30px;
-}*/

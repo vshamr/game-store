@@ -8,7 +8,7 @@ import ProductsDropDown from "@/components/products/productsDropDown/productsDro
 function Header(): JSX.Element {
   const [showDropdown, setShowDropdown] = useState(false);
   return (
-    <header className="header">
+    <header>
       <div className="header_container">
         <h1>Best Games Market</h1>
         <nav className="header_nav">
@@ -36,7 +36,7 @@ function Header(): JSX.Element {
           </span>
         </nav>
         <span className="header_searchBar">
-          <SearchBar onSearch={() => {}} />
+          <SearchBar />
         </span>
       </div>
     </header>

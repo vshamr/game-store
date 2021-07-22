@@ -1,1 +1,11 @@
-export const urlProducts = `http://localhost:3000/games`;
+import axios from "axios";
+
+const instance = axios.create({
+  baseURL: "http://localhost:3000/api/",
+});
+
+export const URL = {
+  search(searchTerm) {
+    return instance.get(`search/${searchTerm}`);
+  },
+};

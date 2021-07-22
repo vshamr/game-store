@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { ProductsData } from "@/constants/data";
+import { PRODUCTS_DATA } from "@/constants/data";
 import "./productsDropDown.css";
 
 function ProductsDropDown(): JSX.Element {
@@ -8,7 +8,7 @@ function ProductsDropDown(): JSX.Element {
   return (
     <>
       <ul className={click ? "drop-down visible" : "drop-down"}>
-        {ProductsData.map((item, index) => (
+        {PRODUCTS_DATA.map((item, index) => (
           <li key={index.toString()}>
             <Link to={item.path} onClick={() => setClick(false)}>
               {item.title}
