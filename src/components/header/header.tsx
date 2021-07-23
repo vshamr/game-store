@@ -36,6 +36,16 @@ function Header(): JSX.Element {
               About
             </NavLink>
           </span>
+          <span className="header_nav-link">
+            <NavLink to={Routes.SIGN_IN} activeClassName="header_nav-activeLink">
+              SignIn
+            </NavLink>
+          </span>
+          <span className="header_nav-link">
+            <NavLink to={Routes.SIGN_UP} activeClassName="header_nav-activeLink">
+              SignUp
+            </NavLink>
+          </span>
         </nav>
         <span className="header_searchBar">
           <SearchBar />

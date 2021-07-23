@@ -27,8 +27,8 @@ span {
   font-size: 25px;
   font-family: 'Teko', sans-serif;
   text-transform: uppercase;
-  letter-spacing: 1.7px;
-  padding: 0px 50px;
+  letter-spacing: 1.3px;
+  padding: 0px 20px;
   transition: all .3s;
 }
 

@@ -9,6 +9,8 @@ import Footer from "@/components/footer/footer";
 import someTypeScript from "./someTypeScript";
 import Header from "./components/header/header";
 import { Routes } from "./constants/Routes";
+import Registration from "@/components/login/registration";
+import SignIn from "@/components/login/signIn";
 
 interface AppProps {
   nothing: boolean;
@@ -41,11 +43,20 @@ class AppContainer extends Component<AppProps, AppState> {
       <StrictMode>
         <BrowserRouter>
           <Header />
+          <Route path={Routes.SIGN_UP} render={() => <Registration />} />
+          <Route path={Routes.SIGN_IN} render={() => <SignIn />} />
           <Route path={Routes.HOME} render={() => <HomePage />} />
           <Route path={Routes.PRODUCTS} render={() => <Products />} />
           <Route path={Routes.ABOUT} render={() => "About"} />
-          <Redirect from="/" to={Routes.HOME} />
 
+
+          {/*<Switch>*/}
+          {/*  <Route path={Routes.HOME} render={() => <HomePage />} />*/}
+          {/*  <Route path={Routes.SIGN_UP} render={() => <SignIn />} />*/}
+          {/*  <Route path={Routes.ERROR} render={() => <h1>404: PAGE NOT FOUND</h1>} />*/}
+          {/*  <Redirect from={'*'} to={Routes.ERROR} />*/}
+          {/*</Switch>*/}
+          <Redirect from="/" to={Routes.HOME} />
           <Footer />
         </BrowserRouter>
       </StrictMode>
