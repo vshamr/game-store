@@ -1,4 +1,3 @@
-
 export enum Routes {
   HOME = "/",
 
@@ -6,5 +5,7 @@ export enum Routes {
   ABOUT = "/about",
   SIGN_UP = "/sign_up",
   SIGN_IN = "/sign_in",
-  USERPAGE = "/user",
+  USER_PAGE = "/user",
 }
+
+export const serverError = 500;

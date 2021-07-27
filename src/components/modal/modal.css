@@ -1,0 +1,113 @@
+.modal-container {
+  width: 500px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 1rem;
+  background-color: #332d42;
+  z-index: 1;
+}
+
+
+.modal-title {
+  font-family: 'Teko', sans-serif;
+  font-size: 40px;
+  text-align: center;
+  color: white;
+  margin-bottom: 2rem;
+  padding: 1rem;
+}
+
+.modal-warning {
+  margin-bottom: 0.2rem;
+  color: #d93025;
+  text-align: end;
+}
+
+.modal-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-form form {
+  width: 100%;
+  padding: 1rem;
+}
+
+.modal-input {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-input:nth-child(2) {
+  margin-bottom: 2rem;
+}
+
+.modal-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 2.5rem;
+  border: 0;
+  color: #ffc010;
+  background-color: transparent;
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  color: #ffc010;
+}
+
+.modal-input label {
+  font-family: 'Teko', sans-serif;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  color: white;
+  padding-left: 20px;
+}
+
+.modal-input input{
+    padding: 0.2rem 1rem;
+    border: 1px solid white;
+    color: black;
+    outline: #ffc010;
+  border-radius: 1rem;
+}
+
+.modal-input input:focus {
+  border-color: #ffc010;
+  box-shadow: 0 0 5px 2px #ffc010;
+}
+
+.modal-btn {
+  display: inline-block;
+  padding: 0.3rem 1.3rem;;
+  font-family: 'Teko', sans-serif;
+  font-size: 25px;
+  font-weight: 700;
+  border-radius: 1rem;
+  border: 0;
+  color: #1a0e22;
+  background-color: #ffc010;
+  letter-spacing: 0.05rem;
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+
+.modal-btn-container {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.modal-btn:hover {
+  color: #232323FF;
+  background-color: #ffc010;
+  box-shadow: 0 0 5px 2px #ffc010;
+}
+

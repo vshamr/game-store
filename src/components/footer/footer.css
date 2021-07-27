@@ -1,7 +1,8 @@
 footer {
-  margin-top: 150px;
-  border-bottom: 2px solid #2b2828;
-  box-shadow: 0 1px 11px 1px black;
+  height: 0px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 .footer_title {
@@ -15,12 +16,12 @@ footer {
   padding-top: 80px;
   display: flex;
   justify-content: space-around;
-  align-items: center;
 }
 
 .footer_image a {
   transition: 0.2s ease;
   font-size: 5.5em;
+
 }
 
 .footer_image a:hover {

@@ -1,11 +1,11 @@
 .searchBar{
   max-width: 31.25rem;
-  margin: 30px;
 }
 
 .searchBar_input{
-  padding: 0.5rem 1.2rem;
-  font-size: 1.2rem;
+  font-family: "Teko", sans-serif;
+  padding: 0.3rem 0.3rem;
+  font-size: 1rem;
   border: 2px solid  #ffffffc7;
   border-radius: 1rem;
   color: #ffc010;
@@ -15,19 +15,20 @@
 
 .searchBar_input:focus{
   border: 2px solid #ffc010;
-  box-shadow: 0 0 2px 1px  #ffffffc7;
+  box-shadow: 0 0 2px 1px #ffffffc7;
 }
 
 .searchBar_input::placeholder{
-  color:  #ffc010;
+  color: #ffc010;
   text-align: center;
   text-transform: capitalize;
 }
 
 .searchBar_button {
-  padding: 0.5rem 1.2rem;
-  font-size: 1.2rem;
-  border: 2px solid  #ffffffc7;
+  font-family: "Teko", sans-serif;
+  padding: 0.3rem 0.5rem;
+  font-size: 1rem;
+  border: 2px solid #ffffffc7;
   border-radius: 1rem;
   color: #ffc010;
   background-color: transparent;

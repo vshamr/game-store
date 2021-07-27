@@ -4,17 +4,17 @@ import "./footer.css";
 
 const Footer: React.FC = () => (
   <footer>
-    <div className="footer_container">
+    <div>
       <h2 className="footer_title">Incredible convenient</h2>
 
-      <div className="footer_content">
+      <div>
         <ul className="footer_image">
           {
             FOOTER_DATA.map(({ href, img }) =>  (
               <li key={href}>
                 <a href={href}>{img}</a>
             </li>
-            )}
+            ))}
         </ul>
       </div>
     </div>
