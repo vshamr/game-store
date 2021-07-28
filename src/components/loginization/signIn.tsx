@@ -29,26 +29,23 @@ function SignIn({ updateIsAuthorized, setUserName }: SignInPropsType) {
       password: ""
     },
     validationSchema: signInShema,
-    onSubmit: (values) => {
-      const checkUser = async () => {
-        try {
-          const data = await fetch(urlUsers);
-          const response = await data.json();
+    onSubmit:async (values) => {
+      try {
+        const data = await fetch(urlUsers);
+        const response = await data.json();
 
-          const user = response.find((person: PersonInterface) => person.login === values.login);
-          if (!user) {
-            throw new Error("You need to create an account");
-          }
-          if (user.password !== values.password) {
-            throw new Error("Wrong password");
-          }
-          updateIsAuthorized(true);
-          setUserName(values.login);
-        } catch (error) {
-          setWarning(error.message);
+        const user = response.find((person: PersonInterface) => person.login === values.login);
+        if (!user) {
+          throw new Error("You need to create an account");
         }
-      };
-      checkUser();
+        if (user.password !== values.password) {
+          throw new Error("Wrong password");
+        }
+        updateIsAuthorized(true);
+        setUserName(values.login);
+      } catch (error) {
+        setWarning(error.message);
+      }
     }
   });
 

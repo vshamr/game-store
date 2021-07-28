@@ -18,6 +18,16 @@
       "login": "q@q.ru",
       "password": "zzzzzz",
       "id": 1
+    },
+    {
+      "login": "a@a.ru",
+      "password": "aaaaaaa",
+      "id": 2
+    },
+    {
+      "login": "s@s.ru",
+      "password": "ssssss",
+      "id": 3
     }
   ]
 }

@@ -8,7 +8,7 @@ import Products from "@/components/products/products";
 import HomePage from "@/components/homePage/homePage";
 import Footer from "@/components/footer/footer";
 import ProfilePage from "@/components/profilePage/profilePage";
-import About from "@/components/about/about";
+import Index from "@/components/about";
 import { Routes } from "./constants/Routes";
 import Header from "./components/header/header";
 import someTypeScript from "./someTypeScript";
@@ -96,7 +96,7 @@ class AppContainer extends Component<AppProps, AppState> {
                 {this.directUser(<Products />)}
               </Route>
               <Route exact path={Routes.ABOUT}>
-                {this.directUser(<About />)}
+                {this.directUser(<Index />)}
               </Route>
               <Route exact path={Routes.SIGN_UP}>
                 {this.state.authorizedUser ? (

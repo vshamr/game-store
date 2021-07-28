@@ -18,7 +18,6 @@ server.use((req, res, next) => {
       res.status(500).send('Such user has already existed');
     }
   }
-
   next()
 });
 

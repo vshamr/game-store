@@ -1,4 +1,4 @@
-import "./header.css";
+import "./styles.css";
 import { Routes } from "@/constants/Routes";
 import { NavLink, useLocation } from "react-router-dom";
 import SearchBar from "@/components/searchBar/searchBar";

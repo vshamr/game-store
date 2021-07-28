@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
 
 import { Routes } from "@/constants/Routes";
-import "../header/header.css";
+import "../header/styles.css";
 import { BiExit } from "react-icons/all";
 
 type AuthorizedUserPropsType = {

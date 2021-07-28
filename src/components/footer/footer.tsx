@@ -1,5 +1,5 @@
 import { FOOTER_DATA } from "@/constants/data";
-import "./footer.css";
+import "./styles.css";
 
 
 const Footer: React.FC = () => (
