@@ -1,4 +1,4 @@
-import "./searchBar.css";
+import "./styles.css";
 import { ChangeEvent, useState } from "react";
 import _ from "lodash";
 import Loader from "@/components/searchBar/loader/loader";

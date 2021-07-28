@@ -1,6 +1,5 @@
 import "./gameCards.css";
 
-
 type GameCardsType = {
   img: string;
   title: string;

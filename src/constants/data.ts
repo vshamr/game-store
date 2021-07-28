@@ -55,4 +55,3 @@ export const CATEGORIES_DATA = [
     icon: FaPlaystation(),
   },
 ];
-

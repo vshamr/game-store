@@ -1,24 +1,22 @@
 import { FOOTER_DATA } from "@/constants/data";
-import "./footer.css";
+import "./styles.css";
 
 
 const Footer: React.FC = () => (
-  <footer>
-    <div className="footer_container">
-      <h3 className="footer_title">Incredible convenient</h3>
-
-      <div className="footer_content">
-        <ul className="footer_image">
-          {
-            FOOTER_DATA.map(({ href, img }) =>  (
+  <>
+    <footer>
+      <h2 className="footer_title">Incredible convenient</h2>
+      <ul className="footer_image">
+        {
+          FOOTER_DATA.map((
+            { href, img }) => (
               <li key={href}>
                 <a href={href}>{img}</a>
-            </li>
-            )}
-        </ul>
-      </div>
-    </div>
-  </footer>
+              </li>
+            ))}
+      </ul>
+    </footer>
+  </>
 );
 
 export default Footer;

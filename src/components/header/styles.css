@@ -1,0 +1,46 @@
+a {
+  text-decoration: none;
+  display: inline-block;
+  color: #ffffffc7;
+}
+
+span {
+  color: #ffc010;
+}
+
+.header_container {
+  min-height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header_nav {
+  font-size: 2.5vh;
+  /*margin: 20px;*/
+}
+
+.header_nav-link {
+  margin: 20px;
+}
+
+.header_nav-link a {
+  font-size: 25px;
+  font-family: "Teko", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  padding: 0px 20px;
+  transition: all 0.3s;
+}
+
+.header_nav-link a.header_nav-activeLink {
+  color: #ffc010;
+}
+
+.header_nav-link a:hover {
+  color: #ffc010;
+}
+
+.authorizedUser {
+
+}

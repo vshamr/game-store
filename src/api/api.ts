@@ -1,7 +1,9 @@
 import axios from "axios";
 
-const instance = axios.create({
-  baseURL: "http://localhost:3000/api/",
+export const urlUsers = `http://localhost:3000/users`;
+
+export const instance = axios.create({
+  baseURL: "http://localhost:3000/",
 });
 
 export const URL = {
