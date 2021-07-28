@@ -7,11 +7,11 @@ import { BiExit } from "react-icons/all";
 
 type AuthorizedUserPropsType = {
   userName: string;
-  checkAuthorization: Function;
+  updateIsAuthorized: Function;
 };
 
-function AuthorizedUser({ userName, checkAuthorization }: AuthorizedUserPropsType) {
-  const handleLogOut = () => checkAuthorization(false);
+function AuthorizedUser({ userName, updateIsAuthorized}: AuthorizedUserPropsType) {
+  const handleLogOut = () => updateIsAuthorized(false);
 
   return (
     <div className="authorizedUser">

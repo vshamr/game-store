@@ -3,77 +3,53 @@ import { Link } from "react-router-dom";
 import { IoMdCloseCircle } from "react-icons/io";
 import { useFormik } from "formik";
 import { urlUsers } from "@/api/api";
-import * as yup from "yup";
 import { Routes } from "@/constants/Routes";
 import { InputText } from "@/components/loginization/inputText";
 import Warnings from "@/components/loginization/warnings";
 import "../modal/modal.css";
+import { signInShema } from "@/constants/schemaValidation";
 
 export interface PersonInterface {
   id: number;
-  email: string;
+  login: string;
   password: string;
 }
 
 type SignInPropsType = {
-  checkAuthorization: Function;
+  updateIsAuthorized: Function;
   setUserName: Function;
 };
 
-type FormikErrorType = {
-  email?: string;
-  password?: string;
-};
-
-function SignIn({ checkAuthorization, setUserName }: SignInPropsType) {
+function SignIn({ updateIsAuthorized, setUserName }: SignInPropsType) {
   const [warning, setWarning] = useState("");
 
   const formik = useFormik({
     initialValues: {
-      email: "",
-      password: "",
+      login: "",
+      password: ""
     },
-    validationSchema: yup.object().shape({
-      password: yup
-        .string()
-        .min(6, "Password has to be longer than 6 characters!")
-        .required("Password is required!")
-        .matches(/[a-zA-Z]/, "Password can only contain Latin letters."),
-    }),
-    validate: (values) => {
-      const errors: FormikErrorType = {};
-      if (!values.email) {
-        errors.email = "Required";
-      } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-        errors.email = "Invalid email address";
-      }
-      return errors;
-    },
+    validationSchema: signInShema,
     onSubmit: (values) => {
       const checkUser = async () => {
         try {
           const data = await fetch(urlUsers);
           const response = await data.json();
 
-          const user = response.find((person: PersonInterface) => person.email === values.email);
-
+          const user = response.find((person: PersonInterface) => person.login === values.login);
           if (!user) {
-            throw new Error("Such user is not registraited");
+            throw new Error("You need to create an account");
           }
-
           if (user.password !== values.password) {
             throw new Error("Wrong password");
           }
-
-          checkAuthorization(true);
-          setUserName(values.email);
+          updateIsAuthorized(true);
+          setUserName(values.login);
         } catch (error) {
           setWarning(error.message);
         }
       };
-
       checkUser();
-    },
+    }
   });
 
   return (
@@ -86,20 +62,11 @@ function SignIn({ checkAuthorization, setUserName }: SignInPropsType) {
         {warning && <Warnings warning={warning} setWarning={setWarning} />}
         <div className="modal-form">
           <form onSubmit={formik.handleSubmit}>
-            <InputText
-              label="email"
-              type="text"
-              touched={formik.touched.email}
-              error={formik.errors.email}
-              {...formik.getFieldProps("email")}
-            />
-            <InputText
-              label="password"
-              type="password"
-              touched={formik.touched.password}
-              error={formik.errors.password}
-              {...formik.getFieldProps("password")}
-            />
+            <InputText label="login" type="text" name="login" value={formik.values.login} onChange={formik.handleChange}
+                       touched={formik.touched.login} error={formik.errors.login} />
+            <InputText label="password" type="password" name="password" value={formik.values.password}
+                       onChange={formik.handleChange} touched={formik.touched.password}
+                       error={formik.errors.password} />
             <div className="modal-btn-container">
               <button type="submit" className="modal-btn">
                 Sign In

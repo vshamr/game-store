@@ -8,37 +8,26 @@ import { urlUsers } from "@/api/api";
 import { Routes, serverError } from "@/constants/Routes";
 import { InputText } from "@/components/loginization/inputText";
 import Warnings from "@/components/loginization/warnings";
+import { signUpShema } from "@/constants/schemaValidation";
 
 type SignUpPropsType = {
-  checkAuthorization: Function;
+  updateIsAuthorized: Function;
   setUserName: Function;
 }
 
-function SignUp({ checkAuthorization, setUserName }: SignUpPropsType) {
+function SignUp({ updateIsAuthorized, setUserName }: SignUpPropsType) {
   const [warning, setWarning] = useState("");
 
   const formik = useFormik({
     initialValues: { login: "", password: "", repeatedPassword: "" },
-    validationSchema: yup.object({
-      login: yup.string()
-        .max(15, "Login must have less than 15 characters")
-        .min(4, "Login must have more than 4 characters")
-        .required("Login is required!"),
-      password: yup.string()
-        .min(6, "Password has to be longer than 6 characters!")
-        .required("Password is required!")
-        .matches(/[a-zA-Z]/, "Password can only contain Latin letters."),
-      repeatedPassword: yup.string()
-        .required("Please, repeat your password")
-        .oneOf([yup.ref("password"), null], "Passwords must match")
-    }),
+    validationSchema: signUpShema,
     onSubmit: values => {
       const { login, password } = values;
 
       const signUpUser = async () => {
         try {
           const newUser = await axios.post(urlUsers, { login, password });
-          checkAuthorization(true);
+          updateIsAuthorized(true);
           setUserName(newUser.data.login);
         } catch (error) {
           if (error.response.status === serverError) {
@@ -46,13 +35,11 @@ function SignUp({ checkAuthorization, setUserName }: SignUpPropsType) {
           }
         }
       };
-
       signUpUser();
     }
   });
 
   return (
-    <>
       <div className="modal-container">
         <Link to={Routes.HOME} className="modal-close"><IoMdCloseCircle /></Link>
         <h3 className="modal-title">Registration</h3>
@@ -73,7 +60,6 @@ function SignUp({ checkAuthorization, setUserName }: SignUpPropsType) {
           </form>
         </div>
       </div>
-    </>
   );
 }
 

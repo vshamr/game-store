@@ -1,10 +1,10 @@
-.categories{
+.categories {
   margin-bottom: 2rem;
   border-bottom: 2px solid #2b2828;
   box-shadow: 0 1px 11px 1px black;
 }
 
-.categories-title{
+.categories-title {
   font-size: 48px;
   text-align: center;
   color: #ffffffc7;
@@ -12,7 +12,7 @@
   padding: 1rem 0;
 }
 
-.categories-content{
+.categories-content {
   display: flex;
   justify-content: space-around;
   margin-top: 40px;
@@ -20,7 +20,7 @@
   padding-bottom: 40px;
 }
 
-.categories-item{
+.categories-item {
   width: 150px;
   height: 200px;
   display: flex;
@@ -34,10 +34,10 @@
   cursor: pointer;
 }
 
-.categories-item:hover{
+.categories-item:hover {
   transform: scale(1.2);
   color: #ffc010;
-  background-color:  transparent;
+  background-color: transparent;
   border: 3px solid #ffc010;
   box-shadow: 0 0 7px 4px #ffc010;
 }
@@ -45,5 +45,3 @@
 .categories-item div {
   font-size: 4rem;
 }
-
-

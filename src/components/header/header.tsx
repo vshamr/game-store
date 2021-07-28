@@ -16,9 +16,7 @@ type HeaderPropsType = {
 
 function Header({ authorizedUser, userName, checkAuthorization, getTargetPage }: HeaderPropsType) {
   const [showDropdown, setShowDropdown] = useState(false);
-
   const location = useLocation();
-
   useEffect(() => {
     if (!authorizedUser && location.pathname !== Routes.SIGN_IN) {
       getTargetPage(location.pathname);
@@ -54,7 +52,7 @@ function Header({ authorizedUser, userName, checkAuthorization, getTargetPage }:
           </span>
         </nav>
         {authorizedUser ? (
-          <AuthorizedUser userName={userName} checkAuthorization={checkAuthorization} />
+          <AuthorizedUser userName={userName} updateIsAuthorized={checkAuthorization} />
         ) : (
           <UnauthorizedUser />
         )}

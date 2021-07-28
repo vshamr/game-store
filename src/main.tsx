@@ -12,6 +12,7 @@ import About from "@/components/about/about";
 import { Routes } from "./constants/Routes";
 import Header from "./components/header/header";
 import someTypeScript from "./someTypeScript";
+
 const Modal = lazy(() => import("./components/modal/modal"));
 const SignIn = lazy(() => import("./components/loginization/signIn"));
 const SignUp = lazy(() => import("./components/loginization/signUp"));
@@ -40,13 +41,13 @@ class AppContainer extends Component<AppProps, AppState> {
       userName: "",
       chosenLocation: ""
     };
-    this.checkAuthorization = this.checkAuthorization.bind(this);
+    this.updateIsAuthorized = this.updateIsAuthorized.bind(this);
     this.setUserName = this.setUserName.bind(this);
     this.getTargetPage = this.getTargetPage.bind(this);
     this.directUser = this.directUser.bind(this);
   }
 
-  checkAuthorization(value: boolean) {
+  updateIsAuthorized(value: boolean) {
     this.setState({
       authorizedUser: value
     });
@@ -74,6 +75,7 @@ class AppContainer extends Component<AppProps, AppState> {
     if (this.state.authorizedUser) {
       return component;
     }
+
     return <Redirect to={Routes.SIGN_IN} />;
   }
 
@@ -85,7 +87,7 @@ class AppContainer extends Component<AppProps, AppState> {
             <Header
               authorizedUser={this.state.authorizedUser}
               userName={this.state.userName}
-              checkAuthorization={this.checkAuthorization}
+              checkAuthorization={this.updateIsAuthorized}
               getTargetPage={this.getTargetPage}
             />
             <Switch>
@@ -100,7 +102,7 @@ class AppContainer extends Component<AppProps, AppState> {
                 {this.state.authorizedUser ? (
                   <Redirect to={Routes.USER_PAGE} />
                 ) : (
-                  <Modal> <SignUp checkAuthorization={this.checkAuthorization} setUserName={this.setUserName} />
+                  <Modal> <SignUp updateIsAuthorized={this.updateIsAuthorized} setUserName={this.setUserName} />
                   </Modal>
                 )}
               </Route>
@@ -108,7 +110,7 @@ class AppContainer extends Component<AppProps, AppState> {
                 {this.state.authorizedUser ? (
                   <Redirect to={this.state.chosenLocation} />
                 ) : (
-                  <Modal><SignIn checkAuthorization={this.checkAuthorization} setUserName={this.setUserName} /> </Modal>
+                  <Modal><SignIn updateIsAuthorized={this.updateIsAuthorized} setUserName={this.setUserName} /> </Modal>
                 )}
               </Route>
               <Route exact path={Routes.USER_PAGE}>
