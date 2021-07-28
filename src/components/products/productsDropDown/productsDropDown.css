@@ -1,31 +1,31 @@
-.drop-down{
+.drop-down {
   display: flex;
   font-size: 2vh;
   flex-direction: column;
   position: absolute;
   min-width: 150px;
-  z-index: 1;
-  transition: all 0.3s ease-in-out;
+  z-index: 2;
+  transition: all 0.7s ease-in-out;
   margin-top: 15px;
   border-top: 4px solid #ffc010;
   line-height: 30px;
 }
 
-.drop-down.visible{
+.drop-down.visible {
   display: flex;
   opacity: 1;
   animation: drop-down-open 0.7s ease;
 }
 
-.drop-down a{
+.drop-down a {
   border: none;
   width: 100%;
   border-bottom: 2px solid #ffffffc7;
-  transition: 0.2s ease;
+  transition: 0.7s ease;
   padding: 0;
 }
 
-.drop-down a:hover{
+.drop-down a:hover {
   color: #ffc010;
   border-bottom-color: #ffc010;
 }

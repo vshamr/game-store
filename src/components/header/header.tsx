@@ -2,19 +2,15 @@ import "./styles.css";
 import { Routes } from "@/constants/Routes";
 import { NavLink, useLocation } from "react-router-dom";
 import SearchBar from "@/components/searchBar/searchBar";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import ProductsDropDown from "@/components/products/productsDropDown/productsDropDown";
 import AuthorizedUser from "@/components/loginization/authorizedUser";
 import UnauthorizedUser from "@/components/loginization/unauthorizedUser";
+import HeaderContext from "@/constants/headerContext";
 
-type HeaderPropsType = {
-  authorizedUser: boolean;
-  userName: string;
-  checkAuthorization: Function;
-  getTargetPage: Function;
-};
 
-function Header({ authorizedUser, userName, checkAuthorization, getTargetPage }: HeaderPropsType) {
+function Header() {
+  const { authorizedUser, userName, updateIsAuthorized, getTargetPage } = useContext(HeaderContext);
   const [showDropdown, setShowDropdown] = useState(false);
   const location = useLocation();
   useEffect(() => {
@@ -52,7 +48,7 @@ function Header({ authorizedUser, userName, checkAuthorization, getTargetPage }:
           </span>
         </nav>
         {authorizedUser ? (
-          <AuthorizedUser userName={userName} updateIsAuthorized={checkAuthorization} />
+          <AuthorizedUser userName={userName} updateIsAuthorized={updateIsAuthorized} />
         ) : (
           <UnauthorizedUser />
         )}

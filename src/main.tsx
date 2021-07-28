@@ -12,6 +12,7 @@ import Index from "@/components/about";
 import { Routes } from "./constants/Routes";
 import Header from "./components/header/header";
 import someTypeScript from "./someTypeScript";
+import HeaderContext from "@/constants/headerContext";
 
 const Modal = lazy(() => import("./components/modal/modal"));
 const SignIn = lazy(() => import("./components/loginization/signIn"));
@@ -84,12 +85,14 @@ class AppContainer extends Component<AppProps, AppState> {
       <StrictMode>
         <BrowserRouter>
           <Suspense fallback={<div>Loading...</div>}>
-            <Header
-              authorizedUser={this.state.authorizedUser}
-              userName={this.state.userName}
-              checkAuthorization={this.updateIsAuthorized}
-              getTargetPage={this.getTargetPage}
-            />
+            <HeaderContext.Provider value={{
+              authorizedUser: this.state.authorizedUser,
+              userName: this.state.userName,
+              updateIsAuthorized: this.updateIsAuthorized,
+              getTargetPage: this.getTargetPage
+            }}>
+              <Header />
+            </HeaderContext.Provider>
             <Switch>
               <Route exact path={Routes.HOME} render={() => <HomePage />} />
               <Route exact path={Routes.PRODUCTS}>
