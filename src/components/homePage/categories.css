@@ -12,9 +12,16 @@
   padding: 1rem 0;
 }
 
-.categories-content {
+.categories_inner {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+}
+
+.categories-content {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 3.3fr 3.3fr 1fr;
+  column-gap: 5em;
   margin-top: 40px;
   border-bottom: 2px solid #2b2828;
   padding-bottom: 40px;
