@@ -8,6 +8,8 @@ import { InputText } from "@/components/loginization/inputText";
 import Warnings from "@/components/loginization/warnings";
 import "../modal/modal.css";
 import { signInShema } from "@/constants/schemaValidation";
+import { useDispatch } from "react-redux";
+import { logInAC, setUserNameAC } from "@/redux/reducer";
 
 export interface PersonInterface {
   id: number;
@@ -15,12 +17,8 @@ export interface PersonInterface {
   password: string;
 }
 
-type SignInPropsType = {
-  updateIsAuthorized: Function;
-  setUserName: Function;
-};
-
-function SignIn({ updateIsAuthorized, setUserName }: SignInPropsType) {
+function SignIn() {
+  const dispatch = useDispatch();
   const [warning, setWarning] = useState("");
 
   const formik = useFormik({
@@ -41,8 +39,8 @@ function SignIn({ updateIsAuthorized, setUserName }: SignInPropsType) {
         if (user.password !== values.password) {
           throw new Error("Wrong password");
         }
-        updateIsAuthorized(true);
-        setUserName(values.login);
+        dispatch(logInAC());
+        dispatch(setUserNameAC(values.login))
       } catch (error) {
         setWarning(error.message);
       }

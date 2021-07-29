@@ -8,13 +8,12 @@ import { Routes, serverError } from "@/constants/Routes";
 import { InputText } from "@/components/loginization/inputText";
 import Warnings from "@/components/loginization/warnings";
 import { signUpShema } from "@/constants/schemaValidation";
+import { useDispatch } from "react-redux";
+import { logInAC, setUserNameAC } from "@/redux/reducer";
 
-type SignUpPropsType = {
-  updateIsAuthorized: Function;
-  setUserName: Function;
-}
 
-function SignUp({ updateIsAuthorized, setUserName }: SignUpPropsType) {
+function SignUp() {
+  const dispatch = useDispatch();
   const [warning, setWarning] = useState("");
 
   const formik = useFormik({
@@ -24,8 +23,8 @@ function SignUp({ updateIsAuthorized, setUserName }: SignUpPropsType) {
       const { login, password } = values;
       try {
         const newUser = await axios.post(urlUsers, { login, password });
-        updateIsAuthorized(true);
-        setUserName(newUser.data.login);
+        dispatch(logInAC());
+        dispatch(setUserNameAC(newUser.data.login));
       } catch (error) {
         if (error.response.status === serverError) {
           setWarning(error.response.data);

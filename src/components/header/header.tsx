@@ -2,20 +2,28 @@ import "./styles.css";
 import { Routes } from "@/constants/Routes";
 import { NavLink, useLocation } from "react-router-dom";
 import SearchBar from "@/components/searchBar/searchBar";
-import { useContext, useEffect, useState } from "react";
+import {  useEffect, useState } from "react";
 import ProductsDropDown from "@/components/products/productsDropDown/productsDropDown";
 import AuthorizedUser from "@/components/loginization/authorizedUser";
 import UnauthorizedUser from "@/components/loginization/unauthorizedUser";
-import HeaderContext from "@/constants/headerContext";
+import { useDispatch, useSelector } from "react-redux";
+import { getTargetPageAC } from "@/redux/reducer";
 
+
+export type RootStateType = {
+  isLoggedIn: boolean;
+  userName: string
+};
 
 function Header() {
-  const { authorizedUser, userName, updateIsAuthorized, getTargetPage } = useContext(HeaderContext);
+  const authorizedUser = useSelector((state: RootStateType) => state.isLoggedIn);
+  const dispatch = useDispatch();
+
   const [showDropdown, setShowDropdown] = useState(false);
   const location = useLocation();
   useEffect(() => {
     if (!authorizedUser && location.pathname !== Routes.SIGN_IN) {
-      getTargetPage(location.pathname);
+      dispatch(getTargetPageAC(location.pathname));
     }
   }, [location]);
 
@@ -47,11 +55,7 @@ function Header() {
             </NavLink>
           </span>
         </nav>
-        {authorizedUser ? (
-          <AuthorizedUser userName={userName} updateIsAuthorized={updateIsAuthorized} />
-        ) : (
-          <UnauthorizedUser />
-        )}
+        {authorizedUser ? <AuthorizedUser /> : <UnauthorizedUser />}
         <span className="header_searchBar">
           <SearchBar />
         </span>

@@ -28,6 +28,11 @@
       "login": "s@s.ru",
       "password": "ssssss",
       "id": 3
+    },
+    {
+      "login": "q@q.ru",
+      "password": "qqqqqq",
+      "id": 4
     }
   ]
 }
