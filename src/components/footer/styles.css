@@ -5,6 +5,11 @@ footer {
   width: 100%;
 }
 
+.footer_container {
+  background-image: url(../../assets/images/bg_header.png);
+  background-color: #1a0e22;
+}
+
 .footer_title {
   font-size: 48px;
   text-align: center;

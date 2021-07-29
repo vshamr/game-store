@@ -11,11 +11,17 @@
   box-shadow: 0 0 5px 2px #ffc010;
 }
 
-.gameCards_container {
+.gameCards_inner {
   display: flex;
-  justify-content: space-around;
-  margin: 80px 0px 50px 50px;
+  justify-content: center;
+}
+
+.gameCards_container {
+  margin: 80px 0;
   text-align: center;
+  display: grid;
+  grid-template-columns: 1.5fr 1.5fr 1fr;
+  column-gap: 5em;
 }
 
 .gameCards_content{

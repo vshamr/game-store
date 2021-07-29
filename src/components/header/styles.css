@@ -13,11 +13,11 @@ span {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
 }
 
 .header_nav {
   font-size: 2.5vh;
-  /*margin: 20px;*/
 }
 
 .header_nav-link {
@@ -39,8 +39,4 @@ span {
 
 .header_nav-link a:hover {
   color: #ffc010;
-}
-
-.authorizedUser {
-
 }

@@ -1,33 +1,30 @@
 @import "normalize.css";
 @import "sanitize.css";
 @import "fontface.css";
-@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Teko:wght@600&display=swap');
-
-
-
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Teko:wght@600&display=swap");
 
 body {
   height: 100%;
-  min-width:900px;
-  font-family: 'Barlow', sans-serif;
+  min-width: 900px;
+  font-family: "Barlow", sans-serif;
   color: #ffffffc7;
   line-height: 26px;
-  background: url(../assets/images/background.png) no-repeat;
-  background: #1a0e22;
+  background-image: url(../assets/images/background.png);
+  background-color: #1a0e22;
 }
 
 html {
-  position:relative;
-  min-height:90vh;
+  position: relative;
+  min-height: 90vh;
 }
 
-h1, h2 {
-  font-family: 'Teko', sans-serif;
+h1,
+h2 {
+  font-family: "Teko", sans-serif;
   font-style: normal;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 2px;
   color: #ffffffc7;
 }
-
