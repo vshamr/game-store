@@ -1,3 +1,33 @@
+.header_top-logo {
+  min-height: 40px;
+  background-color: black;;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: relative;
+}
+
+.header_btn-authorization {
+  font-family: "Teko", sans-serif;
+  font-weight: 400;
+  font-size: 25px;
+  letter-spacing: 1px;
+  width: 150px;
+  margin-right: 16px;
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  right: 0;
+}
+
+.header_btn-signup {
+  border: 1px solid #ffffffc7;
+  border-radius: 6px;
+  padding: 8px 5px 8px 5px;
+}
+
 a {
   text-decoration: none;
   display: inline-block;
@@ -8,35 +38,38 @@ span {
   color: #ffc010;
 }
 
-.header_container {
+.header_menu {
   min-height: 100px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-
+  background: rgba(26, 26, 26, 0.2);
 }
 
-.header_nav {
-  font-size: 2.5vh;
+.header_nav-menu {
+  min-width: 500px;
+  display: flex;
+  justify-content: space-between;
 }
 
-.header_nav-link {
-  margin: 20px;
-}
-
-.header_nav-link a {
-  font-size: 25px;
+.header_nav-menu a {
   font-family: "Teko", sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 1.3px;
-  padding: 0px 20px;
-  transition: all 0.3s;
+  font-size: 30px;
+  letter-spacing: 1.5px;
+  transition: height .4s cubic-bezier(.23,1,.32,1);
 }
 
-.header_nav-link a.header_nav-activeLink {
+.header_nav-menu a.header_nav-activeLink {
   color: #ffc010;
 }
 
-.header_nav-link a:hover {
+.header_nav-menu a:hover {
   color: #ffc010;
+  transform: scale(1.1);
+  transition: all 0.7s ease-in-out;
+}
+
+.header_searchBar {
+  position: absolute;
+  right: 0;
 }

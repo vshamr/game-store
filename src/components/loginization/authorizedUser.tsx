@@ -15,13 +15,13 @@ function AuthorizedUser() {
   const handleLogOut = () => dispatch(logOutAC());
 
   return (
-    <div className="authorizedUser">
-      <span className="header_nav-link">
+    <div>
+      <span>
         <Link to={Routes.USER_PAGE}>
           <FaUserCircle /> {userName}
         </Link>
       </span>
-      <span onClick={handleLogOut} className="header_nav-link">
+      <span onClick={handleLogOut}>
         <Link to={Routes.HOME}>
           <BiExit />
         </Link>

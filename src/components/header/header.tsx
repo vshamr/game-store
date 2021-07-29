@@ -2,7 +2,7 @@ import "./styles.css";
 import { Routes } from "@/constants/Routes";
 import { NavLink, useLocation } from "react-router-dom";
 import SearchBar from "@/components/searchBar/searchBar";
-import {  useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import ProductsDropDown from "@/components/products/productsDropDown/productsDropDown";
 import AuthorizedUser from "@/components/loginization/authorizedUser";
 import UnauthorizedUser from "@/components/loginization/unauthorizedUser";
@@ -29,18 +29,21 @@ function Header() {
 
   return (
     <header>
-      <div className="header_container">
-        <h1>
-          <span>Best Games</span> Market
-        </h1>
-        <nav>
-          <span className="header_nav-link">
+        <div className="header_top-logo">
+          <h1>
+            <span>Best Games</span> Market
+          </h1>
+          {authorizedUser ? <AuthorizedUser /> : <UnauthorizedUser />}
+        </div>
+
+      <div className="header_menu">
+        <nav className="header_nav-menu">
+          <span >
             <NavLink to={Routes.HOME} activeClassName="header_nav-activeLink">
               Home
             </NavLink>
           </span>
           <span
-            className="header_nav-link"
             onMouseEnter={() => setShowDropdown(true)}
             onMouseLeave={() => setShowDropdown(false)}
           >
@@ -49,13 +52,12 @@ function Header() {
               {showDropdown && <ProductsDropDown />}
             </NavLink>
           </span>
-          <span className="header_nav-link">
+          <span>
             <NavLink to={Routes.ABOUT} activeClassName="header_nav-activeLink">
               About
             </NavLink>
           </span>
         </nav>
-        {authorizedUser ? <AuthorizedUser /> : <UnauthorizedUser />}
         <span className="header_searchBar">
           <SearchBar />
         </span>

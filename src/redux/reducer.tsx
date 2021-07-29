@@ -38,6 +38,8 @@ export const reducer = (state: InitialStateType = initialState, action: any) => 
         isLoggedIn: false
       };
     }
+    default:
+      return state
   }
 };
 
