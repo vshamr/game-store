@@ -3,6 +3,7 @@ import { ChangeEvent, useState } from "react";
 import _ from "lodash";
 import Loader from "@/components/searchBar/loader/loader";
 import { URL } from "@/api/api";
+import { BiSearchAlt } from "react-icons/all";
 
 const SearchBar = (): JSX.Element => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -29,7 +30,7 @@ const SearchBar = (): JSX.Element => {
   }
 
   return (
-    <div className="searchBar">
+    <div>
       <input
         className="searchBar_input"
         type="text"
@@ -37,8 +38,8 @@ const SearchBar = (): JSX.Element => {
         value={searchTerm}
         onChange={handleChange}
       />
-      <button className="searchBar_button" type="submit" onClick={handleSearch}>
-        Search
+      <button className="searchBar-btn" type="submit" onClick={handleSearch}>
+        <BiSearchAlt className="searchBar-btn-item"/>
       </button>
       {isSearching && <Loader />}
     </div>

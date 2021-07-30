@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useFormik } from "formik";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { IoMdCloseCircle } from "react-icons/io";
 import { urlUsers } from "@/api/api";
 import { Routes, serverError } from "@/constants/Routes";
 import { InputText } from "@/components/loginization/inputText";
@@ -10,6 +9,7 @@ import Warnings from "@/components/loginization/warnings";
 import { signUpShema } from "@/constants/schemaValidation";
 import { useDispatch } from "react-redux";
 import { logInAC, setUserNameAC } from "@/redux/reducer";
+import { CgCloseR } from "react-icons/all";
 
 
 function SignUp() {
@@ -35,7 +35,7 @@ function SignUp() {
 
   return (
     <div className="modal-container">
-      <Link to={Routes.HOME} className="modal-close"><IoMdCloseCircle /></Link>
+      <Link to={Routes.HOME} className="modal-close"><CgCloseR /></Link>
       <h3 className="modal-title">Registration</h3>
       {warning && <Warnings warning={warning} setWarning={setWarning} />}
       <div className="modal-form">

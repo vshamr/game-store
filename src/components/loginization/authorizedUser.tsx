@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
-import { FaUserCircle } from "react-icons/fa";
 import { Routes } from "@/constants/Routes";
 import "../header/styles.css";
-import { BiExit } from "react-icons/all";
+import { BiExit, BiUser} from "react-icons/all";
 import { useDispatch, useSelector } from "react-redux";
 import { RootStateType } from "@/components/header/header";
 import { logOutAC } from "@/redux/reducer";
@@ -15,10 +14,10 @@ function AuthorizedUser() {
   const handleLogOut = () => dispatch(logOutAC());
 
   return (
-    <div>
+    <div className="header_authorization-item">
       <span>
         <Link to={Routes.USER_PAGE}>
-          <FaUserCircle /> {userName}
+          <BiUser /> {userName}
         </Link>
       </span>
       <span onClick={handleLogOut}>

@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { IoMdCloseCircle } from "react-icons/io";
 import { useFormik } from "formik";
 import { urlUsers } from "@/api/api";
 import { Routes } from "@/constants/Routes";
@@ -10,6 +9,7 @@ import "../modal/modal.css";
 import { signInShema } from "@/constants/schemaValidation";
 import { useDispatch } from "react-redux";
 import { logInAC, setUserNameAC } from "@/redux/reducer";
+import { CgCloseR } from "react-icons/all";
 
 export interface PersonInterface {
   id: number;
@@ -51,11 +51,10 @@ function SignIn() {
     <div>
       <div className="modal-container">
         <Link to={Routes.HOME} className="modal-close">
-          <IoMdCloseCircle />
+          <CgCloseR />
         </Link>
         <h3 className="modal-title">Authorization</h3>
         {warning && <Warnings warning={warning} setWarning={setWarning} />}
-        <div className="modal-form">
           <form onSubmit={formik.handleSubmit}>
             <InputText label="login" type="text" name="login" value={formik.values.login} onChange={formik.handleChange}
                        touched={formik.touched.login} error={formik.errors.login} />
@@ -68,7 +67,6 @@ function SignIn() {
               </button>
             </div>
           </form>
-        </div>
       </div>
     </div>
   );

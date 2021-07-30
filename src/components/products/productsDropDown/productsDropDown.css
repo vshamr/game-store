@@ -1,23 +1,12 @@
 .drop-down {
-  display: flex;
-  font-size: 2vh;
-  flex-direction: column;
-  position: absolute;
-  min-width: 150px;
-  z-index: 2;
-  transition: all 0.7s ease-in-out;
-  margin-top: 15px;
-  border-top: 4px solid #ffc010;
-  line-height: 30px;
-}
-
-.drop-down.visible {
-  display: flex;
-  opacity: 1;
-  animation: drop-down-open 0.7s ease;
+  margin: 0 !important;
+  font-size: 15px !important;
 }
 
 .drop-down a {
+  font-size: 25px;
+  font-weight: 300;
+  text-align: center;
   border: none;
   width: 100%;
   border-bottom: 2px solid #ffffffc7;
@@ -26,6 +15,6 @@
 }
 
 .drop-down a:hover {
-  color: #ffc010;
-  border-bottom-color: #ffc010;
+  background-color: transparent !important;
+  border-bottom: 2px solid black;
 }

@@ -9,6 +9,7 @@ function HomePage(): JSX.Element {
   return (
     <div>
       <Categories />
+      <h2 className="categories-title"><span>Top</span> games</h2>
       <div className="gameCards_inner">
         <div className="gameCards_container">
           <GameCards
@@ -16,21 +17,18 @@ function HomePage(): JSX.Element {
             title="Assassin's Creed® Valhalla"
             price="60 BYN"
             description="Assassin's Creed Valhalla is a 2020 action role-playing video game developed by Ubisoft Montreal and published by Ubisoft"
-            date="2019-06-22"
           />
           <GameCards
             img={GAME2_SPIDERMAN}
-            title="Marvel’s Spider-Man: Miles Morales"
+            title="Marvel’s Spider-Man"
             price="70 BYN"
             description="Marvel's Spider-Man: Miles Morales is an action-adventure computer game developed by Insomniac Games "
-            date="2019-06-22"
           />
           <GameCards
             img={GAME3_WATCHDOGS}
             title="Watch Dogs: Legion"
             price="55 BYN"
             description="Watch Dogs: Legion is an Action-adventure computer game developed by Ubisoft Toronto and published by Ubisoft."
-            date="2019-06-22"
           />
           ;
         </div>
