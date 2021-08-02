@@ -55,8 +55,6 @@ class AppContainer extends Component<AppProps, AppState> {
     console.error("error Info", errorInfo.componentStack);
   }
 
-
-
   redirectOnChoosenPage(component: JSX.Element) {
     if (store.getState().isLoggedIn) {
       return component;

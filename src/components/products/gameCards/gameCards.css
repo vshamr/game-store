@@ -3,12 +3,6 @@
   background-color: #190b25;
 }
 
-.gameCards_inner {
-  margin-top: 10vh;
-  display: flex;
-  justify-content: center;
-}
-
 .gameCards_content {
   position: relative;
   overflow: hidden;
@@ -21,11 +15,22 @@ img {
 }
 
 .gameCards_container {
+  padding-top: 40px;
   text-align: center;
-  display: grid;
-  grid-template-columns: 1.5fr 1.5fr 1fr;
-  column-gap: 5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
+
+.gameCards-top-title {
+  margin: 3.5em 0 1em 0;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 48px;
+}
+
 .gameCards-title{
   height: 50px;
   display: flex;
@@ -33,9 +38,11 @@ img {
   align-items: center;
   font-size: 48px;
 }
+
 h4 {
   margin-bottom: 0;
 }
+
 .gameCards-title {
   background-color: #ffffffc7;
   width: 100%;
@@ -76,4 +83,28 @@ h4 {
 .gameCards_content:hover .gameCards-about {
   background-color: #ffc010;
   transform: translateY(0%);
+}
+
+@media (max-width: 1000px) {
+  .gameCards-top-title {
+    margin-top: 300px;
+  }
+  .gameCards_container {
+    display: block;
+  }
+
+  .gameCards {
+    display: inline-block;
+    min-width: 300px;
+    margin: 20px;
+  }
+}
+
+@media (max-width: 680px) {
+  .gameCards-top-title {
+    margin-top: 550px;
+  }
+  .gameCards_container {
+   padding-top: 0;
+  }
 }

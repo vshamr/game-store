@@ -6,7 +6,6 @@
 
 body {
   height: 100%;
-  min-width: 900px;
   font-family: "Barlow", sans-serif;
   color: #ffffffc7;
   line-height: 26px;
@@ -16,7 +15,6 @@ body {
 
 html {
   position: relative;
-  min-height: 90vh;
 }
 
 h1,

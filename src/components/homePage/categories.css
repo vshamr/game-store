@@ -19,15 +19,17 @@
 }
 
 .categories-content {
+  min-width: 100%;
   text-align: center;
-  display: grid;
-  grid-template-columns: repeat(3, 300px);
-  column-gap: 10em;
   margin-top: 40px;
   padding-bottom: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 .categories-item {
+  min-width: 300px;
   background: url(../../assets/images/categories_bg.png);
   background-position: center bottom;
   background-size: cover;
@@ -44,3 +46,14 @@
   color: rgba(255, 192, 16, 0.8);
 }
 
+@media (max-width: 1000px) {
+  .categories-content {
+    display: block;
+    margin-top: 0;
+  }
+
+  .categories-item {
+    min-width: 300px;
+    margin: 20px;
+  }
+}

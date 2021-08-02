@@ -1,11 +1,12 @@
 footer {
-  height: 0px;
+  height: 0;
   position: absolute;
   bottom: 0;
   width: 100%;
 }
 
 .footer_container {
+  min-width: 100%;
   background-image: url(../../assets/images/bg_header.png);
   background-color: rgba(26, 14, 34, 0.5);
 }
@@ -23,6 +24,7 @@ span {
 }
 
 .footer_image {
+
   display: flex;
   justify-content: space-around;
   padding: 5vh 0 5vh 0;
@@ -41,4 +43,14 @@ span {
 
 li {
   list-style: none;
+}
+
+@media (max-width: 540px) {
+  .footer_title span{
+    display: block;
+    padding-bottom: 20px;
+  }
+  .footer_image {
+    font-size: 10px;
+  }
 }

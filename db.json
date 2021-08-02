@@ -18,31 +18,6 @@
       "login": "q@q.ru",
       "password": "zzzzzz",
       "id": 1
-    },
-    {
-      "login": "a@a.ru",
-      "password": "aaaaaaa",
-      "id": 2
-    },
-    {
-      "login": "s@s.ru",
-      "password": "ssssss",
-      "id": 3
-    },
-    {
-      "login": "q@q.ru",
-      "password": "qqqqqq",
-      "id": 4
-    },
-    {
-      "login": "sedfd",
-      "password": "xxxxxx",
-      "id": 5
-    },
-    {
-      "login": "rrrrr",
-      "password": "zzzzzz",
-      "id": 6
     }
   ]
 }

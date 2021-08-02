@@ -15,7 +15,6 @@ function GameCards({ img, title, price, description }: GameCardsType) {
         <img src={img} alt={title} />
         <div className="gameCards-about">{description}</div>
       </div>
-
       <div className="gameCards-title">
         <h4>{title}</h4>
         <p>{price}</p>

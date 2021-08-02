@@ -7,8 +7,8 @@ function HomePage(): JSX.Element {
   return (
     <div>
       <Categories />
-      <h2 className="categories-title"><span>Top</span> games</h2>
-      <div className="gameCards_inner">
+      <h2 className="gameCards-top-title"><span>Top</span> games</h2>
+
         <div className="gameCards_container">
           {
             GAME_CARDS_DATA.map(({ img, title, price, description }) =>
@@ -19,7 +19,7 @@ function HomePage(): JSX.Element {
                 description={description} />
             )
           }
-        </div>
+
       </div>
     </div>
   );
