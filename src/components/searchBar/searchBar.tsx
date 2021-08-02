@@ -30,7 +30,7 @@ const SearchBar = (): JSX.Element => {
   }
 
   return (
-    <div>
+    <>
       <input
         className="searchBar_input"
         type="text"
@@ -42,7 +42,7 @@ const SearchBar = (): JSX.Element => {
         <BiSearchAlt className="searchBar-btn-item"/>
       </button>
       {isSearching && <Loader />}
-    </div>
+    </>
   );
 };
 

@@ -55,6 +55,8 @@ class AppContainer extends Component<AppProps, AppState> {
     console.error("error Info", errorInfo.componentStack);
   }
 
+
+
   redirectOnChoosenPage(component: JSX.Element) {
     if (store.getState().isLoggedIn) {
       return component;
@@ -77,6 +79,7 @@ class AppContainer extends Component<AppProps, AppState> {
                 <Route exact path={Routes.ABOUT}>
                   {this.redirectOnChoosenPage(<Index />)}
                 </Route>
+
                 <Route exact path={Routes.SIGN_UP}>
                   {store.getState().isLoggedIn ? (
                     <Redirect to={Routes.USER_PAGE} />
@@ -84,14 +87,15 @@ class AppContainer extends Component<AppProps, AppState> {
                     <Modal> <SignUp /></Modal>
                   )}
                 </Route>
+
                 <Route exact path={Routes.SIGN_IN}>
                   {store.getState().isLoggedIn ? (
                     <Redirect to={store.getState().chosenLocation} />
                   ) : (
-                    <Modal><SignIn />
-                    </Modal>
+                    <Modal> <SignIn /> </Modal>
                   )}
                 </Route>
+
                 <Route exact path={Routes.USER_PAGE}>
                   {this.redirectOnChoosenPage(<ProfilePage />)}
                 </Route>

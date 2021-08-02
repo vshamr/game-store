@@ -5,7 +5,7 @@
 }
 
 .categories-title {
-  margin: 2em 0 1em 0;
+  margin: 3.5em 0 1em 0;
   height: 50px;
   display: flex;
   justify-content: center;
@@ -43,3 +43,4 @@
   font-size: 5rem;
   color: rgba(255, 192, 16, 0.8);
 }
+

@@ -3,7 +3,7 @@ import { Routes } from "@/constants/Routes";
 import { NavLink, useLocation } from "react-router-dom";
 import SearchBar from "@/components/searchBar/searchBar";
 import { useEffect, useState } from "react";
-import ProductsDropDown from "@/components/products/productsDropDown/productsDropDown";
+import ProductsDropDown from "@/components/header/drop-down/productsDropDown";
 import AuthorizedUser from "@/components/loginization/authorizedUser";
 import UnauthorizedUser from "@/components/loginization/unauthorizedUser";
 import { useDispatch, useSelector } from "react-redux";
@@ -38,11 +38,9 @@ function Header() {
 
       <div className="header_menu">
         <nav className="header_nav-menu">
-          <span >
             <NavLink to={Routes.HOME} activeClassName="header_nav-activeLink">
               Home
             </NavLink>
-          </span>
           <span
             onMouseEnter={() => setShowDropdown(true)}
             onMouseLeave={() => setShowDropdown(false)}
@@ -52,11 +50,10 @@ function Header() {
               {showDropdown && <ProductsDropDown />}
             </NavLink>
           </span>
-          <span>
             <NavLink to={Routes.ABOUT} activeClassName="header_nav-activeLink">
               About
             </NavLink>
-          </span>
+
         </nav>
         <span className="header_searchBar">
           <SearchBar />
