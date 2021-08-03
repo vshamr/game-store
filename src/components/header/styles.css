@@ -90,6 +90,47 @@ span {
 
 @media (max-width: 1000px) {
   .header_searchBar {
+    margin-top: 10px;
+    min-width: 50%;
+  }
+
+  .header_menu {
     display: block;
+  }
+}
+
+@media (max-width: 700px) {
+  .header_top-logo {
+    min-height: 80px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .header_top-logo h1 {
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .header_searchBar {
+    margin-top: 10px;
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 520px) {
+  .header_top-logo {
+    display: block;
+    min-height: 110px;
+  }
+  .header_top-logo h1 {
+    text-align: center;
+  }
+  .header_btn-authorization {
+    min-width: 100%;
+    justify-content: center;
+    position: relative;
+  }
+  .header_btn-authorization a {
+    margin-right: 10px;
   }
 }
