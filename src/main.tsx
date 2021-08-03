@@ -1,21 +1,21 @@
-import "./styles/main.css";
-import "./styles/main.scss";
-import { Component, ErrorInfo, StrictMode } from "react";
-import { Suspense, lazy } from "react";
-import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";
+import { Component, ErrorInfo, StrictMode, Suspense, lazy } from "react";
 import ReactDom from "react-dom";
-import Products from "@/components/products/products";
-import HomePage from "@/components/homePage/homePage";
-import Footer from "@/components/footer/footer";
-import ProfilePage from "@/components/profilePage/profilePage";
-import Index from "@/components/about";
-import { Routes } from "./constants/Routes";
-import Header from "./components/header/header";
-import someTypeScript from "./someTypeScript";
+import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "@/redux/redux-store";
 
-const Modal = lazy(() => import("./components/modal/modal"));
+import "./styles/main.css";
+import "./styles/main.scss";
+import Header from "./components/header";
+import Products from "@/components/products";
+import HomePage from "@/components/homePage";
+import ProfilePage from "@/components/profilePage";
+import About from "@/components/about";
+import Footer from "@/components/footer";
+import { Routes } from "./constants/Routes";
+import someTypeScript from "./someTypeScript";
+
+const Modal = lazy(() => import("./components/modal"));
 const SignIn = lazy(() => import("./components/loginization/signIn"));
 const SignUp = lazy(() => import("./components/loginization/signUp"));
 
@@ -75,7 +75,7 @@ class AppContainer extends Component<AppProps, AppState> {
                   {this.redirectOnChoosenPage(<Products />)}
                 </Route>
                 <Route exact path={Routes.ABOUT}>
-                  {this.redirectOnChoosenPage(<Index />)}
+                  {this.redirectOnChoosenPage(<About />)}
                 </Route>
 
                 <Route exact path={Routes.SIGN_UP}>

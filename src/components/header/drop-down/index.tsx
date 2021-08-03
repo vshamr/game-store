@@ -1,7 +1,8 @@
-import { Link } from "react-router-dom";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+
+import "./styles.css";
 import { PRODUCTS_DATA } from "@/constants/data";
-import "./productsDropDown.css";
 
 function ProductsDropDown(): JSX.Element {
   const [click, setClick] = useState(false);

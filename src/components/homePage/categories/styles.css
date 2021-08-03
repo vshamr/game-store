@@ -1,6 +1,6 @@
 .categories {
   max-height: 360px;
-  background-image: url(../../assets/images/bg_header.png);
+  background-image: url(../../../assets/images/bg_header.png);
   background-color: rgba(26, 14, 34, 0.5);
 }
 
@@ -30,7 +30,7 @@
 
 .categories-item {
   min-width: 300px;
-  background: url(../../assets/images/categories_bg.png);
+  background: url(../../../assets/images/categories_bg.png);
   background-position: center bottom;
   background-size: cover;
   padding: 20px 60px 20px 60px;

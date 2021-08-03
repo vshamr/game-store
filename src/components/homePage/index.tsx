@@ -1,5 +1,5 @@
-import "../products/gameCards/gameCards.css";
-import GameCards from "@/components/products/gameCards/gameCards";
+import "../products/gameCards/styles.css";
+import GameCards from "@/components/products/gameCards";
 import Categories from "@/components/homePage/categories";
 import { GAME_CARDS_DATA } from "@/constants/data";
 

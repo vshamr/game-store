@@ -1,14 +1,14 @@
-import "./styles.css";
-import { Routes } from "@/constants/Routes";
-import { NavLink, useLocation } from "react-router-dom";
-import SearchBar from "@/components/searchBar/searchBar";
 import { useEffect, useState } from "react";
-import ProductsDropDown from "@/components/header/drop-down/productsDropDown";
+import { NavLink, useLocation } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+
+import "./styles.css";
+import SearchBar from "@/components/searchBar";
+import ProductsDropDown from "@/components/header/drop-down";
 import AuthorizedUser from "@/components/loginization/authorizedUser";
 import UnauthorizedUser from "@/components/loginization/unauthorizedUser";
-import { useDispatch, useSelector } from "react-redux";
+import { Routes } from "@/constants/Routes";
 import { getTargetPageAC } from "@/redux/reducer";
-
 
 export type RootStateType = {
   isLoggedIn: boolean;

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import "./categories.css";
+
+import "./styles.css";
 import { CATEGORIES_DATA } from "@/constants/data";
 import { Routes } from "@/constants/Routes";
 

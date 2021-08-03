@@ -1,16 +1,16 @@
 import { useState } from "react";
-import { useFormik } from "formik";
-import axios from "axios";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import axios from "axios";
+import { useFormik } from "formik";
+import { CgCloseR } from "react-icons/all";
+
 import { urlUsers } from "@/api/api";
 import { Routes, serverError } from "@/constants/Routes";
 import { InputText } from "@/components/loginization/inputText";
 import Warnings from "@/components/loginization/warnings";
 import { signUpShema } from "@/constants/schemaValidation";
-import { useDispatch } from "react-redux";
 import { logInAC, setUserNameAC } from "@/redux/reducer";
-import { CgCloseR } from "react-icons/all";
-
 
 function SignUp() {
   const dispatch = useDispatch();

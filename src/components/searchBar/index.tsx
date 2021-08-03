@@ -1,7 +1,8 @@
-import "./styles.css";
 import { ChangeEvent, useState } from "react";
 import _ from "lodash";
-import Loader from "@/components/searchBar/loader/loader";
+
+import "./styles.css";
+import Loader from "@/components/searchBar/loader";
 import { URL } from "@/api/api";
 import { BiSearchAlt } from "react-icons/all";
 

@@ -1,4 +1,4 @@
-import "./gameCards.css";
+import "./styles.css";
 
 type GameCardsType = {
   img: any;

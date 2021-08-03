@@ -1,15 +1,16 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import { useFormik } from "formik";
+import { CgCloseR } from "react-icons/all";
+
+import "../modal/styles.css";
 import { urlUsers } from "@/api/api";
 import { Routes } from "@/constants/Routes";
 import { InputText } from "@/components/loginization/inputText";
 import Warnings from "@/components/loginization/warnings";
-import "../modal/modal.css";
 import { signInShema } from "@/constants/schemaValidation";
-import { useDispatch } from "react-redux";
 import { logInAC, setUserNameAC } from "@/redux/reducer";
-import { CgCloseR } from "react-icons/all";
 
 export interface PersonInterface {
   id: number;
