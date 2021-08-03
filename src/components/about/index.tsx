@@ -1,5 +1,3 @@
-const Index: React.FC = () =>
-  <h3>Products</h3>;
-;
+const About: React.FC = () => <h3>About</h3>;
 
-export default Index;
+export default About;

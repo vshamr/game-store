@@ -1,26 +1,24 @@
 import { Link } from "react-router-dom";
-import { FaUserCircle } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
+import { BiExit, BiUser} from "react-icons/all";
 
-import { Routes } from "@/constants/Routes";
 import "../header/styles.css";
-import { BiExit } from "react-icons/all";
+import { Routes } from "@/constants/Routes";
+import { RootStateType } from "@/components/header";
+import { logOutAC } from "@/redux/reducer";
 
-type AuthorizedUserPropsType = {
-  userName: string;
-  updateIsAuthorized: Function;
-};
+function AuthorizedUser() {
+  const userName = useSelector((state: RootStateType) => state.userName);
+  const dispatch = useDispatch();
 
-function AuthorizedUser({ userName, updateIsAuthorized}: AuthorizedUserPropsType) {
-  const handleLogOut = () => updateIsAuthorized(false);
+  const handleLogOut = () => dispatch(logOutAC());
 
   return (
-    <div className="authorizedUser">
-      <span className="header_nav-link">
+    <div className="header_authorization-item">
         <Link to={Routes.USER_PAGE}>
-          <FaUserCircle /> {userName}
+          <BiUser /> {userName}
         </Link>
-      </span>
-      <span onClick={handleLogOut} className="header_nav-link">
+      <span onClick={handleLogOut}>
         <Link to={Routes.HOME}>
           <BiExit />
         </Link>

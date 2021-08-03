@@ -1,0 +1,93 @@
+.modal-container {
+  min-width: 450px;
+  min-height: 300px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: url(../../assets/images/categories_bg.png);
+  background-color: rgba(26, 14, 34, 0.5);
+  z-index: 1;
+  position: fixed;
+}
+
+.modal-title {
+  font-family: 'Teko', sans-serif;
+  font-size: 40px;
+  text-align: center;
+  color: #ffc010;
+  margin-bottom: 2rem;
+  padding: 1rem;
+}
+
+.modal-warning {
+  margin-bottom: 0.2rem;
+  color: #d93025;
+  text-align: end;
+}
+
+.modal-input {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-input:nth-child(2) {
+  margin-bottom: 2rem;
+}
+
+.modal-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 2.5rem;
+  border: 0;
+  color: rgba(255, 192, 16, 0.7);
+  background-color: transparent;
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+
+.modal-close {
+  color: #ffc010;
+}
+
+.modal-input label {
+  font-family: 'Teko', sans-serif;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  color: #ffffffc7;
+  padding-left: 20px;
+}
+
+.modal-input input {
+  margin-right: 5px;
+  color: black;
+  outline: #ffc010;
+  border: 2px solid #2d3547;
+  border-radius: 6px;
+  padding: 7px 10px;
+}
+
+.modal-btn {
+  font-family: 'Teko', sans-serif;
+  font-size: 25px;
+  font-weight: 500;
+  letter-spacing: 1.4px;
+  padding: 0.3rem 1.3rem;
+  border-radius: 6px;
+  border: 0;
+  background-color: rgba(255, 192, 16, 0.8);
+  cursor: pointer;
+}
+
+.modal-btn:hover {
+  background-color: #ffc010;
+}
+
+.modal-btn-container {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  text-align: center;
+}

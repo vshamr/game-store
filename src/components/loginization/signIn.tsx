@@ -1,13 +1,16 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { IoMdCloseCircle } from "react-icons/io";
+import { useDispatch } from "react-redux";
 import { useFormik } from "formik";
+import { CgCloseR } from "react-icons/all";
+
+import "../modal/styles.css";
 import { urlUsers } from "@/api/api";
 import { Routes } from "@/constants/Routes";
 import { InputText } from "@/components/loginization/inputText";
 import Warnings from "@/components/loginization/warnings";
-import "../modal/modal.css";
 import { signInShema } from "@/constants/schemaValidation";
+import { logInAC, setUserNameAC } from "@/redux/reducer";
 
 export interface PersonInterface {
   id: number;
@@ -15,12 +18,8 @@ export interface PersonInterface {
   password: string;
 }
 
-type SignInPropsType = {
-  updateIsAuthorized: Function;
-  setUserName: Function;
-};
-
-function SignIn({ updateIsAuthorized, setUserName }: SignInPropsType) {
+function SignIn() {
+  const dispatch = useDispatch();
   const [warning, setWarning] = useState("");
 
   const formik = useFormik({
@@ -41,8 +40,8 @@ function SignIn({ updateIsAuthorized, setUserName }: SignInPropsType) {
         if (user.password !== values.password) {
           throw new Error("Wrong password");
         }
-        updateIsAuthorized(true);
-        setUserName(values.login);
+        dispatch(logInAC());
+        dispatch(setUserNameAC(values.login))
       } catch (error) {
         setWarning(error.message);
       }
@@ -53,11 +52,10 @@ function SignIn({ updateIsAuthorized, setUserName }: SignInPropsType) {
     <div>
       <div className="modal-container">
         <Link to={Routes.HOME} className="modal-close">
-          <IoMdCloseCircle />
+          <CgCloseR />
         </Link>
         <h3 className="modal-title">Authorization</h3>
         {warning && <Warnings warning={warning} setWarning={setWarning} />}
-        <div className="modal-form">
           <form onSubmit={formik.handleSubmit}>
             <InputText label="login" type="text" name="login" value={formik.values.login} onChange={formik.handleChange}
                        touched={formik.touched.login} error={formik.errors.login} />
@@ -70,7 +68,6 @@ function SignIn({ updateIsAuthorized, setUserName }: SignInPropsType) {
               </button>
             </div>
           </form>
-        </div>
       </div>
     </div>
   );
