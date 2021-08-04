@@ -3,7 +3,7 @@ import axios from "axios";
 export const urlUsers = `http://localhost:3000/users`;
 
 export const instance = axios.create({
-  baseURL: "http://localhost:3000/",
+  baseURL: "http://localhost:3000/"
 });
 
 export const usersAPI = {
@@ -11,9 +11,12 @@ export const usersAPI = {
     return instance.get(`search/${searchTerm}`);
   },
   getProfile(values) {
-    return instance.get(`api/getProfile/users`, {...values})
+    return instance.get(`api/getProfile/users`, { ...values });
   },
-  changePassword(userId, password ) {
-    return instance.post(`api/changePassword/users/${userId}`, { password } )
+  changePassword(userId, password) {
+    return instance.post(`api/changePassword/users/${userId}`, { password });
+  },
+  saveProfile(values) {
+    return instance.post(`/api/saveProfile/users`, { ...values });
   }
 };

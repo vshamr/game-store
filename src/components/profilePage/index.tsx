@@ -5,7 +5,7 @@ import { useFormik } from "formik";
 import "./styles.css";
 import { userPageShema } from "@/constants/schemaValidation";
 import { usersAPI } from "@/api/api";
-import { setUserNameAC } from "@/redux/reducer";
+import { setUserNameAC, setUserProfileAC } from "@/redux/reducer";
 import Warnings from "@/components/loginization/warnings";
 import { InputText } from "@/components/loginization/inputText";
 import Modal from "@/components/modal";
@@ -31,7 +31,10 @@ const ProfilePage = () => {
     onSubmit: async (values) => {
       try {
         const updatedUser = await usersAPI.getProfile({ ...values });
+        const saveUserProfile = await usersAPI.saveProfile({ ...values });
+
         dispatch(setUserNameAC(updatedUser.data.login));
+        dispatch(setUserProfileAC(saveUserProfile.data.values));
       } catch (error) {
         setWarning(error.message);
       }
@@ -47,7 +50,7 @@ const ProfilePage = () => {
             <button className="user-page-btn">Change profile image</button>
           </div>
           <form className="user-page_form" onSubmit={formik.handleSubmit}>
-            <Warnings warning={warning} setWarning={setWarning} />
+
             <div className="user-page_form-box">
               <InputText label="login" type="login" value={formik.values.login} name="Name"
                          onChange={formik.handleChange} error={formik.errors.login} touched={formik.touched.login} />
@@ -57,12 +60,12 @@ const ProfilePage = () => {
                          onChange={formik.handleChange} touched={formik.touched.address}
                          error={formik.errors.address} />
             </div>
+              <Warnings warning={warning} setWarning={setWarning} />
             <div className="user-page_form-btn">
               <button className="user-page-btn">Save profile</button>
               <button className="user-page-btn" onClick={openPasswordModal}>Change password</button>
-              {showPasswordModal && <Modal> <ChangePassword setShowPasswordModal={setShowPasswordModal}/> </Modal>}
+              {showPasswordModal && <Modal> <ChangePassword setShowPasswordModal={setShowPasswordModal} /> </Modal>}
             </div>
-
           </form>
         </div>
       </div>
