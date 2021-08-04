@@ -88,19 +88,16 @@
   font-family: 'Teko', sans-serif;
   font-weight: 300;
   letter-spacing: 1px;
-  margin-bottom: 0.2rem;
   color: #d93025;
-  text-align: end;
-}
-
-.modal-warning div {
-  height: 10px;
+  position: relative;
+  left: 260px;
+  top: 57px;
 }
 
 .user-page_form-box .modal-warning {
   position: relative;
   top: 100px;
-  padding-left: 8px;
+  left: 8px;
 }
 
 @media (max-width: 520px) {
@@ -115,5 +112,3 @@
     padding-left: 0;
   }
 }
-
-

@@ -60,7 +60,7 @@ const ProfilePage = () => {
                          onChange={formik.handleChange} touched={formik.touched.address}
                          error={formik.errors.address} />
             </div>
-              <Warnings warning={warning} setWarning={setWarning} />
+            <Warnings warning={warning} setWarning={setWarning} />
             <div className="user-page_form-btn">
               <button className="user-page-btn">Save profile</button>
               <button className="user-page-btn" onClick={openPasswordModal}>Change password</button>

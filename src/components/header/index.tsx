@@ -49,7 +49,7 @@ function Header() {
           >
             <NavLink to={Routes.PRODUCTS} activeClassName="header_nav-activeLink">
               Products
-              {showDropdown && <ProductsDropDown />}
+              <ProductsDropDown />
             </NavLink>
           </span>
             <NavLink to={Routes.ABOUT} activeClassName="header_nav-activeLink">
