@@ -1,12 +1,10 @@
 .modal-container {
-  min-width: 450px;
-  min-height: 300px;
+  width: 450px;
+  height: 300px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background: url(../../assets/images/categories_bg.png);
-  background-color: rgba(26, 14, 34, 0.5);
-  z-index: 1;
   position: fixed;
 }
 
@@ -17,12 +15,6 @@
   color: #ffc010;
   margin-bottom: 2rem;
   padding: 1rem;
-}
-
-.modal-warning {
-  margin-bottom: 0.2rem;
-  color: #d93025;
-  text-align: end;
 }
 
 .modal-input {
@@ -91,3 +83,24 @@
   margin-bottom: 10px;
   text-align: center;
 }
+
+.modal-warning {
+  margin-bottom: 0.2rem;
+  color: #d93025;
+  text-align: end;
+}
+
+@media (max-width: 520px) {
+  .modal-input {
+    flex-direction: column;
+  }
+  .modal-container {
+    width: 320px;
+    height: 350px;
+  }
+  .modal-input label {
+    padding-left: 0;
+  }
+}
+
+

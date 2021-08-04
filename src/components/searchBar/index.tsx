@@ -3,7 +3,7 @@ import _ from "lodash";
 
 import "./styles.css";
 import Loader from "@/components/searchBar/loader";
-import { URL } from "@/api/api";
+import { usersAPI } from "@/api/api";
 import { BiSearchAlt } from "react-icons/all";
 
 const SearchBar = (): JSX.Element => {
@@ -17,7 +17,7 @@ const SearchBar = (): JSX.Element => {
 
   async function getSearch() {
     try {
-      const response = await URL.search(searchTerm);
+      const response = await usersAPI.search(searchTerm);
       console.log(response);
     } catch (error) {
       console.error(error);

@@ -6,8 +6,14 @@ export const instance = axios.create({
   baseURL: "http://localhost:3000/",
 });
 
-export const URL = {
+export const usersAPI = {
   search(searchTerm) {
     return instance.get(`search/${searchTerm}`);
   },
+  getProfile(values) {
+    return instance.get(`api/getProfile/users`, {...values})
+  },
+  changePassword(userId, password ) {
+    return instance.post(`api/changePassword/users/${userId}`, { password } )
+  }
 };

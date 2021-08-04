@@ -46,6 +46,9 @@ li {
 }
 
 @media (max-width: 540px) {
+  .footer_title {
+    margin-top: 70px;
+  }
   .footer_title span{
     display: block;
     padding-bottom: 20px;

@@ -1,0 +1,136 @@
+.user-page {
+  margin: 100px 20px 0 20px;
+  width: 100%;
+  height: 55vh;
+  background-image: url(../../assets/images/bg_header.png);
+  background-color: rgba(26, 14, 34, 0.3);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.user-page_inner {
+  width: 800px;
+  padding-top: 40px;
+  display: grid;
+  grid-template-columns: 230px 1fr;
+}
+
+.user-page_avatar {
+  min-height: 300px;
+  width: 230px;
+  margin-bottom: 2rem;
+  border-radius: 1rem;
+  border: 2px solid #ffc010;
+  background-image: url(../../assets/images/no_picture.jpg);
+}
+
+.user-page-btn {
+  margin-bottom: 25px;
+  padding: 20px 30px;
+  border-radius: 10px;
+  color: #ffffff;
+  text-transform: uppercase;
+  border: 0;
+  background-color: rgba(255, 192, 16, 0.7);
+  cursor: pointer;
+}
+
+.user-page-btn:hover {
+  background-color: #ffc010;
+}
+
+.user-page_form {
+  margin-left: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-page_form-btn {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-page_form-box {
+  width: 50%;
+}
+
+.user-page_form-box div {
+  height: 70px;
+  margin-bottom: 15px;
+  display: inline-block;
+}
+
+.user-page_form-box .modal-input input {
+  width: 100%;
+  color: #fff;
+  border: 2px solid #2d3547;
+  border-radius: 10px;
+  background: rgba(26, 26, 26, 0.4);
+}
+
+.user-page_form-box label,
+.user-page_form-box .modal-input label {
+  font-family: "Barlow", sans-serif;
+  letter-spacing: 0;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #ffffffc7;
+  padding-left: 8px;
+}
+
+@media (max-width: 900px) {
+  .container {
+    padding-right: 30px;
+  }
+}
+
+@media (max-width: 750px) {
+  .user-page {
+    margin-left: 0;
+  }
+
+  .user-page_inner {
+    grid-template-columns: 3.5fr 1fr;
+  }
+
+  .user-page_img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .user-page_form {
+    flex-direction: column;
+  }
+
+  .user-page_form-box {
+    width: 250px;
+  }
+
+  .user-page_form-btn {
+    width: 250px;
+  }
+}
+
+@media (max-width: 580px) {
+  .container {
+    padding-right: 0;
+  }
+
+  .user-page {
+    height: 100vh;
+  }
+
+  .user-page_inner {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .user-page_form {
+    align-items: center;
+    margin-left: 0;
+  }
+}
