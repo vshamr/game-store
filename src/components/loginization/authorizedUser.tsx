@@ -15,7 +15,7 @@ function AuthorizedUser() {
 
   return (
     <div className="header_authorization-item">
-        <Link to={Routes.USER_PAGE}>
+        <Link to={Routes.PROFILE_PAGE}>
           <BiUser /> {userName}
         </Link>
       <span onClick={handleLogOut}>

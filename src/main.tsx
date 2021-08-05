@@ -77,15 +77,13 @@ class AppContainer extends Component<AppProps, AppState> {
                 <Route exact path={Routes.ABOUT}>
                   {this.redirectOnChoosenPage(<About />)}
                 </Route>
-
                 <Route exact path={Routes.SIGN_UP}>
                   {store.getState().isLoggedIn ? (
-                    <Redirect to={Routes.USER_PAGE} />
+                    <Redirect to={Routes.PROFILE_PAGE} />
                   ) : (
                     <Modal> <SignUp /></Modal>
                   )}
                 </Route>
-
                 <Route exact path={Routes.SIGN_IN}>
                   {store.getState().isLoggedIn ? (
                     <Redirect to={store.getState().chosenLocation} />
@@ -93,8 +91,7 @@ class AppContainer extends Component<AppProps, AppState> {
                     <Modal> <SignIn /> </Modal>
                   )}
                 </Route>
-
-                <Route exact path={Routes.USER_PAGE}>
+                <Route exact path={Routes.PROFILE_PAGE}>
                   {this.redirectOnChoosenPage(<ProfilePage />)}
                 </Route>
                 <Redirect from="/" to={Routes.HOME} />

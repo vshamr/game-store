@@ -95,16 +95,23 @@ h4 {
 
   .gameCards {
     display: inline-block;
-    min-width: 300px;
+    max-width: 300px;
     margin: 20px;
   }
 }
 
 @media (max-width: 680px) {
   .gameCards-top-title {
-    margin-top: 550px;
+    margin-top: 480px;
   }
   .gameCards_container {
    padding-top: 0;
   }
 }
+
+@media (max-width: 350px) {
+  .gameCards-top-title {
+    margin-top: 50px;
+  }
+}
+

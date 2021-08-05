@@ -12,7 +12,9 @@ import { getTargetPageAC } from "@/redux/reducer";
 
 export type RootStateType = {
   isLoggedIn: boolean;
-  userName: string
+  userName: string;
+  userId: number;
+  userPassword: string;
 };
 
 function Header() {
@@ -35,7 +37,6 @@ function Header() {
           </h1>
           {authorizedUser ? <AuthorizedUser /> : <UnauthorizedUser />}
         </div>
-
       <div className="header_menu">
         <nav className="header_nav-menu">
             <NavLink to={Routes.HOME} activeClassName="header_nav-activeLink">
@@ -53,7 +54,6 @@ function Header() {
             <NavLink to={Routes.ABOUT} activeClassName="header_nav-activeLink">
               About
             </NavLink>
-
         </nav>
         <span className="header_searchBar">
           <SearchBar />

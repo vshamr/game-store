@@ -1,32 +1,10 @@
-/*
-.drop-down {
-  margin: 0 !important;
-  font-size: 15px !important;
-}
-
-.drop-down a {
-  font-size: 25px;
-  font-weight: 300;
-  text-align: center;
-  border: none;
-  width: 100%;
-  border-bottom: 2px solid #ffffffc7;
-  transition: 0.7s ease;
-  padding: 0;
-}
-
-.drop-down a:hover {
-  background-color: transparent !important;
-  border-bottom: 2px solid black;
-}
-*/
-
 .drop-down {
   margin-bottom: 0;
   position: absolute;
   top: 100px;
   list-style: none;
   text-align: center;
+  z-index: 1;
 }
 
 .drop-down a {

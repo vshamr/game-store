@@ -1,5 +1,4 @@
 .searchBar_input {
-  margin-right: 16px;
   width: 100%;
   background: none;
   border: 2px solid #2d3547;
@@ -22,6 +21,7 @@
 
 .searchBar-btn-item {
   font-size: 20px;
+  color: #fff;
 }
 
 @media (max-width: 600px) {
