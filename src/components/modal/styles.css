@@ -1,5 +1,5 @@
 .modal-container {
-  width: 450px;
+  width: 420px;
   min-height: 300px;
   top: 50%;
   left: 50%;
@@ -14,7 +14,7 @@
   text-align: center;
   color: #ffc010;
   margin-bottom: 2rem;
-  padding: 1rem;
+  padding: 0.5rem;
 }
 
 .modal-input {
@@ -50,11 +50,11 @@
   text-transform: uppercase;
   letter-spacing: 1.3px;
   color: #ffffffc7;
-  padding-left: 20px;
+  padding-left: 40px;
 }
 
 .modal-input input {
-  margin-right: 5px;
+  margin-right: 15px;
   color: black;
   outline: #ffc010;
   border: 2px solid #2d3547;
@@ -79,8 +79,7 @@
 }
 
 .modal-btn-container {
-  margin-top: 30px;
-  margin-bottom: 10px;
+  padding: 10px 0 20px 0;
   text-align: center;
 }
 
@@ -90,7 +89,7 @@
   letter-spacing: 1px;
   color: #d93025;
   position: relative;
-  left: 260px;
+  left: 220px;
   top: 57px;
 }
 

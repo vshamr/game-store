@@ -12,10 +12,9 @@ import Modal from "@/components/modal";
 import ChangePassword from "@/components/profilePage/changePassword";
 import { RootStateType } from "@/components/header";
 
-
 const ProfilePage = () => {
   const dispatch = useDispatch();
-  const userId = useSelector((state: RootStateType) => state.userId);
+ const userName = useSelector((state: RootStateType) => state.userName);
   const [warning, setWarning] = useState("");
 
   const [showPasswordModal, setShowPasswordModal] = useState(false);
@@ -52,13 +51,33 @@ const ProfilePage = () => {
           <form className="user-page_form" onSubmit={formik.handleSubmit}>
 
             <div className="user-page_form-box">
-              <InputText label="login" type="login" value={formik.values.login} name="Name"
-                         onChange={formik.handleChange} error={formik.errors.login} touched={formik.touched.login} />
-              <InputText label="phone" type="tel" name="Phone number" value={formik.values.phone}
-                         onChange={formik.handleChange} touched={formik.touched.phone} error={formik.errors.phone} />
-              <InputText label="address" type="text" name="Address delivery" value={formik.values.address}
-                         onChange={formik.handleChange} touched={formik.touched.address}
-                         error={formik.errors.address} />
+              <InputText
+                label="login"
+                type="login"
+                value={userName}
+                name="Name"
+                onChange={formik.handleChange}
+                error={formik.errors.login}
+                touched={formik.touched.login}
+              />
+              <InputText
+                label="phone"
+                type="tel"
+                name="Phone number"
+                value={formik.values.phone}
+                onChange={formik.handleChange}
+                touched={formik.touched.phone}
+                error={formik.errors.phone}
+              />
+              <InputText
+                label="address"
+                type="text"
+                name="Address delivery"
+                value={formik.values.address}
+                onChange={formik.handleChange}
+                touched={formik.touched.address}
+                error={formik.errors.address}
+              />
             </div>
             <Warnings warning={warning} setWarning={setWarning} />
             <div className="user-page_form-btn">

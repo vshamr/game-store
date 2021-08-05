@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { slide as Menu } from "react-burger-menu";
 
 import "./styles.css";
 import SearchBar from "@/components/searchBar";
@@ -49,7 +48,7 @@ function Header() {
           >
             <NavLink to={Routes.PRODUCTS} activeClassName="header_nav-activeLink">
               Products
-              <ProductsDropDown />
+              {showDropdown && <ProductsDropDown />}
             </NavLink>
           </span>
             <NavLink to={Routes.ABOUT} activeClassName="header_nav-activeLink">

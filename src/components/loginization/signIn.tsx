@@ -49,7 +49,7 @@ function SignIn() {
   });
 
   return (
-    <div>
+
       <div className="modal-container">
         <Link to={Routes.HOME} className="modal-close">
           <CgCloseR />
@@ -69,7 +69,7 @@ function SignIn() {
             </div>
           </form>
       </div>
-    </div>
+
   );
 }
 

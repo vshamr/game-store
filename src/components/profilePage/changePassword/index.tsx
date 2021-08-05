@@ -29,6 +29,7 @@ const ChangePassword = ({ setShowPasswordModal }: ChangePasswordPropsType) => {
     validationSchema: changePasswordShema,
     onSubmit: async (values) => {
       const { password } = values;
+
       try {
         const updatedPassword = await usersAPI.changePassword(userId, { password });
         dispatch(setUserPasswordAC(updatedPassword.data.password));
@@ -47,7 +48,7 @@ const ChangePassword = ({ setShowPasswordModal }: ChangePasswordPropsType) => {
         <Warnings warning={warning} setWarning={setWarning} />
         <div className="modal-form">
           <form onSubmit={formik.handleSubmit}>
-            <InputText label="password" type="password" name="password" value={formik.values.password}
+            <InputText label="password" type="password" name="new password" value={formik.values.password}
                        onChange={formik.handleChange} touched={formik.touched.password}
                        error={formik.errors.password} />
             <InputText label="repeatPassword" type="password" name="repeat password"
