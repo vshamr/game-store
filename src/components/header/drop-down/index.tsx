@@ -1,24 +1,21 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import "./styles.css";
-import { PRODUCTS_DATA } from "@/constants/data";
+import { CATEGORIES_DATA } from "@/constants/data";
+import { Routes } from "@/constants/Routes";
 
-function ProductsDropDown(): JSX.Element {
-  const [click, setClick] = useState(false);
-  return (
-    <>
-      <ul className={click ? "drop-down-visible" : "drop-down"}>
-        {PRODUCTS_DATA.map((item, index) => (
-          <li key={index.toString()}>
-            <Link to={item.path} onClick={() => setClick(false)}>
-              {item.title}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </>
-  );
-}
+type Props = {
+  isDropDownOpen: boolean;
+};
+
+const ProductsDropDown = ({ isDropDownOpen }: Props) => (
+  <ul className={isDropDownOpen ? "drop-down-visible" : "drop-down"}>
+    {CATEGORIES_DATA.map(({ id, title, category }) => (
+      <li key={id}>
+        <Link to={`${Routes.PRODUCTS}/${category}`}>{title}</Link>
+      </li>
+    ))}
+  </ul>
+);
 
 export default ProductsDropDown;
