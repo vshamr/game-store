@@ -42,8 +42,7 @@
   }
 }
 
-
-@media(max-width: 500px) {
+@media(max-width: 520px) {
   .drop-down {
     top: 135px;
   }

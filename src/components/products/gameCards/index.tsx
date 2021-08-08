@@ -8,7 +8,6 @@ type GameCardsType = {
 };
 
 function GameCards({ img, title, price, description }: GameCardsType) {
-
   return (
     <div className="gameCards">
       <div className="gameCards_content">

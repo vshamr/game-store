@@ -6,14 +6,15 @@ import store from "@/redux/redux-store";
 
 import "./styles/main.css";
 import "./styles/main.scss";
-import Header from "./components/header";
 import Products from "@/components/products";
 import HomePage from "@/components/homePage";
 import ProfilePage from "@/components/profilePage";
 import About from "@/components/about";
 import Footer from "@/components/footer";
+import ChosenCategory from "@/components/homePage/chooseCategory/chooseCategory";
 import { Routes } from "./constants/Routes";
 import someTypeScript from "./someTypeScript";
+import Header from "./components/header";
 
 const Modal = lazy(() => import("./components/modal"));
 const SignIn = lazy(() => import("./components/loginization/signIn"));
@@ -37,17 +38,16 @@ class AppContainer extends Component<AppProps, AppState> {
     this.state = {
       title: someTypeScript("Test-block for css-modules"),
       hasError: false,
-      authorizedUser: false
+      authorizedUser: false,
     };
     this.redirectOnChoosenPage = this.redirectOnChoosenPage.bind(this);
 
     store.subscribe(() => {
       this.setState({
-        authorizedUser: store.getState().isLoggedIn
+        authorizedUser: store.getState().isLoggedIn,
       });
     });
   }
-
 
   componentDidCatch(error: Error, errorInfo: ErrorInfo) {
     this.setState({ hasError: true });
@@ -71,26 +71,32 @@ class AppContainer extends Component<AppProps, AppState> {
               <Header />
               <Switch>
                 <Route exact path={Routes.HOME} render={() => <HomePage />} />
-                <Route exact path={Routes.PRODUCTS}>
-                  {this.redirectOnChoosenPage(<Products />)}
+                <Route exact path={`${Routes.PRODUCTS}/:category`}>
+                  {this.redirectOnChoosenPage(<ChosenCategory />)}
                 </Route>
                 <Route exact path={Routes.ABOUT}>
                   {this.redirectOnChoosenPage(<About />)}
                 </Route>
-                <Route exact path={Routes.SIGN_UP}>
+                {/*<Route exact path={Routes.SIGN_UP}>
                   {store.getState().isLoggedIn ? (
                     <Redirect to={Routes.PROFILE_PAGE} />
                   ) : (
-                    <Modal> <SignUp /></Modal>
+                    <Modal>
+                      {" "}
+                      <SignUp />
+                    </Modal>
                   )}
                 </Route>
                 <Route exact path={Routes.SIGN_IN}>
                   {store.getState().isLoggedIn ? (
                     <Redirect to={store.getState().chosenLocation} />
                   ) : (
-                    <Modal> <SignIn /> </Modal>
+                    <Modal>
+                      {" "}
+                      <SignIn />{" "}
+                    </Modal>
                   )}
-                </Route>
+                </Route>*/}
                 <Route exact path={Routes.PROFILE_PAGE}>
                   {this.redirectOnChoosenPage(<ProfilePage />)}
                 </Route>

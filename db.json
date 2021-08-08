@@ -1,4 +1,141 @@
 {
+  "games": [
+    {
+      "id": "1",
+      "category": "pc",
+      "img": "https://cdn.mos.cms.futurecdn.net/CxnmWGbpu73iYmc35WkdLG-970-80.jpg.webp",
+      "title": "Assassin's Creed",
+      "price": "20$",
+      "descr": "Ubisoft continues to take us around the world with Assassin’s Creed, making dreams of becoming great heroes and getting involved in history come true. Norse mythology is enduringly popular, and so it was only a matter of time until the series gave us Vikings.",
+      "date": "Wed, 20 Jun 2021 14:00:00"
+    },
+    {
+      "id": "2",
+      "category": "pc",
+      "img": "https://cdn.mos.cms.futurecdn.net/pMNAGBgznvEHzS7AyBntJb-970-80.jpg.webp",
+      "title": "XCOM",
+      "price": "20$",
+      "descr": "XCOM 2 is a slick, turn-based strategy game that doesn’t care about your feelings. As you battle an alien invasion you’ll grow attached to your squad, upgrading them, customising their gear and building personalities for them in their head..",
+      "date": "Mon, 18 Jun 2021 10:20:00"
+    },
+    {
+      "id": "3",
+      "category": "pc",
+      "img": "https://cdn.mos.cms.futurecdn.net/tLc63ZgRv6eVpEFg6K7T4U-970-80.jpg.webp",
+      "title": "Alien Isolation",
+      "price": "20$",
+      "descr": "Beep, beep, beep. Alien: Isolation’s motion tracker is a blessing and a curse: a terrifying sign that the beast is near, and even the thought of the sound puts our hair on edge. But we daren’t put it away in case we turn a corner and, bam, the alien is on top of us, and it’s game over, and we have to leave our PC to go outside for a long, slow walk.",
+      "date": "Wed, 20 Jun 2021 07:00:00"
+    },
+    {
+      "id": "4",
+      "category": "pc",
+      "img": "https://cdn.mos.cms.futurecdn.net/n6eawhFjCR8KeobCdJUQV4-970-80.jpg.webp",
+      "title": "Total War",
+      "price": "15$",
+      "descr": "It still has the epic, dense campaigns fans of the series are looking for, but the way it makes diplomacy completely transparent, telling you exactly what it will take to strike a deal, makes dealing with other factions more streamlined.",
+      "date": "Mon, 18 Jun 2021 12:40:00"
+    },
+    {
+      "id": "5",
+      "category": "pc",
+      "img": "https://cdn.mos.cms.futurecdn.net/iPKatp6VvEFwBwMeYXSwhR-970-80.jpg.webp",
+      "title": "Doom",
+      "price": "15$",
+      "descr": "Fights are still, for the most part, unbearably tense and hectic. You’ll scramble and double jump to avoid packs of enemies, using the super shotgun’s meat hook to grapple to far-off enemies before turning them into red mist..",
+      "date": "Tue, 19 Jun 2021 20:00:00"
+    },
+    {
+      "id": "6",
+      "category": "xbox",
+      "img": "https://cdn.mos.cms.futurecdn.net/pSSXz7cLgrmcuTd3Xd9ksb-970-80.jpg.webp",
+      "title": "Gears",
+      "price": "15$",
+      "descr": "All the old favourites are back too of course, from Marcus Fenix to his son JD, and it's all in for a brilliant Gears experience. It's not just limited to single-player, or brilliant co-op, story moments though.",
+      "date": "Mon, 18 Jun 2021 04:00:00"
+    },
+    {
+      "id": "7",
+      "category": "xbox",
+      "img": "https://cdn.mos.cms.futurecdn.net/PvZjFcpYXZZCo5L5nJYXcU-970-80.jpg.webp",
+      "title": "Sea of Thieves",
+      "price": "20$",
+      "descr": "Rare's emergent pirate adventure sees players sailing across the big blue, finding treasure where the X marks the spot, defeating hordes of skeletons and undead sea captains, and even collecting chickens and other items to sell to travelling merchants.",
+      "date": "Mon, 18 Jun 2021 09:00:00"
+    },
+    {
+      "id": "8",
+      "img": "https://cdn.mos.cms.futurecdn.net/p4fSkPtHLMUz8tDRo248oB-970-80.jpg.webp",
+      "category": "xbox",
+      "title": "Forza Horizon",
+      "price": "10$",
+      "descr": "It wouldn't be an Xbox games list without a Forza and the latest, Forza Horizon 4 is a worthy addition. Everything you love is back and this time placed in a beautiful, race ready rendition of England. The location is the real star as ever, full of amazing landscapes to test your driving skills and impossible to hit magic sheep (go on, just try.",
+      "date": "Mon, 18 Jun 2021 10:00:00"
+    },
+    {
+      "id": "9",
+      "img": "https://cdn.mos.cms.futurecdn.net/nngbDGDRK7f7HKozcjq4SG-970-80.jpg.webp",
+      "category": "xbox",
+      "title": "Quantum Break",
+      "price": "20$",
+      "descr": "It might've overextended a bit with its experimental TV tie-in elements, but Quantum Break from Remedy Entertainment (makers of Max Payne and Alan Wake) has moments where its mix of third-person shooting and temporal powers really soars.",
+      "date": "Mon, 18 Jun 2021 14:00:00"
+    },
+    {
+      "id": "10",
+      "img": "https://cdn.mos.cms.futurecdn.net/q7WA2D9ZqtsG4XNcPN6XPW-970-80.jpg.webp",
+      "category": "xbox",
+      "title": "Halo",
+      "price": "20$",
+      "descr": "No, the main draw here is the chance to play through four of the Xbox's most formative games in their best possible versions - the early games are remade with improved graphics, there are frame rate boosts, re-done hi-res cutscenes and more.",
+      "date": "Mon, 18 Jun 2021 09:00:00"
+    },
+    {
+      "id": "11",
+      "category": "playstation",
+      "img": "https://cdn.mos.cms.futurecdn.net/YBsWmvSczhu5jpnYG7GpmN-970-80.jpg.webp",
+      "title": "Ghost of Tsushima",
+      "price": "20$",
+      "descr": "You'll be thankful for every minute you spend in the beautiful, full, and surprisingly chill world of Ghost of Tsushima. Sucker Punch's latest takes an Assassin's Creed-style Japan, adds a Red Dead Redemption 2-sized world, and blends in an entire library's worth of Akira Kurosawa movies to create this tribute to the Japanese culture is so clearly reveres. This is a fantastic swan song for the PS4.",
+      "date": "Wed, 20 Jun 2021 19:00:00"
+    },
+    {
+      "id": "12",
+      "category": "playstation",
+      "img": "https://cdn.mos.cms.futurecdn.net/agJhDHc2ADtRhVLJrnyL7Z-970-80.jpg.webp",
+      "title": "Shadow of the Colossus",
+      "price": "20$",
+      "descr": "Shadow of the Colossus is one of those games that everyone wanted to be remastered for years upon years. And then it happened. Announced at E3 2017, but arrived in February 2018, this is the kind of game that makes huge ripples in the gaming industry, because it still felt as thought-provoking and artistic as it did when it originally released some 13 years earlier on the PS2.",
+      "date": "Wed, 20 Jun 2021 21:00:00"
+    },
+    {
+      "id": "13",
+      "category": "playstation",
+      "img": "https://cdn.mos.cms.futurecdn.net/nkfrbHXU3TzyNQpXQDJyuZ-970-80.jpg.webp",
+      "title": "Uncharted",
+      "price": "15$",
+      "descr": "Uncharted is a fitting end for Nathan's story, and playing it feels like completing the satisfying final chapter in a beloved adventure book that's made an indelible mark on your heart.",
+      "date": "Wed, 20 Jun 2021 10:00:00"
+    },
+    {
+      "id": "14",
+      "category": "playstation",
+      "img": "https://cdn.mos.cms.futurecdn.net/u44cTYQrV2QgsHemA2YS9a-970-80.jpg.webp",
+      "title": "inFamous",
+      "price": "15$",
+      "descr": "Despite the fact it was one of the original PS4 launch games, inFamous: Second Son is a wonderful example of how technical tweaks for the PS4 Pro release can change the quality of a game dramatically.",
+      "date": "Wed, 20 Jun 2021 01:00:00"
+    },
+    {
+      "id": "15",
+      "category": "playstation",
+      "img": "https://cdn.mos.cms.futurecdn.net/DTgFDdbfqdUhs8ebrymi6b-970-80.jpg.webp",
+      "title": "The Last Of Us",
+      "price": "20$",
+      "descr": "Naughty Dog's post-apocalyptic tale is still one of the best video game stories ever told. So if you've not experienced Ellie and Joel's tale yet, settle back (although not too far, this is a tense game with mutants in it), and immerse yourself in one of the best games of all time.",
+      "date": "Wed, 20 Jun 2021 21:00:00"
+    }
+  ],
   "posts": [
     {
       "id": 1,

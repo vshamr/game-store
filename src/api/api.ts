@@ -1,6 +1,7 @@
 import axios from "axios";
 
 export const urlUsers = `http://localhost:3000/users`;
+export const urlProducts = `http://localhost:3000/games`;
 
 export const instance = axios.create({
   baseURL: "http://localhost:3000/"
