@@ -3,29 +3,29 @@
     {
       "id": "1",
       "category": "pc",
-      "img": "https://cdn.mos.cms.futurecdn.net/CxnmWGbpu73iYmc35WkdLG-970-80.jpg.webp",
-      "title": "Assassin's Creed",
-      "price": "20$",
-      "descr": "Ubisoft continues to take us around the world with Assassin’s Creed, making dreams of becoming great heroes and getting involved in history come true. Norse mythology is enduringly popular, and so it was only a matter of time until the series gave us Vikings.",
-      "date": "Wed, 20 Jun 2021 14:00:00"
+      "img": "https://m.media-amazon.com/images/M/MV5BY2UxMTY2OTUtMzBlMy00Zjk4LThmY2UtMzVhOTlkOWEwYjdkXkEyXkFqcGdeQXVyMTMxNDI1OTQx._V1_.jpg",
+      "title": "Disco Elysium - The Final Cut",
+      "price": "$18.49",
+      "descr": "Disco Elysium - The Final Cut is the definitive edition of the smash-hit RPG. Pursue your political dreams in new quests, meet and question more of the city's locals, and explore a whole extra area.",
+      "date": "Tu, 30 Mar 2021 14:00:00"
     },
     {
       "id": "2",
       "category": "pc",
-      "img": "https://cdn.mos.cms.futurecdn.net/pMNAGBgznvEHzS7AyBntJb-970-80.jpg.webp",
-      "title": "XCOM",
-      "price": "20$",
-      "descr": "XCOM 2 is a slick, turn-based strategy game that doesn’t care about your feelings. As you battle an alien invasion you’ll grow attached to your squad, upgrading them, customising their gear and building personalities for them in their head..",
-      "date": "Mon, 18 Jun 2021 10:20:00"
+      "img": "http://squarefaction.ru/files/game/1071/cover/cover.jpg",
+      "title": "Half-Life 2",
+      "price": "$6.29",
+      "descr": "HALF-LIFE sends a shock through the game industry with its combination of pounding action and continuous, immersive storytelling.",
+      "date": "Fr, 16 Nov 2004 11:00:00"
     },
     {
       "id": "3",
       "category": "pc",
-      "img": "https://cdn.mos.cms.futurecdn.net/tLc63ZgRv6eVpEFg6K7T4U-970-80.jpg.webp",
-      "title": "Alien Isolation",
-      "price": "20$",
-      "descr": "Beep, beep, beep. Alien: Isolation’s motion tracker is a blessing and a curse: a terrifying sign that the beast is near, and even the thought of the sound puts our hair on edge. But we daren’t put it away in case we turn a corner and, bam, the alien is on top of us, and it’s game over, and we have to leave our PC to go outside for a long, slow walk.",
-      "date": "Wed, 20 Jun 2021 07:00:00"
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXotC2b_aFY7mgoeghnnu60bmOB8fmOMTRtitEkQzJwE1kdOJsgzv-Hy6Wqktn7SAJwJA&usqp=CAU",
+      "title": "Grand Theft Auto V",
+      "price": "$8",
+      "descr": "Microsoft no longer supports creating Games for Windows-LIVE accounts within Grand Theft Auto IV.",
+      "date": "Mo, 13 Apr 2015 21:00:00"
     },
     {
       "id": "4",
@@ -48,29 +48,29 @@
     {
       "id": "6",
       "category": "xbox",
-      "img": "https://cdn.mos.cms.futurecdn.net/pSSXz7cLgrmcuTd3Xd9ksb-970-80.jpg.webp",
-      "title": "Gears",
-      "price": "15$",
-      "descr": "All the old favourites are back too of course, from Marcus Fenix to his son JD, and it's all in for a brilliant Gears experience. It's not just limited to single-player, or brilliant co-op, story moments though.",
-      "date": "Mon, 18 Jun 2021 04:00:00"
+      "img": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6465/6465433_sd.jpg;maxHeight=640;maxWidth=550",
+      "title": "Madden NFL 22 ",
+      "price": "$3",
+      "descr": "Fast to the fun, social football gameplay with NFL superstars set in locations around the globe featuring larger than life presentation, characters and teams.",
+      "date": "Tu, 13 Jul 2021 10:00:00"
     },
     {
       "id": "7",
       "category": "xbox",
-      "img": "https://cdn.mos.cms.futurecdn.net/PvZjFcpYXZZCo5L5nJYXcU-970-80.jpg.webp",
-      "title": "Sea of Thieves",
-      "price": "20$",
-      "descr": "Rare's emergent pirate adventure sees players sailing across the big blue, finding treasure where the X marks the spot, defeating hordes of skeletons and undead sea captains, and even collecting chickens and other items to sell to travelling merchants.",
-      "date": "Mon, 18 Jun 2021 09:00:00"
+      "img": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6438/6438900_sd.jpg;maxHeight=640;maxWidth=550",
+      "title": "Mass Effect Legendary Edition",
+      "price": "$7.99",
+      "descr": "The Mass Effect Legendary Edition includes single-player base content and over 40 DLC from the highly acclaimed Mass Effect, Mass Effect 2, and Mass Effect 3 games, including promo weapons, armors, and packs – remastered and optimized for 4K Ultra HD.",
+      "date": "Tu, 10 Jul 2021 10:00:00"
     },
     {
       "id": "8",
-      "img": "https://cdn.mos.cms.futurecdn.net/p4fSkPtHLMUz8tDRo248oB-970-80.jpg.webp",
       "category": "xbox",
-      "title": "Forza Horizon",
-      "price": "10$",
-      "descr": "It wouldn't be an Xbox games list without a Forza and the latest, Forza Horizon 4 is a worthy addition. Everything you love is back and this time placed in a beautiful, race ready rendition of England. The location is the real star as ever, full of amazing landscapes to test your driving skills and impossible to hit magic sheep (go on, just try.",
-      "date": "Mon, 18 Jun 2021 10:00:00"
+      "img": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6471/6471723_sd.jpg;maxHeight=640;maxWidth=550",
+      "title": "NBA 2K22 75th Anniversary Edition",
+      "price": "$9.99",
+      "descr": "This edition also includes NBA 2K22 for Xbox Series X|S - A New Generation NBA 2K Experience. NBA 2K22 puts the entire basketball universe in your hands. Anyone, anywhere can hoop in NBA 2K22.",
+      "date": "Sat, 2 Aug 2021 15:00:00"
     },
     {
       "id": "9",
@@ -93,11 +93,11 @@
     {
       "id": "11",
       "category": "playstation",
-      "img": "https://cdn.mos.cms.futurecdn.net/YBsWmvSczhu5jpnYG7GpmN-970-80.jpg.webp",
-      "title": "Ghost of Tsushima",
-      "price": "20$",
-      "descr": "You'll be thankful for every minute you spend in the beautiful, full, and surprisingly chill world of Ghost of Tsushima. Sucker Punch's latest takes an Assassin's Creed-style Japan, adds a Red Dead Redemption 2-sized world, and blends in an entire library's worth of Akira Kurosawa movies to create this tribute to the Japanese culture is so clearly reveres. This is a fantastic swan song for the PS4.",
-      "date": "Wed, 20 Jun 2021 19:00:00"
+      "img": "https://s1.gaming-cdn.com/images/products/5679/orig/red-dead-redemption-2-standard-edition-cover.jpg",
+      "title": "Red Dead Redemption 2",
+      "price": "34.99$",
+      "descr": "Winner of over 175 Game of the Year Awards and recipient of over 250 perfect scores, RDR2 is the epic tale of outlaw Arthur Morgan and the infamous Van der Linde gang, on the run across America at the dawn of the modern age. ",
+      "date": "Thu, 26 Oct 2020 22:00:00"
     },
     {
       "id": "12",
@@ -111,11 +111,11 @@
     {
       "id": "13",
       "category": "playstation",
-      "img": "https://cdn.mos.cms.futurecdn.net/nkfrbHXU3TzyNQpXQDJyuZ-970-80.jpg.webp",
-      "title": "Uncharted",
-      "price": "15$",
-      "descr": "Uncharted is a fitting end for Nathan's story, and playing it feels like completing the satisfying final chapter in a beloved adventure book that's made an indelible mark on your heart.",
-      "date": "Wed, 20 Jun 2021 10:00:00"
+      "img": "https://images.by.prom.st/113388786_god-of-war.jpg",
+      "title": "God of War",
+      "price": "20$",
+      "descr": " His vengeance against the gods of Olympus far behind him, Kratos now lives as a man in the lands of Norse Gods and monsters. It is in this harsh, unforgiving world that he must fight to survive… and teach his son to do the same.",
+      "date": "Wed, 20 Apr 2021 15:00:00"
     },
     {
       "id": "14",
@@ -155,6 +155,11 @@
       "login": "q@q.ru",
       "password": "zzzzzz",
       "id": 1
+    },
+    {
+      "login": "ssss",
+      "password": "ssssss",
+      "id": 2
     }
   ]
 }

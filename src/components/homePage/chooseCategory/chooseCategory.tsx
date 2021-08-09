@@ -31,7 +31,7 @@ function ChosenCategory() {
     <div className="container">
       <div className="category">
         <h3 className="category-title">
-          <span>{params.category}</span> section
+          <span>{params.category}</span>
         </h3>
         <div className="games-wrapper">
           {games.map((game: Game) => (

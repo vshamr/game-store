@@ -16,7 +16,7 @@
   padding: 8px 14px;
   top: 0;
   cursor: pointer;
-  height: 100%;
+  height: 32px;
 }
 
 .searchBar-btn-item {
@@ -27,5 +27,8 @@
 @media (max-width: 600px) {
   .searchBar_input {
     min-height: 40px;
+  }
+  .searchBar-btn {
+    height: 40px;
   }
 }

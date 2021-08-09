@@ -85,6 +85,14 @@ h4 {
   transform: translateY(0%);
 }
 
+.games-wrapper {
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 1rem;
+}
+
+
 @media (max-width: 1000px) {
   .gameCards-top-title {
     margin-top: 300px;

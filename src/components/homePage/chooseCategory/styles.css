@@ -1,0 +1,29 @@
+.category-title{
+    margin-bottom: 1rem;
+    padding: 1rem 0;
+    font-size: var(--lmedium);
+    border-bottom: 2px solid var(--main-color);
+}
+
+.category-title span{
+    text-transform: capitalize;
+}
+
+.games-wrapper{
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 1rem;
+  }
+  
+  @media screen and (max-width: 1520px) {
+    .games-wrapper{
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media screen and (max-width: 1020px) {
+    .games-wrapper{
+      grid-template-columns: 1fr;
+    }
+  }

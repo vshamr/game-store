@@ -6,7 +6,6 @@ import store from "@/redux/redux-store";
 
 import "./styles/main.css";
 import "./styles/main.scss";
-import Products from "@/components/products";
 import HomePage from "@/components/homePage";
 import ProfilePage from "@/components/profilePage";
 import About from "@/components/about";
@@ -77,12 +76,11 @@ class AppContainer extends Component<AppProps, AppState> {
                 <Route exact path={Routes.ABOUT}>
                   {this.redirectOnChoosenPage(<About />)}
                 </Route>
-                {/*<Route exact path={Routes.SIGN_UP}>
+                <Route exact path={Routes.SIGN_UP}>
                   {store.getState().isLoggedIn ? (
                     <Redirect to={Routes.PROFILE_PAGE} />
                   ) : (
                     <Modal>
-                      {" "}
                       <SignUp />
                     </Modal>
                   )}
@@ -92,11 +90,10 @@ class AppContainer extends Component<AppProps, AppState> {
                     <Redirect to={store.getState().chosenLocation} />
                   ) : (
                     <Modal>
-                      {" "}
-                      <SignIn />{" "}
+                      <SignIn />
                     </Modal>
                   )}
-                </Route>*/}
+                </Route>
                 <Route exact path={Routes.PROFILE_PAGE}>
                   {this.redirectOnChoosenPage(<ProfilePage />)}
                 </Route>
