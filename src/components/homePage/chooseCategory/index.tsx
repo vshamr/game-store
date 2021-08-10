@@ -9,6 +9,9 @@ export interface Game {
   img: string;
   price: string;
   descr: string;
+  genre: string;
+  age: string;
+  category: string;
 }
 
 function ChosenCategory() {

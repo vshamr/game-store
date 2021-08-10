@@ -4,8 +4,9 @@ import { urlProducts } from "@/api/api";
 import Categories from "@/components/homePage/categories";
 import SearchBar from "@/components/searchBar";
 import Loader from "@/components/searchBar/loader";
-import { Game } from "@/components/homePage/chooseCategory/chooseCategory";
+import { Game } from "@/components/homePage/chooseCategory";
 import GameCards from "@/components/products/gameCards";
+import Filter from "@/components/homePage/filter/filter";
 
 const Products: React.FC = () => {
   const [nameOfTheGame, setNameOfTheGame] = useState("");
@@ -42,21 +43,19 @@ const Products: React.FC = () => {
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => setNameOfTheGame(e.target.value);
 
   return (
-    <>
-      <div className="container">
-        <Categories />
-        <SearchBar handleOnSubmit={handleOnSubmit} handleOnChange={handleOnChange} nameOfTheGame={nameOfTheGame} />
-        {isSearching && <Loader />}
-        {debouncedNameOfTheGame.length !== 0 && games.length === 0 && (
-          <div className="not-found">Nothing was found</div>
-        )}
-        <div className="games-wrapper">
-          {games.map((game: Game) => (
-            <GameCards key={game.id} {...game} />
-          ))}
-        </div>
-      </div>
-    </>
+    <div className="container">
+      <Filter />
+     {/* <Categories />
+      <SearchBar handleOnSubmit={handleOnSubmit} handleOnChange={handleOnChange} nameOfTheGame={nameOfTheGame} />
+      {isSearching && <Loader />}
+      {debouncedNameOfTheGame.length !== 0 && games.length === 0 && <div className="not-found">Nothing was found</div>}
+      <div className="games-wrapper">
+        {games.map((game: Game) => (
+          <GameCards key={game.id} {...game} />
+        ))}
+      </div>*/}
+
+    </div>
   );
 };
 

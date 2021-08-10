@@ -10,10 +10,11 @@ import HomePage from "@/components/homePage";
 import ProfilePage from "@/components/profilePage";
 import About from "@/components/about";
 import Footer from "@/components/footer";
-import ChosenCategory from "@/components/homePage/chooseCategory/chooseCategory";
+import ChosenCategory from "@/components/homePage/chooseCategory";
 import { Routes } from "./constants/Routes";
 import someTypeScript from "./someTypeScript";
 import Header from "./components/header";
+import Products from "@/components/products";
 
 const Modal = lazy(() => import("./components/modal"));
 const SignIn = lazy(() => import("./components/loginization/signIn"));
@@ -70,6 +71,9 @@ class AppContainer extends Component<AppProps, AppState> {
               <Header />
               <Switch>
                 <Route exact path={Routes.HOME} render={() => <HomePage />} />
+                <Route exact path={Routes.PRODUCTS}>
+                  {this.redirectOnChoosenPage(<Products />)}
+                </Route>
                 <Route exact path={`${Routes.PRODUCTS}/:category`}>
                   {this.redirectOnChoosenPage(<ChosenCategory />)}
                 </Route>

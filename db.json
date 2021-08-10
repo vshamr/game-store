@@ -7,7 +7,10 @@
       "title": "Disco Elysium - The Final Cut",
       "price": "$18.49",
       "descr": "Disco Elysium - The Final Cut is the definitive edition of the smash-hit RPG. Pursue your political dreams in new quests, meet and question more of the city's locals, and explore a whole extra area.",
-      "date": "Tu, 30 Mar 2021 14:00:00"
+      "date": "Tu, 30 Mar 2021 14:00:00",
+      "genre": ["All", "Racing"],
+      "age": "ADULTS_AGE",
+      "rating": "4"
     },
     {
       "id": "2",
@@ -16,7 +19,10 @@
       "title": "Half-Life 2",
       "price": "$6.29",
       "descr": "HALF-LIFE sends a shock through the game industry with its combination of pounding action and continuous, immersive storytelling.",
-      "date": "Fr, 16 Nov 2004 11:00:00"
+      "date": "Fr, 16 Nov 2004 11:00:00",
+      "genre": ["All", "Racing"],
+      "age": "ADULTS_AGE",
+      "rating": "3"
     },
     {
       "id": "3",
@@ -25,7 +31,10 @@
       "title": "Grand Theft Auto V",
       "price": "$8",
       "descr": "Microsoft no longer supports creating Games for Windows-LIVE accounts within Grand Theft Auto IV.",
-      "date": "Mo, 13 Apr 2015 21:00:00"
+      "date": "Mo, 13 Apr 2015 21:00:00",
+      "genre": ["All", "Shooter"],
+      "age": "ADULTS_AGE",
+      "rating": "2"
     },
     {
       "id": "4",
@@ -34,7 +43,10 @@
       "title": "Total War",
       "price": "15$",
       "descr": "It still has the epic, dense campaigns fans of the series are looking for, but the way it makes diplomacy completely transparent, telling you exactly what it will take to strike a deal, makes dealing with other factions more streamlined.",
-      "date": "Mon, 18 Jun 2021 12:40:00"
+      "date": "Mon, 18 Jun 2021 12:40:00",
+      "genre": ["All", "Strategy"],
+      "age": "ADULTS_AGE",
+      "rating": "5"
     },
     {
       "id": "5",
@@ -43,7 +55,10 @@
       "title": "Doom",
       "price": "15$",
       "descr": "Fights are still, for the most part, unbearably tense and hectic. You’ll scramble and double jump to avoid packs of enemies, using the super shotgun’s meat hook to grapple to far-off enemies before turning them into red mist..",
-      "date": "Tue, 19 Jun 2021 20:00:00"
+      "date": "Tue, 19 Jun 2021 20:00:00",
+      "genre": "Strategy",
+      "age": "TEEN_AGE",
+      "rating": "2"
     },
     {
       "id": "6",
@@ -52,7 +67,10 @@
       "title": "Madden NFL 22 ",
       "price": "$3",
       "descr": "Fast to the fun, social football gameplay with NFL superstars set in locations around the globe featuring larger than life presentation, characters and teams.",
-      "date": "Tu, 13 Jul 2021 10:00:00"
+      "date": "Tu, 13 Jul 2021 10:00:00",
+      "genre": "Racing",
+      "age": "ADULTS_AGE",
+      "rating": "2"
     },
     {
       "id": "7",
@@ -61,7 +79,10 @@
       "title": "Mass Effect Legendary Edition",
       "price": "$7.99",
       "descr": "The Mass Effect Legendary Edition includes single-player base content and over 40 DLC from the highly acclaimed Mass Effect, Mass Effect 2, and Mass Effect 3 games, including promo weapons, armors, and packs – remastered and optimized for 4K Ultra HD.",
-      "date": "Tu, 10 Jul 2021 10:00:00"
+      "date": "Tu, 10 Jul 2021 10:00:00",
+      "genre": "SHOOTER_GENRE",
+      "age": "SURVIVAL_GENRE",
+      "rating": "2"
     },
     {
       "id": "8",
@@ -70,7 +91,10 @@
       "title": "NBA 2K22 75th Anniversary Edition",
       "price": "$9.99",
       "descr": "This edition also includes NBA 2K22 for Xbox Series X|S - A New Generation NBA 2K Experience. NBA 2K22 puts the entire basketball universe in your hands. Anyone, anywhere can hoop in NBA 2K22.",
-      "date": "Sat, 2 Aug 2021 15:00:00"
+      "date": "Sat, 2 Aug 2021 15:00:00",
+      "genre": "SHOOTER_GENRE",
+      "age": "ADULTS_AGE",
+      "rating": "5"
     },
     {
       "id": "9",
@@ -79,7 +103,10 @@
       "title": "Quantum Break",
       "price": "20$",
       "descr": "It might've overextended a bit with its experimental TV tie-in elements, but Quantum Break from Remedy Entertainment (makers of Max Payne and Alan Wake) has moments where its mix of third-person shooting and temporal powers really soars.",
-      "date": "Mon, 18 Jun 2021 14:00:00"
+      "date": "Mon, 18 Jun 2021 14:00:00",
+      "genre": "SHOOTER_GENRE",
+      "age": "ALL_AGES",
+      "rating": "3"
     },
     {
       "id": "10",
@@ -88,7 +115,10 @@
       "title": "Halo",
       "price": "20$",
       "descr": "No, the main draw here is the chance to play through four of the Xbox's most formative games in their best possible versions - the early games are remade with improved graphics, there are frame rate boosts, re-done hi-res cutscenes and more.",
-      "date": "Mon, 18 Jun 2021 09:00:00"
+      "date": "Mon, 18 Jun 2021 09:00:00",
+      "genre": "SHOOTER_GENRE",
+      "age": "ADULTS_AGE",
+      "rating": "4"
     },
     {
       "id": "11",
@@ -97,7 +127,10 @@
       "title": "Red Dead Redemption 2",
       "price": "34.99$",
       "descr": "Winner of over 175 Game of the Year Awards and recipient of over 250 perfect scores, RDR2 is the epic tale of outlaw Arthur Morgan and the infamous Van der Linde gang, on the run across America at the dawn of the modern age. ",
-      "date": "Thu, 26 Oct 2020 22:00:00"
+      "date": "Thu, 26 Oct 2020 22:00:00",
+      "genre": "SHOOTER_GENRE",
+      "age": "EVERYONE_AGE",
+      "rating": "4"
     },
     {
       "id": "12",
@@ -106,7 +139,10 @@
       "title": "Shadow of the Colossus",
       "price": "20$",
       "descr": "Shadow of the Colossus is one of those games that everyone wanted to be remastered for years upon years. And then it happened. Announced at E3 2017, but arrived in February 2018, this is the kind of game that makes huge ripples in the gaming industry, because it still felt as thought-provoking and artistic as it did when it originally released some 13 years earlier on the PS2.",
-      "date": "Wed, 20 Jun 2021 21:00:00"
+      "date": "Wed, 20 Jun 2021 21:00:00",
+      "genre": "SHOOTER_GENRE",
+      "age": "ADULTS_AGE",
+      "rating": "4"
     },
     {
       "id": "13",
@@ -115,7 +151,10 @@
       "title": "God of War",
       "price": "20$",
       "descr": " His vengeance against the gods of Olympus far behind him, Kratos now lives as a man in the lands of Norse Gods and monsters. It is in this harsh, unforgiving world that he must fight to survive… and teach his son to do the same.",
-      "date": "Wed, 20 Apr 2021 15:00:00"
+      "date": "Wed, 20 Apr 2021 15:00:00",
+      "genre": "SURVIVAL_GENRE",
+      "age": "TEEN_AGE",
+      "rating": "5"
     },
     {
       "id": "14",
@@ -124,7 +163,10 @@
       "title": "inFamous",
       "price": "15$",
       "descr": "Despite the fact it was one of the original PS4 launch games, inFamous: Second Son is a wonderful example of how technical tweaks for the PS4 Pro release can change the quality of a game dramatically.",
-      "date": "Wed, 20 Jun 2021 01:00:00"
+      "date": "Wed, 20 Jun 2021 01:00:00",
+      "genre": "SHOOTER_GENRE",
+      "age": "ADULTS_AGE",
+      "rating": "5"
     },
     {
       "id": "15",
@@ -133,7 +175,10 @@
       "title": "The Last Of Us",
       "price": "20$",
       "descr": "Naughty Dog's post-apocalyptic tale is still one of the best video game stories ever told. So if you've not experienced Ellie and Joel's tale yet, settle back (although not too far, this is a tense game with mutants in it), and immerse yourself in one of the best games of all time.",
-      "date": "Wed, 20 Jun 2021 21:00:00"
+      "date": "Wed, 20 Jun 2021 21:00:00",
+      "genre": "SHOOTER_GENRE",
+      "age": "ADULTS_AGE",
+      "rating": "2"
     }
   ],
   "posts": [
