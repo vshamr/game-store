@@ -85,13 +85,13 @@ function Header() {
             About
           </NavLink>
         </nav>
-        <span className="header_searchBar">
+        {/*<span className="header_searchBar">
           <SearchBar handleOnSubmit={handleOnSubmit} handleOnChange={handleOnChange} nameOfTheGame={nameOfGame} />
           {isSearching && <Loader />}
           {debouncedNameOfTheGame.length !== 0 && games.length === 0 && (
             <div className="not-found">Nothing was found</div>
           )}
-        </span>
+        </span>*/}
       </div>
     </header>
   );

@@ -18,9 +18,9 @@ const SearchBar = ({ handleOnSubmit, handleOnChange, nameOfTheGame }: SearchBarP
       value={nameOfTheGame}
       onChange={handleOnChange}
     />
-    <button className="searchBar-btn" type="submit" onSubmit={handleOnSubmit}>
+    {/*<button className="searchBar-btn" type="submit" onSubmit={handleOnSubmit}>
       <BiSearchAlt className="searchBar-btn-item" />
-    </button>
+    </button>*/}
   </>
 );
 

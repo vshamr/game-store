@@ -1,4 +1,6 @@
 import { SyntheticEvent, useEffect, useState } from "react";
+
+import "./styles.css";
 import useDebounce from "@/constants/useDebounce";
 import { urlProducts } from "@/api/api";
 import Categories from "@/components/homePage/categories";
@@ -43,18 +45,23 @@ const Products: React.FC = () => {
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => setNameOfTheGame(e.target.value);
 
   return (
-    <div className="container">
-      <Filter />
-     {/* <Categories />
-      <SearchBar handleOnSubmit={handleOnSubmit} handleOnChange={handleOnChange} nameOfTheGame={nameOfTheGame} />
-      {isSearching && <Loader />}
-      {debouncedNameOfTheGame.length !== 0 && games.length === 0 && <div className="not-found">Nothing was found</div>}
-      <div className="games-wrapper">
-        {games.map((game: Game) => (
-          <GameCards key={game.id} {...game} />
-        ))}
-      </div>*/}
-
+    <div>
+      <Categories />
+      <div className="products">
+        <Filter />
+        <div className="products_content">
+          <SearchBar handleOnSubmit={handleOnSubmit} handleOnChange={handleOnChange} nameOfTheGame={nameOfTheGame} />
+          {isSearching && <Loader />}
+          {debouncedNameOfTheGame.length !== 0 && games.length === 0 && (
+            <div className="not-found">Nothing was found</div>
+          )}
+          <div className="games-wrapper">
+            {games.map((game: Game) => (
+              <GameCards key={game.id} {...game} />
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
