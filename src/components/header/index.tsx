@@ -25,34 +25,10 @@ function Header() {
   const authorizedUser = useSelector((state: RootStateType) => state.isLoggedIn);
   const dispatch = useDispatch();
 
-  const [nameOfGame, setNameOfGame] = useState("");
-  const [isSearching, setIsSearching] = useState(false);
-  const [games, setGames] = useState([]);
   const [isDropDownOpen, setIsDropDownOpen] = useState(false);
-  const debouncedNameOfTheGame = useDebounce(nameOfGame, 300);
 
-  useEffect(() => {
-    if (!nameOfGame) {
-      setGames([]);
-      return;
-    }
-
-    const getGames = async () => {
-      setIsSearching(true);
-      const data = await fetch(`${urlProducts}?title_like=${debouncedNameOfTheGame}`);
-      const response = await data.json();
-
-      setGames(response);
-      setIsSearching(false);
-    };
-
-    getGames();
-  }, [debouncedNameOfTheGame]);
   const showDropDownMenu = () => setIsDropDownOpen(true);
   const hideDropDownMenu = () => setIsDropDownOpen(false);
-
-  const handleOnSubmit = (e: SyntheticEvent) => e.preventDefault();
-  const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => setNameOfGame(e.target.value);
 
   const location = useLocation();
   useEffect(() => {
@@ -85,13 +61,6 @@ function Header() {
             About
           </NavLink>
         </nav>
-        {/*<span className="header_searchBar">
-          <SearchBar handleOnSubmit={handleOnSubmit} handleOnChange={handleOnChange} nameOfTheGame={nameOfGame} />
-          {isSearching && <Loader />}
-          {debouncedNameOfTheGame.length !== 0 && games.length === 0 && (
-            <div className="not-found">Nothing was found</div>
-          )}
-        </span>*/}
       </div>
     </header>
   );

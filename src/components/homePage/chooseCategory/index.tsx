@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import GameCards from "@/components/products/gameCards";
 import { urlProducts } from "@/api/api";
+import { GAME_CARDS_DATA } from "@/constants/data";
 
 export interface Game {
   id: string;
@@ -37,7 +38,7 @@ function ChosenCategory() {
           <span>{params.category}</span>
         </h3>
         <div className="games-wrapper">
-          {games.map((game: Game) => (
+           {games.map((game: Game) => (
             <GameCards key={game.id} {...game} />
           ))}
         </div>

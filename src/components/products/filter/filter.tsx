@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 
 import "./styles.css";
-import { GAME_CARDS_DATA } from "@/constants/data";
 import { Game } from "@/components/homePage/chooseCategory";
 import GameCards from "@/components/products/gameCards";
 
@@ -11,36 +10,36 @@ function Filter() {
   const [filterGameByAge, setFilterGameByAge] = useState([]);
   const [sortRating, setSortRating] = useState([]);
   const [sortPrice, setSortPrice] = useState([]);
-  const [game, setGame] = useState([]);
+  const [games, setGames] = useState([]);
 
   useEffect(() => {
-    setGame(game);
+    setGames(games);
   }, []);
 
   useEffect(() => {
-    setGame([]);
-    const filteredByGenre = GAME_CARDS_DATA.map((g) => ({ ...g, filteredGenre: g.genre.includes(filter) }));
-    setGame(filteredByGenre);
+    setGames([]);
+    const filteredByGenre = games.map((game: Game) => ({ ...game, filteredGenre: game.genre.includes(filter) }));
+    setGames(filteredByGenre);
   }, [filter]);
 
   useEffect(() => {
-    const filteredByAge = GAME_CARDS_DATA.map((g) => ({ ...g, filteredAge: g.age.includes(filter) }));
+    const filteredByAge = games.map((game: Game) => ({ ...game, filteredAge: game.age.includes(filter) }));
     setFilterGameByAge(filteredByAge);
   }, [filter]);
 
   useEffect(() => {
     setFilterGameByCategory([]);
-    const filteredByCategory = GAME_CARDS_DATA.map((g) => ({ ...g, filteredCategory: g.category.includes(filter) }));
+    const filteredByCategory = games.map((game: Game) => ({ ...game, filteredCategory: game.category.includes(filter) }));
     setFilterGameByCategory(filteredByCategory);
   }, [filter]);
 
   useEffect(() => {
-    const sortedByRating = GAME_CARDS_DATA.sort((a, b) => (a.rating > b.rating ? -1 : 1));
+    const sortedByRating = games.sort((a, b) => (a.rating > b.rating ? -1 : 1));
     setSortRating(sortedByRating);
   });
 
   useEffect(() => {
-    const sortedByPrice = GAME_CARDS_DATA.sort((a, b) => (a.price > b.price ? -1 : 1));
+    const sortedByPrice = games.sort((a, b) => (a.price > b.price ? -1 : 1));
     setSortPrice(sortedByPrice);
   });
 
@@ -96,7 +95,7 @@ function Filter() {
             </div>
           </div>
           <div className="filter_game-container">
-            {game.map((g: Game) => (g.filteredGenre ? <GameCards key={g.id} {...g} /> : ""))}
+            {games.map((game: Game) => (game.filteredGenre ? <GameCards key={game.id} {...game} /> : ""))}
           </div>
         </div>
 
@@ -138,7 +137,9 @@ function Filter() {
             </div>
           </div>
           <div className="filter_game-container">
-            {filterGameByCategory.map((g: Game) => (g.filteredCategory ? <GameCards key={g.id} {...g} /> : ""))}
+            {filterGameByCategory.map((game: Game) =>
+              game.filteredCategory ? <GameCards key={game.id} {...game} /> : ""
+            )}
           </div>
         </div>
 
@@ -191,7 +192,7 @@ function Filter() {
             </div>
           </div>
           <div className="filter_game-container">
-            {filterGameByAge.map((g: Game) => (g.filteredAge ? <GameCards key={g.id} {...g} /> : ""))}
+            {filterGameByAge.map((game: Game) => (game.filteredAge ? <GameCards key={game.id} {...game} /> : ""))}
           </div>
         </div>
 
@@ -203,7 +204,6 @@ function Filter() {
               id="rating"
               name="sorting"
               value="rating"
-
             />
             <label htmlFor="rating">Rating</label>
           </div>
@@ -215,7 +215,6 @@ function Filter() {
           </div>
           <div>{sortPrice.map((g: Game) => <GameCards key={g.id} {...g} /> && "")}</div>
         </div>
-
       </form>
     </div>
   );

@@ -25,6 +25,14 @@
   color: #fff;
 }
 
+.searchBar_homePage .searchBar_input {
+  width: 80%;
+  margin-top: 20px;
+  margin-left: 0;
+  left: 10%;
+  position: relative;
+}
+
 @media (max-width: 600px) {
   .searchBar_input {
     min-height: 40px;

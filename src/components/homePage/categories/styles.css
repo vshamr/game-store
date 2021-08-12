@@ -1,5 +1,5 @@
 .categories {
-  max-height: 360px;
+  min-height: 360px;
   background-image: url(../../../assets/images/bg_header.png);
   background-color: rgba(26, 14, 34, 0.5);
 }

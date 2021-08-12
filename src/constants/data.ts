@@ -25,7 +25,7 @@ export const CATEGORIES_DATA = [
   },
 ];
 
-export const GAME_CARDS_DATA = [
+/* export const GAME_CARDS_DATA = [
   {
     img: GAME2_SPIDERMAN,
     title: "Marvel’s Spider-Man",
@@ -59,7 +59,7 @@ export const GAME_CARDS_DATA = [
     category: ["pc"],
     rating: "3",
   },
-];
+]; */
 
 export const FOOTER_DATA = [
   {
