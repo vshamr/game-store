@@ -19,5 +19,8 @@ export const usersAPI = {
   },
   saveProfile(values) {
     return instance.post(`/api/saveProfile/users`, { ...values });
-  }
+  },
+  getGames(){
+    return instance.get(`/getProducts`);
+  },
 };

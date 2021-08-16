@@ -12,7 +12,7 @@ const initialState = {
   userName: "",
   userPassword: "",
   chosenLocation: "",
-  filteredGames: [],
+  filteredGames: "",
 };
 
 type InitialStateType = typeof initialState;
@@ -72,4 +72,4 @@ export const setUserProfileAC = (userName: string) => ({ type: SAVE_USER_PROFILE
 export const getTargetPageAC = (path: string) => ({ type: GET_TARGET_PAGE, path });
 export const logInAC = () => ({ type: LOG_IN });
 export const logOutAC = () => ({ type: LOG_OUT });
-export const getFilteredGames = (filteredGames: string) => ({ type: GET_FILTERED_GAMES, filteredGames });
+export const getFilteredGames = (payload) => ({ type: GET_FILTERED_GAMES, payload: [...payload] });

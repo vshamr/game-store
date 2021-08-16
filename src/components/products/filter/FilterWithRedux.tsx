@@ -1,9 +1,8 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
-import axios from "axios";
 import { getFilteredGames } from "@/redux/reducer";
-import { Game } from "@/components/homePage/chooseCategory";
 import GameCards from "@/components/products/gameCards";
+import { Game } from "@/components/homePage/chooseCategory";
 
 const FilterWithRedux: React.FunctionComponent = (props) => {
   const dispatch = useDispatch();
@@ -12,7 +11,7 @@ const FilterWithRedux: React.FunctionComponent = (props) => {
 
   async function getProducts() {
     try {
-      await axios.get("http://localhost:3001/getProducts").then((response) => {
+      await URL.getGames().then((response) => {
         setGames(response.data);
       });
     } catch (error) {
@@ -32,7 +31,7 @@ const FilterWithRedux: React.FunctionComponent = (props) => {
   const sortByPrice = () => {
     const result = products.sort((a, b) => (a.price > b.price ? -1 : 1));
     return dispatch(getFilteredGames(result));
-  };*/
+  }; */
 
   /*  const filterByCategory = (value) => {
     if (value === "All") {
@@ -44,42 +43,47 @@ const FilterWithRedux: React.FunctionComponent = (props) => {
     } else if (value === "Playstation") {
       dispatch(getFilteredGames(products.filter((game) => game.genre == "Playstation")));
     }
-  };*/
+  }; */
 
   const filterByGenre = (value: string) => {
     if (value === "all") {
       dispatch(getFilteredGames(games.filter((game) => game.genre)));
     } else if (value === "Shooter") {
-      dispatch(getFilteredGames(games.filter((game) => game.genre == "Shooter")));
+      dispatch(getFilteredGames(games.filter((game) => game.genre === "Shooter")));
     } else if (value === "Strategy") {
-      dispatch(getFilteredGames(games.filter((game) => game.genre == "Strategy")));
+      dispatch(getFilteredGames(games.filter((game) => game.genre === "Strategy")));
     } else if (value === "Fighting") {
-      dispatch(getFilteredGames(games.filter((game) => game.genre == "Fighting")));
+      dispatch(getFilteredGames(games.filter((game) => game.genre === "Fighting")));
     } else if (value === "Racing") {
-      dispatch(getFilteredGames(games.filter((game) => game.genre == "Racing")));
+      dispatch(getFilteredGames(games.filter((game) => game.genre === "Racing")));
     }
   };
-  const filterByAge = (value) => {
+  const filterByAge = (value: string) => {
     if (value === "all") {
       dispatch(getFilteredGames(games.filter((game) => game.age)));
-    } else if (value === "6 +") {
-      dispatch(getFilteredGames(games.filter((game) => game.age == "6 +")));
-    } else if (value === "16 +") {
-      dispatch(getFilteredGames(games.filter((game) => game.age == "16 +")));
-    } else if (value === "18 +") {
-      dispatch(getFilteredGames(games.filter((game) => game.age == "18 +")));
+    } else if (value === "6+") {
+      dispatch(getFilteredGames(games.filter((game) => game.age === "6+")));
+    } else if (value === "12+") {
+      dispatch(getFilteredGames(games.filter((game) => game.age === "12+")));
+    } else if (value === "16+") {
+      dispatch(getFilteredGames(games.filter((game) => game.age === "16+")));
+    } else if (value === "18+") {
+      dispatch(getFilteredGames(games.filter((game) => game.age === "18+")));
     }
   };
 
   return (
     <div className="filter_container">
-      <div >
+      <div>
         <div>
           <p>Genres</p>
           <ul className="products-page__selection-list">
             <li>
               <input name="genreFilter" type="radio" onChange={() => filterByGenre("all")} />
               <span className="products-page__selectors">All</span>
+              {games.map((game: Game) => (
+                <GameCards key={game.id} {...game} />
+              ))}
             </li>
 
             <li>
@@ -103,20 +107,20 @@ const FilterWithRedux: React.FunctionComponent = (props) => {
           <p className="products-page__title">Age</p>
           <ul className="products-page__selection-list">
             <li>
-              <input name="ageFilter" type="radio" onChange={() => filterByAge("All")} />
+              <input name="ageFilter" type="radio" onChange={() => filterByAge("all")} />
               <span className="products-page__selectors">All</span>
             </li>
             <li>
-              <input name="ageFilter" type="radio" onChange={() => filterByAge("6 +")} />
+              <input name="ageFilter" type="radio" onChange={() => filterByAge("6+")} />
               <span className="products-page__selectors">6 +</span>
             </li>
 
             <li>
-              <input name="ageFilter" type="radio" onChange={() => filterByAge("12 +")} />
+              <input name="ageFilter" type="radio" onChange={() => filterByAge("12+")} />
               <span className="products-page__selectors">12 +</span>
             </li>
             <li>
-              <input name="ageFilter" type="radio" onChange={() => filterByAge("18 +")} />
+              <input name="ageFilter" type="radio" onChange={() => filterByAge("18+")} />
               <span className="products-page__selectors">18 +</span>
             </li>
           </ul>

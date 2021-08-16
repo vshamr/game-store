@@ -8,9 +8,7 @@ import SearchBar from "@/components/searchBar";
 import Loader from "@/components/searchBar/loader";
 import { Game } from "@/components/homePage/chooseCategory";
 import GameCards from "@/components/products/gameCards";
-import Filter from "@/components/products/filter/filter";
 import FilterWithRedux from "@/components/products/filter/FilterWithRedux";
-import { GAME_CARDS_DATA } from "@/constants/data";
 
 const Products: React.FC = () => {
   const [nameOfTheGame, setNameOfTheGame] = useState("");
@@ -50,8 +48,7 @@ const Products: React.FC = () => {
     <div>
       <Categories />
       <div className="products">
-        <Filter />
-
+        <FilterWithRedux />
         <div className="products_content">
           <SearchBar handleOnSubmit={handleOnSubmit} handleOnChange={handleOnChange} nameOfTheGame={nameOfTheGame} />
           {isSearching && <Loader />}
