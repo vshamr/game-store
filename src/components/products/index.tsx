@@ -1,14 +1,13 @@
 import { SyntheticEvent, useEffect, useState } from "react";
 
 import "./styles.css";
-import useDebounce from "@/constants/useDebounce";
+import useDebounce from "@/hooks/useDebounce";
 import { urlProducts } from "@/api/api";
 import Categories from "@/components/homePage/categories";
 import SearchBar from "@/components/searchBar";
 import Loader from "@/components/searchBar/loader";
-import { Game } from "@/components/homePage/chooseCategory";
 import GameCards from "@/components/products/gameCards";
-import FilterWithRedux from "@/components/products/filter/FilterWithRedux";
+import { Game } from "@/constants/interfaces";
 
 const Products: React.FC = () => {
   const [nameOfTheGame, setNameOfTheGame] = useState("");
@@ -48,18 +47,17 @@ const Products: React.FC = () => {
     <div>
       <Categories />
       <div className="products">
-        <FilterWithRedux />
         <div className="products_content">
           <SearchBar handleOnSubmit={handleOnSubmit} handleOnChange={handleOnChange} nameOfTheGame={nameOfTheGame} />
           {isSearching && <Loader />}
           {debouncedNameOfTheGame.length !== 0 && games.length === 0 && (
             <div className="not-found">Nothing was found</div>
           )}
-        </div>
-        <div className="games-wrapper">
-          {games.map((game: Game) => (
-            <GameCards key={game.id} {...game} />
-          ))}
+          <div className="games-wrapper">
+            {games.map((game: Game) => (
+              <GameCards key={game.id} {...game} />
+            ))}
+          </div>
         </div>
       </div>
     </div>

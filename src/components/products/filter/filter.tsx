@@ -1,223 +1,195 @@
+import { useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
-
-import "./styles.css";
+import { getFilteredGames } from "@/redux/reducer";
 import { Game } from "@/components/homePage/chooseCategory";
-import GameCards from "@/components/products/gameCards";
+import { Dropdown } from "semantic-ui-react";
 
-function Filter() {
-  const [filter, setFilter] = useState(" ");
-  const [filterGameByCategory, setFilterGameByCategory] = useState([]);
-  const [filterGameByAge, setFilterGameByAge] = useState([]);
-  const [sortRating, setSortRating] = useState([]);
-  const [sortPrice, setSortPrice] = useState([]);
-  const [games, setGames] = useState([]);
-
-  useEffect(() => {
-    setGames(games);
-  }, []);
-
-  useEffect(() => {
-    setGames([]);
-    const filteredByGenre = games.map((game: Game) => ({ ...game, filteredGenre: game.genre.includes(filter) }));
-    setGames(filteredByGenre);
-  }, [filter]);
-
-  useEffect(() => {
-    const filteredByAge = games.map((game: Game) => ({ ...game, filteredAge: game.age.includes(filter) }));
-    setFilterGameByAge(filteredByAge);
-  }, [filter]);
-
-  useEffect(() => {
-    setFilterGameByCategory([]);
-    const filteredByCategory = games.map((game: Game) => ({ ...game, filteredCategory: game.category.includes(filter) }));
-    setFilterGameByCategory(filteredByCategory);
-  }, [filter]);
-
-  useEffect(() => {
-    const sortedByRating = games.sort((a, b) => (a.rating > b.rating ? -1 : 1));
-    setSortRating(sortedByRating);
-  });
-
-  useEffect(() => {
-    const sortedByPrice = games.sort((a, b) => (a.price > b.price ? -1 : 1));
-    setSortPrice(sortedByPrice);
-  });
-
-  return (
-    <div className="filter_container">
-      <form className="filter_form">
-        <div className="filter_inner">
-          <div>
-            <p className="filter_title">Genres:</p>
-            <div className="filter_bar">
-              <input
-                type="radio"
-                id="shooter"
-                name="filter"
-                value="shooter"
-                active={filter === "Shooter"}
-                onClick={() => setFilter("Shooter")}
-              />
-              <label htmlFor="shooter">Shooter</label>
-            </div>
-            <div className="filter_bar">
-              <input
-                type="radio"
-                id="racing"
-                name="filter"
-                value="racing"
-                active={filter === "Racing"}
-                onClick={() => setFilter("Racing")}
-              />
-              <label htmlFor="racing">Racing</label>
-            </div>
-            <div className="filter_bar">
-              <input
-                type="radio"
-                id="strategy"
-                name="filter"
-                value="strategy"
-                active={filter === "Strategy"}
-                onClick={() => setFilter("Strategy")}
-              />
-              <label htmlFor="strategy">Strategy</label>
-            </div>
-            <div className="filter_bar">
-              <input
-                type="radio"
-                id="fighting"
-                name="filter"
-                value="fighting"
-                active={filter === "Fighting"}
-                onClick={() => setFilter("Fighting")}
-              />
-              <label htmlFor="fighting">Fighting</label>
-            </div>
-          </div>
-          <div className="filter_game-container">
-            {games.map((game: Game) => (game.filteredGenre ? <GameCards key={game.id} {...game} /> : ""))}
-          </div>
-        </div>
-
-        <div className="filter_inner">
-          <div>
-            <p className="filter_title">Category:</p>
-            <div className="filter_bar">
-              <input
-                type="radio"
-                id="playstation"
-                name="filter"
-                value="playstation"
-                active={filter === "playstation"}
-                onClick={() => setFilter("playstation")}
-              />
-              <label htmlFor="playstation">Playstation</label>
-            </div>
-            <div className="filter_bar">
-              <input
-                type="radio"
-                id="xbox"
-                name="filter"
-                value="xbox"
-                active={filter === "xbox"}
-                onClick={() => setFilter("xbox")}
-              />
-              <label htmlFor="xbox">Xbox</label>
-            </div>
-            <div className="filter_bar">
-              <input
-                type="radio"
-                id="pc"
-                name="filter"
-                value="pc"
-                active={filter === "pc"}
-                onClick={() => setFilter("pc")}
-              />
-              <label htmlFor="pc">PC</label>
-            </div>
-          </div>
-          <div className="filter_game-container">
-            {filterGameByCategory.map((game: Game) =>
-              game.filteredCategory ? <GameCards key={game.id} {...game} /> : ""
-            )}
-          </div>
-        </div>
-
-        <div className="filter_inner">
-          <div>
-            <p className="filter_title">Age:</p>
-            <div className="filter_bar">
-              <input
-                type="radio"
-                id="all"
-                name="filter"
-                value="all"
-                active={filter === "all"}
-                onClick={() => setFilter("all")}
-              />
-              <label htmlFor="all">All</label>
-            </div>
-            <div className="filter_bar">
-              <input
-                type="radio"
-                id="6+"
-                name="filter"
-                value="6+"
-                active={filter === "6+"}
-                onClick={() => setFilter("6+")}
-              />
-              <label htmlFor="6+">6+</label>
-            </div>
-            <div className="filter_bar">
-              <input
-                type="radio"
-                id="12+"
-                name="filter"
-                value="12+"
-                active={filter === "12+"}
-                onClick={() => setFilter("12+")}
-              />
-              <label htmlFor="12+">12+</label>
-            </div>
-            <div className="filter_bar">
-              <input
-                type="radio"
-                id="18+"
-                name="filter"
-                value="12+"
-                active={filter === "18+"}
-                onClick={() => setFilter("18+")}
-              />
-              <label htmlFor="18+">18+</label>
-            </div>
-          </div>
-          <div className="filter_game-container">
-            {filterGameByAge.map((game: Game) => (game.filteredAge ? <GameCards key={game.id} {...game} /> : ""))}
-          </div>
-        </div>
-
-        <div>
-          <p className="filter_title">Sort by:</p>
-          <div className="filter_bar">
-            <input
-              type="radio"
-              id="rating"
-              name="sorting"
-              value="rating"
-            />
-            <label htmlFor="rating">Rating</label>
-          </div>
-          <div>{sortRating.map((g: Game) => <GameCards key={g.id} {...g} /> && "")}</div>
-
-          <div className="filter_bar">
-            <input type="radio" id="price" name="sorting" value="price" />
-            <label htmlFor="price">Price</label>
-          </div>
-          <div>{sortPrice.map((g: Game) => <GameCards key={g.id} {...g} /> && "")}</div>
-        </div>
-      </form>
-    </div>
-  );
-}
-
-export default Filter;
+// type FilterPropsType = {
+//   title: string;
+//   filterByPlatform: [];
+// };
+//
+// const Filter = (props: FilterPropsType) => {
+//   const dispatch = useDispatch();
+//
+//   const sortingOptions = [
+//     { label: "Ascending", value: "ascending" },
+//     { label: "Descending", value: "descending" },
+//   ];
+//
+//   const [games, setGames] = useState([]);
+//   const [type, setType] = useState("ascending");
+//
+//   const changeType = (e: any): void => {
+//     setType(e.target.value);
+//   };
+//
+//   async function getProducts() {
+//     try {
+//       await URL.getGames().then((response) => {
+//         setGames(response.data);
+//       });
+//     } catch (error) {
+//       console.log(error);
+//     }
+//   }
+//   useEffect(() => {
+//     getProducts();
+//   }, []);
+//
+//   const sortByRatingAsc = () => {
+//     const result = games.sort((a, b) => (a.rating > b.rating ? -1 : 1));
+//     return dispatch(getFilteredGames(result));
+//   };
+//
+//   const sortByRatingDesc = () => {
+//     const result = games.sort((a, b) => (a.rating > b.rating ? 1 : -1));
+//     return dispatch(getFilteredGames(result));
+//   };
+//
+//   const sortByPriceAsc = () => {
+//     const result = games.sort((a, b) => (a.price > b.price ? -1 : 1));
+//     return dispatch(getFilteredGames(result));
+//   };
+//
+//   const sortByPriceDesc = () => {
+//     const result = games.sort((a, b) => (a.price > b.price ? 1 : -1));
+//     return dispatch(getFilteredGames(result));
+//   };
+//
+//   /* const filterByCategory = (value: string) => {
+//     if (value === "All") {
+//       dispatch(getFilteredGames(games.filter((game) => game.genre)));
+//     } else if (value === "PC") {
+//       dispatch(getFilteredGames(games.filter((game) => game.genre == "PC")));
+//     } else if (value === "Xbox") {
+//       dispatch(getFilteredGames(games.filter((game) => game.genre == "Xbox")));
+//     } else if (value === "Playstation") {
+//       dispatch(getFilteredGames(games.filter((game) => game.genre == "Playstation")));
+//     }
+//   }; */
+//
+//   const filterByGenre = (value: string) => {
+//     if (value === "all") {
+//       dispatch(getFilteredGames(games.filter((game) => game.genre)));
+//     } else if (value === "Shooter") {
+//       dispatch(getFilteredGames(games.filter((game) => game.genre === "Shooter")));
+//     } else if (value === "Strategy") {
+//       dispatch(getFilteredGames(games.filter((game) => game.genre === "Strategy")));
+//     } else if (value === "Fighting") {
+//       dispatch(getFilteredGames(games.filter((game) => game.genre === "Fighting")));
+//     } else if (value === "Racing") {
+//       dispatch(getFilteredGames(games.filter((game) => game.genre === "Racing")));
+//     }
+//   };
+//   const filterByAge = (value: string) => {
+//     if (value === "all") {
+//       dispatch(getFilteredGames(games.filter((game) => game.age)));
+//     } else if (value === "6+") {
+//       dispatch(getFilteredGames(games.filter((game) => game.age === "6+")));
+//     } else if (value === "12+") {
+//       dispatch(getFilteredGames(games.filter((game) => game.age === "12+")));
+//     } else if (value === "16+") {
+//       dispatch(getFilteredGames(games.filter((game) => game.age === "16+")));
+//     } else if (value === "18+") {
+//       dispatch(getFilteredGames(games.filter((game) => game.age === "18+")));
+//     }
+//   };
+//   /*
+//   const onInputClick = (e: any): void => {
+//     console.log("on input click", e.target.value);
+//     let filteredArray = [];
+//     filteredArray = games.filter(game => {
+//       return game.genre.includes(e.target.value);
+//     });
+//     setGames(filteredArray);
+//   }; */
+//
+//   return (
+//     <div className="filter_container">
+//       <div>
+//         <p className="products-page__title">{props.title}</p>
+//         <p className="products-page__title">Sort</p>
+//
+//         <div className="products-page__container">
+//           <Dropdown text="Select">
+//             <Dropdown.Menu className="products-page__select">
+//               <Dropdown.Item
+//                 text="Rating"
+//                 onClick={() => (type === "ascending" ? sortByRatingAsc() : sortByRatingDesc())}
+//               />
+//               <Dropdown.Item
+//                 text="Price"
+//                 onClick={() => (type === "ascending" ? sortByPriceAsc() : sortByPriceDesc())}
+//               />
+//             </Dropdown.Menu>
+//           </Dropdown>
+//         </div>
+//
+//         <div className="products-page__container">
+//           <p>Type</p>
+//           <select className="select" value={type} onChange={changeType}>
+//             {sortingOptions.map((option) => (
+//               <option className="select-point" key={option.label} value={option.value}>
+//                 {option.label}
+//               </option>
+//             ))}
+//           </select>
+//         </div>
+//         <div>
+//           <p>Genres</p>
+//           <ul>
+//             <li>
+//               <input name="genreFilter" type="radio" onChange={() => filterByGenre("all")} />
+//               <span>All</span>
+//               {/* {games.map((game: Game) => ( */}
+//               {/*  <GameCards key={game.id} {...game} /> */}
+//               {/* ))} */}
+//             </li>
+//
+//             <li>
+//               <input name="genreFilter" type="radio" onChange={() => filterByGenre("Racing")} />
+//               <span>Racing</span>
+//             </li>
+//
+//             <li>
+//               <input name="genreFilter" type="radio" onChange={() => filterByGenre("Strategy")} />
+//               <span>Strategy</span>
+//             </li>
+//
+//             <li>
+//               <input name="genreFilter" type="radio" onChange={() => filterByGenre("Fighting")} />
+//               <span>Fighting</span>
+//             </li>
+//           </ul>
+//         </div>
+//
+//         <div>
+//           <p>Age</p>
+//           <ul>
+//             <li>
+//               <input name="ageFilter" type="radio" onChange={() => filterByAge("all")} />
+//               <span>All</span>
+//             </li>
+//             <li>
+//               <input name="ageFilter" type="radio" onChange={() => filterByAge("6+")} />
+//               <span>6 +</span>
+//             </li>
+//
+//             <li>
+//               <input name="ageFilter" type="radio" onChange={() => filterByAge("12+")} />
+//               <span>12 +</span>
+//             </li>
+//             <li>
+//               <input name="ageFilter" type="radio" onChange={() => filterByAge("18+")} />
+//               <span>18 +</span>
+//             </li>
+//           </ul>
+//         </div>
+//       </div>
+//       <div>{props.filterByPlatform}</div>
+//     </div>
+//   );
+// };
+//
+// export default Filter;

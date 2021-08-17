@@ -10,7 +10,7 @@ import UnauthorizedUser from "@/components/loginization/unauthorizedUser";
 import { Routes } from "@/constants/Routes";
 import { getTargetPageAC } from "@/redux/reducer";
 import { TiArrowSortedDown, TiArrowSortedUp } from "react-icons/all";
-import useDebounce from "@/constants/useDebounce";
+import useDebounce from "@/hooks/useDebounce";
 import { urlProducts } from "@/api/api";
 import Loader from "@/components/searchBar/loader";
 
@@ -19,6 +19,7 @@ export type RootStateType = {
   userName: string;
   userId: number;
   userPassword: string;
+  filteredProducts: string;
 };
 
 function Header() {
