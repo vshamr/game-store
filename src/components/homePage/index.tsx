@@ -8,9 +8,11 @@ import SearchBar from "@/components/searchBar";
 import Loader from "@/components/searchBar/loader";
 import { Game } from "@/components/homePage/chooseCategory";
 import NewGames from "@/components/homePage/newGames/newGames";
-import CheckBox from "@/components/products/filter/sections/checkBox";
-import { useParams } from "react-router-dom";
-import axios from "axios";
+import Filter from "@/components/products/Filter/Filter";
+const db = require("../../../db.json");
+
+const allCategories = ["all", ...new Set(db.games.map(game => game.category))];
+console.log(allCategories);
 
 function HomePage(): JSX.Element {
   const [newGames, setNewGames] = useState([]);
@@ -18,11 +20,17 @@ function HomePage(): JSX.Element {
   const [isSearching, setIsSearching] = useState(false);
   const [games, setGames] = useState([]);
   const debouncedNameOfTheGame = useDebounce(nameOfGame, 300);
-  const params = useParams();
-  const [Filters, setFilters] = useState({
-    filterGenre: [],
-    price: []
-  });
+
+  const [buttons, setButtons] = useState(allCategories);
+
+  const filterBtn = (button) => {
+    if (button === "all") {
+      setGames(games);
+      return;
+    }
+    const filteredData = db.games.filter((game: Game) => game.category === button);
+    setGames(filteredData);
+  };
 
   useEffect(() => {
     if (!nameOfGame) {
@@ -49,49 +57,14 @@ function HomePage(): JSX.Element {
     getNewGames();
   }, []);
 
-
-  async function getProducts() {
-    try {
-      await urlProducts.then((response) => {
-        setGames(response.data);
-      });
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
-  axios.post("/getProducts", (req, res) => {
-    console.log(req);
-
-
-
   const handleOnSubmit = (e: SyntheticEvent) => e.preventDefault();
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => setNameOfGame(e.target.value);
 
-  const showFilteredResults = (filters) => {
-    /*const variables = {
-      skip: 0,
-      filters: filters,
-    };*/
-    getProducts();
-  };
 
-  const handleFilters = (filters, category) => {
-    console.log(filters);
-    const newFilters = { ...Filters };
-
-    newFilters[category] = filters;
-
-    if (category === "price") {
-    }
-    showFilteredResults(newFilters);
-    setFilters(newFilters);
-  };
 
   return (
     <div>
       <Categories />
-      <CheckBox handleFilters={(filters) => handleFilters(filters, "filterGenre")} />
       <div className="searchBar_homePage">
         <SearchBar handleOnSubmit={handleOnSubmit} handleOnChange={handleOnChange} nameOfTheGame={nameOfGame} />
       </div>
@@ -106,6 +79,11 @@ function HomePage(): JSX.Element {
         ))}
       </div>
       <NewGames newGames={newGames} />
+      <span>Filter</span>
+      {/*<ExsButton button={buttons} filterBtn={filterBtn} />*/}
+
+      <Filter button={buttons} filterBtn={filterBtn} />
+
     </div>
   );
 }

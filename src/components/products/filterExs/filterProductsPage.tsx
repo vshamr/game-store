@@ -1,10 +1,10 @@
-import "./styles.css";
+import "../Filter/styles.css";
 
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { Game } from "@/constants/interfaces";
 import GameCards from "@/components/products/gameCards";
-import Filter from "@/components/products/filter/filter";
+import FilterRedux from "@/components/products/filterExs/filterRedux";
 
 const FilterProductsPage: React.FC = () => {
   /* const params = useParams();
@@ -23,7 +23,7 @@ const FilterProductsPage: React.FC = () => {
   /* const onInputClick = (e: any): void => {
     console.log("on input click", e.target.value);
     let filteredArray = [];
-    filteredArray = games.filter(game => {
+    filteredArray = games.filterExs(game => {
       return game.genre.includes(e.target.value);
     });
     setGames(filteredArray); */
@@ -68,7 +68,7 @@ const FilterProductsPage: React.FC = () => {
 
   return (
     <div>
-      <Filter title="PC" filterByPlatform={displayGames()} />
+      <FilterRedux title="PC" filterByPlatform={displayGames()} />
     </div>
   );
 };
