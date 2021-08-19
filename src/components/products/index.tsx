@@ -1,54 +1,72 @@
 import { SyntheticEvent, useEffect, useState } from "react";
+import axios from "axios";
 
 import "./styles.css";
 import useDebounce from "@/hooks/useDebounce";
-import { urlProducts } from "@/api/api";
 import Categories from "@/components/homePage/categories";
 import SearchBar from "@/components/searchBar";
 import Loader from "@/components/searchBar/loader";
 import GameCards from "@/components/products/gameCards";
 import { Game } from "@/constants/interfaces";
+import Filter from "@/components/products/Filter/filter";
+import { ParamsAges, ParamsCategory, ParamsGenres } from "@/components/products/Filter/filterData";
+
+function getRequestUrl(genre: string, age: string | number, category: string, searchingText: string) {
+  let location = "http://localhost:3000/games?";
+
+  if (genre !== ParamsGenres.ALL) {
+    location += `genre_like=${genre}`;
+  }
+  if (age !== ParamsAges.ALL) {
+    location += location ? `age_like=${age}` : `&&age_like=${age}`;
+  }
+  if (category !== ParamsCategory.ALL) {
+    location += location ? `category_like=${category}` : `&&category_like=${category}`;
+  }
+  if (searchingText) {
+    location += location ? `title_like=${searchingText}` : `&&title_like=${searchingText}`;
+  }
+
+  return location;
+}
 
 const Products: React.FC = () => {
-  const [nameOfTheGame, setNameOfTheGame] = useState("");
+  const [searchingText, setSearchingText] = useState("");
   const [games, setGames] = useState([]);
   const [isSearching, setIsSearching] = useState(false);
-  const debouncedNameOfTheGame = useDebounce(nameOfTheGame, 300);
+  const [genre, setGenre] = useState<ParamsGenres>(ParamsGenres.ALL);
+  const [age, setAge] = useState<ParamsAges>(ParamsAges.ALL);
+  const [category, setCategory] = useState<ParamsCategory>(ParamsCategory.ALL);
+
+  const debouncedNameOfTheGame = useDebounce(searchingText, 300);
 
   useEffect(() => {
-    if (!nameOfTheGame) {
-      const getAllGames = async () => {
-        const data = await fetch(urlProducts);
-        const response = await data.json();
-
-        setGames(response);
-      };
-
-      getAllGames();
-    }
-
-    const getGames = async () => {
+    (async () => {
       setIsSearching(true);
-      const data = await fetch(`${urlProducts}?title_like=${debouncedNameOfTheGame}`);
-      const response = await data.json();
-
-      setGames(response);
+      const { data } = await axios.get(getRequestUrl(genre, age, category, searchingText));
+      setGames(data);
       setIsSearching(false);
-    };
-
-    getGames();
+    })();
   }, [debouncedNameOfTheGame]);
+
+  useEffect(() => {
+    (async () => {
+      const { data } = await axios.get(getRequestUrl(genre, age, category, searchingText));
+      setGames(data);
+    })();
+  }, [genre, age, category]);
 
   const handleOnSubmit = (e: SyntheticEvent) => e.preventDefault();
 
-  const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => setNameOfTheGame(e.target.value);
+  const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => setSearchingText(e.target.value);
 
   return (
     <div>
       <Categories />
       <div className="products">
-        <div className="products_content">
-          <SearchBar handleOnSubmit={handleOnSubmit} handleOnChange={handleOnChange} nameOfTheGame={nameOfTheGame} />
+        <Filter setGenre={setGenre} setAge={setAge} setCategory={setCategory} />
+        <div className="products_container">
+          <SearchBar handleOnSubmit={handleOnSubmit} handleOnChange={handleOnChange} nameOfTheGame={searchingText} />
           {isSearching && <Loader />}
           {debouncedNameOfTheGame.length !== 0 && games.length === 0 && (
             <div className="not-found">Nothing was found</div>

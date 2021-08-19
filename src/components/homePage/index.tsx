@@ -6,13 +6,8 @@ import useDebounce from "@/hooks/useDebounce";
 import { urlProducts } from "@/api/api";
 import SearchBar from "@/components/searchBar";
 import Loader from "@/components/searchBar/loader";
-import { Game } from "@/components/homePage/chooseCategory";
 import NewGames from "@/components/homePage/newGames/newGames";
-import Filter from "@/components/products/Filter/Filter";
-const db = require("../../../db.json");
-
-const allCategories = ["all", ...new Set(db.games.map(game => game.category))];
-console.log(allCategories);
+import { Game } from "@/constants/interfaces";
 
 function HomePage(): JSX.Element {
   const [newGames, setNewGames] = useState([]);
@@ -20,17 +15,6 @@ function HomePage(): JSX.Element {
   const [isSearching, setIsSearching] = useState(false);
   const [games, setGames] = useState([]);
   const debouncedNameOfTheGame = useDebounce(nameOfGame, 300);
-
-  const [buttons, setButtons] = useState(allCategories);
-
-  const filterBtn = (button) => {
-    if (button === "all") {
-      setGames(games);
-      return;
-    }
-    const filteredData = db.games.filter((game: Game) => game.category === button);
-    setGames(filteredData);
-  };
 
   useEffect(() => {
     if (!nameOfGame) {
@@ -60,8 +44,6 @@ function HomePage(): JSX.Element {
   const handleOnSubmit = (e: SyntheticEvent) => e.preventDefault();
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => setNameOfGame(e.target.value);
 
-
-
   return (
     <div>
       <Categories />
@@ -79,11 +61,6 @@ function HomePage(): JSX.Element {
         ))}
       </div>
       <NewGames newGames={newGames} />
-      <span>Filter</span>
-      {/*<ExsButton button={buttons} filterBtn={filterBtn} />*/}
-
-      <Filter button={buttons} filterBtn={filterBtn} />
-
     </div>
   );
 }

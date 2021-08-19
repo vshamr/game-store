@@ -4,7 +4,6 @@ const LOG_IN = "LOG-IN";
 const LOG_OUT = "LOG-OUT";
 const SET_USER_PASSWORD = "SET-USER-PASSWORD";
 const SAVE_USER_PROFILE = "SAVE-USER-PROFILE";
-const GET_FILTERED_GAMES = "GET-FILTERED-GAMES";
 
 const initialState = {
   userId: null,
@@ -55,12 +54,6 @@ export const reducer = (state: InitialStateType = initialState, action: any) => 
         userName: action.userName,
       };
     }
-    case GET_FILTERED_GAMES: {
-      return {
-        ...state,
-        filteredGames: action.filteredGames,
-      };
-    }
     default:
       return state;
   }
@@ -72,4 +65,3 @@ export const setUserProfileAC = (userName: string) => ({ type: SAVE_USER_PROFILE
 export const getTargetPageAC = (path: string) => ({ type: GET_TARGET_PAGE, path });
 export const logInAC = () => ({ type: LOG_IN });
 export const logOutAC = () => ({ type: LOG_OUT });
-export const getFilteredGames = (payload) => ({ type: GET_FILTERED_GAMES, payload: [...payload] });
