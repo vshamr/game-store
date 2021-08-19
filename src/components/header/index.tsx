@@ -1,18 +1,14 @@
-import { SyntheticEvent, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import "./styles.css";
-import SearchBar from "@/components/searchBar";
 import ProductsDropDown from "@/components/header/drop-down";
 import AuthorizedUser from "@/components/loginization/authorizedUser";
 import UnauthorizedUser from "@/components/loginization/unauthorizedUser";
 import { Routes } from "@/constants/Routes";
 import { getTargetPageAC } from "@/redux/reducer";
 import { TiArrowSortedDown, TiArrowSortedUp } from "react-icons/all";
-import useDebounce from "@/hooks/useDebounce";
-import { urlProducts } from "@/api/api";
-import Loader from "@/components/searchBar/loader";
 
 export type RootStateType = {
   isLoggedIn: boolean;

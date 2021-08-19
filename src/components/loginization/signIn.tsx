@@ -5,7 +5,7 @@ import { useFormik } from "formik";
 import { CgCloseR } from "react-icons/all";
 
 import "../modal/styles.css";
-import { urlUsers } from "@/api/api";
+import { urlUsers } from "@/api";
 import { Routes } from "@/constants/Routes";
 import { InputText } from "@/components/loginization/inputText";
 import Warnings from "@/components/loginization/warnings";

@@ -18,13 +18,15 @@ function getRequestUrl(genre: string, age: string | number, category: string, se
     location += `genre_like=${genre}`;
   }
   if (age !== ParamsAges.ALL) {
-    location += location ? `age_like=${age}` : `&&age_like=${age}`;
+    location += location === "http://localhost:3000/games?" ? `age_like=${age}` : `&&age_like=${age}`;
   }
   if (category !== ParamsCategory.ALL) {
-    location += location ? `category_like=${category}` : `&&category_like=${category}`;
+    location +=
+      location === "http://localhost:3000/games?" ? `category_like=${category}` : `&&category_like=${category}`;
   }
   if (searchingText) {
-    location += location ? `title_like=${searchingText}` : `&&title_like=${searchingText}`;
+    location +=
+      location === "http://localhost:3000/games?" ? `title_like=${searchingText}` : `&&title_like=${searchingText}`;
   }
 
   return location;

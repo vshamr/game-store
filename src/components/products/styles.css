@@ -1,34 +1,3 @@
-/*.products {*/
-/*  display: grid;*/
-/*  grid-template-columns: 25% 75%;*/
-/*}*/
-
-/*.products_content {*/
-/*  margin: 50px 170px 0 0;*/
-/*  background: rgba(26, 26, 26, 0.4);*/
-/*  border-radius: 10px;*/
-/*}*/
-
-/*.games-wrapper {*/
-/*  margin-top: 50px;*/
-/*  display: grid;*/
-/*  place-items: center;*/
-/*  grid-template-columns: repeat(3, 1fr);*/
-/*  row-gap: 1rem;*/
-/*}*/
-
-/*@media screen and (max-width: 1520px) {*/
-/*  .games-wrapper {*/
-/*    grid-template-columns: repeat(2, 1fr);*/
-/*  }*/
-/*}*/
-
-/*@media screen and (max-width: 1020px) {*/
-/*  .games-wrapper {*/
-/*    grid-template-columns: 1fr;*/
-/*  }*/
-/*}*/
-
 .products {
   display: grid;
   grid-template-columns: 1fr 4fr;

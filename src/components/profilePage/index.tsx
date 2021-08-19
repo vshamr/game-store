@@ -4,7 +4,7 @@ import { useFormik } from "formik";
 
 import "./styles.css";
 import { userPageShema } from "@/constants/schemaValidation";
-import { usersAPI } from "@/api/api";
+import { usersAPI } from "@/api";
 import { setUserNameAC, setUserProfileAC } from "@/redux/reducer";
 import Warnings from "@/components/loginization/warnings";
 import { InputText } from "@/components/loginization/inputText";

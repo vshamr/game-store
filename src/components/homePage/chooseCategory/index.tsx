@@ -1,7 +1,8 @@
-import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+
 import GameCards from "@/components/products/gameCards";
-import { urlProducts } from "@/api/api";
+import { urlProducts } from "@/api";
 import { Game } from "@/constants/interfaces";
 
 function ChosenCategory() {
@@ -10,14 +11,12 @@ function ChosenCategory() {
   const [games, setGames] = useState([]);
 
   useEffect(() => {
-    const getGames = async () => {
+    (async () => {
       const data = await fetch(`${urlProducts}?category_like=${params.category}`);
       const response = await data.json();
 
       setGames(response);
-    };
-
-    getGames();
+    })();
   }, [params]);
 
   return (

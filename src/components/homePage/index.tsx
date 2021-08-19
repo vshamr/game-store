@@ -3,7 +3,7 @@ import GameCards from "@/components/products/gameCards";
 import Categories from "@/components/homePage/categories";
 import { SyntheticEvent, useEffect, useState } from "react";
 import useDebounce from "@/hooks/useDebounce";
-import { urlProducts } from "@/api/api";
+import { urlProducts } from "@/api";
 import SearchBar from "@/components/searchBar";
 import Loader from "@/components/searchBar/loader";
 import NewGames from "@/components/homePage/newGames/newGames";
