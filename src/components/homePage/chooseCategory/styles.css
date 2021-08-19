@@ -1,0 +1,12 @@
+.category-title {
+  margin-bottom: 1rem;
+  padding: 1rem 0;
+  font-size: var(--lmedium);
+  border-bottom: 2px solid var(--main-color);
+}
+
+.category-title span {
+  text-transform: capitalize;
+}
+
+

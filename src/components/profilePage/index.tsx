@@ -4,7 +4,7 @@ import { useFormik } from "formik";
 
 import "./styles.css";
 import { userPageShema } from "@/constants/schemaValidation";
-import { usersAPI } from "@/api/api";
+import { usersAPI } from "@/api";
 import { setUserNameAC, setUserProfileAC } from "@/redux/reducer";
 import Warnings from "@/components/loginization/warnings";
 import { InputText } from "@/components/loginization/inputText";
@@ -14,7 +14,7 @@ import { RootStateType } from "@/components/header";
 
 const ProfilePage = () => {
   const dispatch = useDispatch();
- const userName = useSelector((state: RootStateType) => state.userName);
+  const userName = useSelector((state: RootStateType) => state.userName);
   const [warning, setWarning] = useState("");
 
   const [showPasswordModal, setShowPasswordModal] = useState(false);
@@ -24,7 +24,7 @@ const ProfilePage = () => {
     initialValues: {
       login: "",
       phone: "",
-      address: ""
+      address: "",
     },
     validationSchema: userPageShema,
     onSubmit: async (values) => {
@@ -37,7 +37,7 @@ const ProfilePage = () => {
       } catch (error) {
         setWarning(error.message);
       }
-    }
+    },
   });
 
   return (
@@ -45,11 +45,10 @@ const ProfilePage = () => {
       <div className="container">
         <div className="user-page_inner">
           <div className="user-page_img">
-            <div className="user-page_avatar"></div>
+            <div className="user-page_avatar" />
             <button className="user-page-btn">Change profile image</button>
           </div>
           <form className="user-page_form" onSubmit={formik.handleSubmit}>
-
             <div className="user-page_form-box">
               <InputText
                 label="login"
@@ -82,15 +81,21 @@ const ProfilePage = () => {
             <Warnings warning={warning} setWarning={setWarning} />
             <div className="user-page_form-btn">
               <button className="user-page-btn">Save profile</button>
-              <button className="user-page-btn" onClick={openPasswordModal}>Change password</button>
-              {showPasswordModal && <Modal> <ChangePassword setShowPasswordModal={setShowPasswordModal} /> </Modal>}
+              <button className="user-page-btn" onClick={openPasswordModal}>
+                Change password
+              </button>
+              {showPasswordModal && (
+                <Modal>
+                  {" "}
+                  <ChangePassword setShowPasswordModal={setShowPasswordModal} />{" "}
+                </Modal>
+              )}
             </div>
           </form>
         </div>
       </div>
     </section>
   );
-
 };
 
 export default ProfilePage;

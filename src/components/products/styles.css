@@ -1,0 +1,14 @@
+.products {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+
+.products_container {
+  margin-top: 50px;
+}
+
+@media (max-width: 1300px) {
+  .products_container {
+    width: 95%;
+  }
+}

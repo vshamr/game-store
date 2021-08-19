@@ -1,4 +1,150 @@
 {
+  "games": [
+    {
+      "id": "1",
+      "category": ["All", "pc"],
+      "img": "https://m.media-amazon.com/images/M/MV5BY2UxMTY2OTUtMzBlMy00Zjk4LThmY2UtMzVhOTlkOWEwYjdkXkEyXkFqcGdeQXVyMTMxNDI1OTQx._V1_.jpg",
+      "title": "Disco Elysium - The Final Cut",
+      "price": "20 BYN",
+      "descr": "Disco Elysium - The Final Cut is the definitive edition of the smash-hit RPG. Pursue your political dreams in new quests, meet and question more of the city's locals, and explore a whole extra area.",
+      "date": "Tu, 30 Mar 2021 14:00:00",
+      "genre": ["All", "Fighting", "Shooter"],
+      "age": ["All", "6"],
+      "rating": "4"
+    },
+    {
+      "id": "2",
+      "category": ["All", "pc"],
+      "img": "http://squarefaction.ru/files/game/1071/cover/cover.jpg",
+      "title": "Half-Life 2",
+      "price": "60 BYN",
+      "descr": "HALF-LIFE sends a shock through the game industry with its combination of pounding action and continuous, immersive storytelling.",
+      "date": "Fr, 16 Nov 2004 11:00:00",
+      "genre": ["All", "Racing", "Fighting"],
+      "age": ["All", "12"],
+      "rating": "3"
+    },
+    {
+      "id": "3",
+      "category": ["All", "pc"],
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXotC2b_aFY7mgoeghnnu60bmOB8fmOMTRtitEkQzJwE1kdOJsgzv-Hy6Wqktn7SAJwJA&usqp=CAU",
+      "title": "Grand Theft Auto V",
+      "price": "15 BYN",
+      "descr": "Microsoft no longer supports creating Games for Windows-LIVE accounts within Grand Theft Auto IV.",
+      "date": "Mo, 13 Apr 2015 21:00:00",
+      "genre": ["All", "Shooter"],
+      "age": ["All", "16"],
+      "rating": "2"
+    },
+    {
+      "id": "4",
+      "category": ["All", "pc"],
+      "img": "http://store.romeremastered.totalwar.com/sites/default/files/styles/640/public/content/images/RRPackshotOpt.jpg?itok=uIauezgi",
+      "title": "Total War",
+      "price": "20 BYN",
+      "descr": "It still has the epic, dense campaigns fans of the series are looking for, but the way it makes diplomacy completely transparent, telling you exactly what it will take to strike a deal, makes dealing with other factions more streamlined.",
+      "date": "Mon, 18 Apr 2021 12:40:00",
+      "genre": ["All", "Strategy"],
+      "age": ["All", "12"],
+      "rating": "5"
+    },
+    {
+      "id": "5",
+      "category": ["All", "pc"],
+      "img": "https://www.belconsole.by/pics/items/xalnowbvqnquuuqjbbueqkvf6lsyydigyveqldte-368x_.jpeg",
+      "title": "Doom",
+      "price": "40 BYN",
+      "descr": "Fights are still, for the most part, unbearably tense and hectic. You’ll scramble and double jump to avoid packs of enemies, using the super shotgun’s meat hook to grapple to far-off enemies before turning them into red mist..",
+      "date": "Tue, 19 Jun 2021 20:00:00",
+      "genre": ["All", "Racing"],
+      "age": ["All", "18"],
+      "rating": "2"
+    },
+    {
+      "id": "6",
+      "category": ["All", "xbox"],
+      "img": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6465/6465433_sd.jpg;maxHeight=640;maxWidth=550",
+      "title": "Madden NFL 22 ",
+      "price": "80 BYN",
+      "descr": "Fast to the fun, social football gameplay with NFL superstars set in locations around the globe featuring larger than life presentation, characters and teams.",
+      "date": "Tu, 13 Jul 2021 10:00:00",
+      "genre": ["All", "Racing"],
+      "age": ["All", "16"],
+      "rating": "2"
+    },
+    {
+      "id": "7",
+      "category":  ["All", "xbox"],
+      "img": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6438/6438900_sd.jpg;maxHeight=640;maxWidth=550",
+      "title": "Mass Effect Legendary Edition",
+      "price": "50 BYN",
+      "descr": "The Mass Effect Legendary Edition includes single-player base content and over 40 DLC from the highly acclaimed Mass Effect, Mass Effect 2, and Mass Effect 3 games, including promo weapons, armors, and packs – remastered and optimized for 4K Ultra HD.",
+      "date": "Tu, 10 Jul 2021 10:00:00",
+      "genre": ["All", "Shooter"],
+      "age": ["All", "12"],
+      "rating": "2"
+    },
+    {
+      "id": "8",
+      "category":  ["All", "xbox"],
+      "img": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6471/6471723_sd.jpg;maxHeight=640;maxWidth=550",
+      "title": "NBA 2K22 75th Anniversary Edition",
+      "price": "10 BYN",
+      "descr": "This edition also includes NBA 2K22 for Xbox Series X|S - A New Generation NBA 2K Experience. NBA 2K22 puts the entire basketball universe in your hands. Anyone, anywhere can hoop in NBA 2K22.",
+      "date": "Sat, 2 Aug 2021 15:00:00",
+      "genre": ["All", "Fighting"],
+      "age": ["All", "16"],
+      "rating": "5"
+    },
+    {
+      "id": "9",
+      "img": "https://cdn.mos.cms.futurecdn.net/nngbDGDRK7f7HKozcjq4SG-970-80.jpg.webp",
+      "category":  ["All", "xbox"],
+      "title": "Quantum Break",
+      "price": "40 BYN",
+      "descr": "It might've overextended a bit with its experimental TV tie-in elements, but Quantum Break from Remedy Entertainment (makers of Max Payne and Alan Wake) has moments where its mix of third-person shooting and temporal powers really soars.",
+      "date": "Mon, 18 Jun 2021 14:00:00",
+      "genre": ["All", "Rasing"],
+      "age": ["All", "6"],
+      "rating": "3"
+    },
+    {
+      "id": "10",
+      "img": "https://upload.wikimedia.org/wikipedia/ru/d/d6/Halo_infinite_cover.png",
+      "category":  ["All", "xbox"],
+      "title": "Halo",
+      "price": "20 BYN",
+      "descr": "No, the main draw here is the chance to play through four of the Xbox's most formative games in their best possible versions - the early games are remade with improved graphics, there are frame rate boosts, re-done hi-res cutscenes and more.",
+      "date": "Mon, 18 Jun 2018 09:00:00",
+      "genre": ["All", "Fighting"],
+      "age": ["All", "18"],
+      "rating": "4"
+    },
+    {
+      "id": "11",
+      "category": ["All", "playstation"],
+      "img": "https://s1.gaming-cdn.com/images/products/5679/orig/red-dead-redemption-2-standard-edition-cover.jpg",
+      "title": "Red Dead Redemption 2",
+      "price": "100 BYN",
+      "descr": "Winner of over 175 Game of the Year Awards and recipient of over 250 perfect scores, RDR2 is the epic tale of outlaw Arthur Morgan and the infamous Van der Linde gang, on the run across America at the dawn of the modern age. ",
+      "date": "Thu, 26 Oct 2020 22:00:00",
+      "genre":  ["All", "Strategy"],
+      "age": ["All", "12"],
+      "rating": "1"
+    },
+    {
+      "id": "12",
+      "category":  ["All", "playstation"],
+      "img": "https://image.api.playstation.com/cdn/EP9000/CUSA08809_00/iSemi9uYvDu1VVdIX93wfMHlfaF37kDW.png",
+      "title": "Shadow of the Colossus",
+      "price": "15 BYN",
+      "descr": "Shadow of the Colossus is one of those games that everyone wanted to be remastered for years upon years. And then it happened.",
+      "date": "Wed, 10 Jun 2021 21:00:00",
+      "genre": ["All", "Shooter"],
+      "age": ["All", "12"],
+      "rating": "4"
+    }
+  ],
   "posts": [
     {
       "id": 1,
@@ -18,6 +164,11 @@
       "login": "q@q.ru",
       "password": "zzzzzz",
       "id": 1
+    },
+    {
+      "login": "ssss",
+      "password": "ssssss",
+      "id": 2
     }
   ]
 }

@@ -5,7 +5,7 @@ import axios from "axios";
 import { useFormik } from "formik";
 import { CgCloseR } from "react-icons/all";
 
-import { urlUsers } from "@/api/api";
+import { urlUsers } from "@/api";
 import { Routes, serverError } from "@/constants/Routes";
 import { InputText } from "@/components/loginization/inputText";
 import Warnings from "@/components/loginization/warnings";

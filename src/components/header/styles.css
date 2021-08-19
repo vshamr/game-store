@@ -67,11 +67,6 @@ span {
   background: rgba(255, 192, 16, 0.9);
 }
 
-.header_searchBar {
-  position: absolute;
-  right: 0;
-}
-
 .header_authorization-item {
   height: 100%;
   width: 190px;
@@ -88,12 +83,13 @@ span {
   font-size: 25px;
 }
 
-@media (max-width: 1000px) {
-  .header_searchBar {
-    margin-top: 10px;
-    min-width: 50%;
-  }
+.not-found {
+  color: rgba(255, 192, 16, 0.8);
+  padding-left: 5px;
+  font-size: 0.8em;
+}
 
+@media (max-width: 1000px) {
   .header_menu {
     display: block;
   }
@@ -121,13 +117,6 @@ span {
     width: 130px;
     justify-content: center;
     position: relative;
-  }
-}
-
-@media (max-width: 600px) {
-  .header_searchBar {
-    margin-top: 10px;
-    min-width: 100%;
   }
 }
 

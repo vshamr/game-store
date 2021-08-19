@@ -1,7 +1,8 @@
 .searchBar_input {
-  width: 100%;
+  width: 88%;
+  margin-left: 70px;
   background: none;
-  border: 2px solid #2d3547;
+  border: 2px solid rgba(255, 255, 255, 0.7);
   border-radius: 6px;
   padding: 7px 10px;
   color: #fff;
@@ -16,7 +17,7 @@
   padding: 8px 14px;
   top: 0;
   cursor: pointer;
-  height: 100%;
+  height: 32px;
 }
 
 .searchBar-btn-item {
@@ -24,8 +25,19 @@
   color: #fff;
 }
 
+.searchBar_homePage .searchBar_input {
+  width: 80%;
+  margin-top: 20px;
+  margin-left: 0;
+  left: 10%;
+  position: relative;
+}
+
 @media (max-width: 600px) {
   .searchBar_input {
     min-height: 40px;
+  }
+  .searchBar-btn {
+    height: 40px;
   }
 }

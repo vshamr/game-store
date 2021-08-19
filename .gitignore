@@ -35,3 +35,6 @@ node_modules
 tsconfig.tsbuildinfo
 
 .idea
+
+test.js
+
