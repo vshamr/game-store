@@ -5,9 +5,10 @@ type GameCardsType = {
   title: string;
   price: string;
   descr: string;
+  onAdd: any;
 };
 
-function GameCards({ img, title, price, descr }: GameCardsType) {
+function GameCards({ img, title, price, descr, onAdd }: GameCardsType) {
   return (
     <div className="gameCards">
       <div className="gameCards_content">
@@ -16,7 +17,10 @@ function GameCards({ img, title, price, descr }: GameCardsType) {
       </div>
       <div className="gameCards-title">
         <h4>{title}</h4>
-        <p>{price}</p>
+        <p>${price}</p>
+        <button className="game-card_btn" onClick={() => onAdd() }>
+          Add To Cart
+        </button>
       </div>
     </div>
   );

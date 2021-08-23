@@ -7,7 +7,6 @@ import Categories from "@/components/homePage/categories";
 import SearchBar from "@/components/searchBar";
 import Loader from "@/components/searchBar/loader";
 import GameCards from "@/components/products/gameCards";
-import { Game } from "@/constants/interfaces";
 import Filter from "@/components/products/Filter/filter";
 import { ParamsAges, ParamsCategory, ParamsGenres } from "@/components/products/Filter/filterData";
 
@@ -74,7 +73,7 @@ const Products: React.FC = () => {
             <div className="not-found">Nothing was found</div>
           )}
           <div className="games-wrapper">
-            {games.map((game: Game) => (
+            {games.map((game) => (
               <GameCards key={game.id} {...game} />
             ))}
           </div>

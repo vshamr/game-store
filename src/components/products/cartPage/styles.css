@@ -1,0 +1,16 @@
+button.add {
+  background-color: #ffc010;
+  width: 1.5rem;
+}
+
+button.remove {
+  background-color: #9a3f3f;
+  width: 1.5rem;
+}
+
+button.badge {
+  background-color: #406196;
+  border: none;
+  color: #ffffffc7;
+  width: 1.5rem;
+}

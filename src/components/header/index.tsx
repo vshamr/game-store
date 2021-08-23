@@ -8,7 +8,7 @@ import AuthorizedUser from "@/components/loginization/authorizedUser";
 import UnauthorizedUser from "@/components/loginization/unauthorizedUser";
 import { Routes } from "@/constants/Routes";
 import { getTargetPageAC } from "@/redux/reducer";
-import { TiArrowSortedDown, TiArrowSortedUp } from "react-icons/all";
+import { CgShoppingCart, TiArrowSortedDown, TiArrowSortedUp } from "react-icons/all";
 
 export type RootStateType = {
   isLoggedIn: boolean;
@@ -18,7 +18,7 @@ export type RootStateType = {
   filteredProducts: string;
 };
 
-function Header() {
+function Header({ countCartItems }) {
   const authorizedUser = useSelector((state: RootStateType) => state.isLoggedIn);
   const dispatch = useDispatch();
 
@@ -56,6 +56,14 @@ function Header() {
           </span>
           <NavLink to={Routes.ABOUT} activeClassName="header_nav-activeLink">
             About
+          </NavLink>
+          <NavLink to={Routes.CART} activeClassName="header_nav-activeLink">
+            <CgShoppingCart />
+            {countCartItems? (
+              <button className="badge">{countCartItems}</button>
+            ) : (
+              ""
+            )}
           </NavLink>
         </nav>
       </div>

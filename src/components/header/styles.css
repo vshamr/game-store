@@ -22,6 +22,11 @@
   right: 0;
 }
 
+.header-cart {
+  font-size: 30px;
+  color: #ffffffc7;
+}
+
 .header_btn-signup {
   border: 1px solid #ffffffc7;
   border-radius: 6px;

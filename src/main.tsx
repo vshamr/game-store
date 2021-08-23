@@ -11,10 +11,11 @@ import ProfilePage from "@/components/profilePage";
 import About from "@/components/about";
 import Footer from "@/components/footer";
 import ChosenCategory from "@/components/homePage/chooseCategory";
+import Products from "@/components/products";
+import CartPage from "@/components/products/cartPage/cartPage";
 import { Routes } from "./constants/Routes";
 import someTypeScript from "./someTypeScript";
 import Header from "./components/header";
-import Products from "@/components/products";
 
 const Modal = lazy(() => import("./components/modal"));
 const SignIn = lazy(() => import("./components/loginization/signIn"));
@@ -28,6 +29,7 @@ interface AppState {
   title: string;
   hasError: boolean;
   authorizedUser: boolean;
+  cartItems: any;
 }
 
 class AppContainer extends Component<AppProps, AppState> {
@@ -35,10 +37,15 @@ class AppContainer extends Component<AppProps, AppState> {
 
   constructor(props: AppProps) {
     super(props);
+
+    this.onAdd = this.onAdd.bind(this);
+    this.onRemove = this.onRemove.bind(this);
+
     this.state = {
       title: someTypeScript("Test-block for css-modules"),
       hasError: false,
       authorizedUser: false,
+      cartItems: [],
     };
     this.redirectOnChoosenPage = this.redirectOnChoosenPage.bind(this);
 
@@ -55,6 +62,26 @@ class AppContainer extends Component<AppProps, AppState> {
     console.error("error Info", errorInfo.componentStack);
   }
 
+  onAdd(games) {
+    const exist = this.state.cartItems.find((x) => x.id === games.id);
+    if (exist) {
+      this.setState(this.state.cartItems.map((x) => (x.id === games.id ? { ...exist, qty: exist.qty + 1 } : x)));
+    } else {
+      this.setState([...this.state.cartItems, { ...games, qty: 1 }]);
+    }
+    console.log("add to card");
+  }
+
+  onRemove(games) {
+    const exist = this.state.cartItems.find((x) => x.id === games.id);
+    if (exist.qty === 1) {
+      this.setState(this.state.cartItems.filter((x) => x.id !== games.id));
+    } else {
+      this.setState(this.state.cartItems.map((x) => (x.id === games.id ? { ...exist, qty: exist.qty - 1 } : x)));
+    }
+    console.log("remove from cart");
+  }
+
   redirectOnChoosenPage(component: JSX.Element) {
     if (store.getState().isLoggedIn) {
       return component;
@@ -68,7 +95,8 @@ class AppContainer extends Component<AppProps, AppState> {
         <BrowserRouter>
           <Suspense fallback={<div>Loading...</div>}>
             <Provider store={store}>
-              <Header />
+              <Header countCartItems={this.state.cartItems.length} />
+              <CartPage cartItems={this.state.cartItems} onAdd={this.onAdd} onRemove={this.onRemove} />
               <Switch>
                 <Route exact path={Routes.HOME} render={() => <HomePage />} />
                 <Route exact path={Routes.PRODUCTS}>
@@ -80,6 +108,9 @@ class AppContainer extends Component<AppProps, AppState> {
                 <Route exact path={Routes.ABOUT}>
                   {this.redirectOnChoosenPage(<About />)}
                 </Route>
+                {/*  <Route exact path={Routes.CART}>
+                  {this.redirectOnChoosenPage(<CartPage cartItems={this.state.cartItems} />)}
+                </Route> */}
                 <Route exact path={Routes.SIGN_UP}>
                   {store.getState().isLoggedIn ? (
                     <Redirect to={Routes.PROFILE_PAGE} />
