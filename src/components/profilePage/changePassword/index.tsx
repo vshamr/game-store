@@ -5,7 +5,7 @@ import { useFormik } from "formik";
 
 import Warnings from "@/components/loginization/warnings";
 import { InputText } from "@/components/loginization/inputText";
-import { setUserPasswordAC } from "@/redux/reducer";
+import { setUserPasswordAC } from "@/redux/user-reducer";
 import { changePasswordShema } from "@/constants/schemaValidation";
 import { usersAPI } from "@/api";
 import { RootStateType } from "@/components/header";

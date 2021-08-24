@@ -10,7 +10,7 @@ import { Routes } from "@/constants/Routes";
 import { InputText } from "@/components/loginization/inputText";
 import Warnings from "@/components/loginization/warnings";
 import { signInShema } from "@/constants/schemaValidation";
-import { logInAC, setUserNameAC } from "@/redux/reducer";
+import { logInAC, setUserNameAC } from "@/redux/user-reducer";
 
 export interface PersonInterface {
   id: number;

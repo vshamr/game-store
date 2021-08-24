@@ -11,12 +11,11 @@ const initialState = {
   userName: "",
   userPassword: "",
   chosenLocation: "",
-  filteredGames: "",
 };
 
 type InitialStateType = typeof initialState;
 
-export const reducer = (state: InitialStateType = initialState, action: any) => {
+export const userReducer = (state: InitialStateType = initialState, action: any) => {
   switch (action.type) {
     case SET_USER_NAME: {
       return {

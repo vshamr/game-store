@@ -7,7 +7,7 @@ import ProductsDropDown from "@/components/header/drop-down";
 import AuthorizedUser from "@/components/loginization/authorizedUser";
 import UnauthorizedUser from "@/components/loginization/unauthorizedUser";
 import { Routes } from "@/constants/Routes";
-import { getTargetPageAC } from "@/redux/reducer";
+import { getTargetPageAC } from "@/redux/user-reducer";
 import { CgShoppingCart, TiArrowSortedDown, TiArrowSortedUp } from "react-icons/all";
 
 export type RootStateType = {
@@ -15,11 +15,12 @@ export type RootStateType = {
   userName: string;
   userId: number;
   userPassword: string;
-  filteredProducts: string;
+  cart: [];
 };
 
-function Header({ countCartItems }) {
+function Header(): JSX.Element {
   const authorizedUser = useSelector((state: RootStateType) => state.isLoggedIn);
+  const cart = useSelector((state: RootStateType) => state.cart);
   const dispatch = useDispatch();
 
   const [isDropDownOpen, setIsDropDownOpen] = useState(false);
@@ -59,11 +60,7 @@ function Header({ countCartItems }) {
           </NavLink>
           <NavLink to={Routes.CART} activeClassName="header_nav-activeLink">
             <CgShoppingCart />
-            {countCartItems? (
-              <button className="badge">{countCartItems}</button>
-            ) : (
-              ""
-            )}
+           {/* {cart.length}*/}
           </NavLink>
         </nav>
       </div>

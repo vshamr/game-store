@@ -5,7 +5,7 @@ import { BiExit, BiUser} from "react-icons/all";
 import "../header/styles.css";
 import { Routes } from "@/constants/Routes";
 import { RootStateType } from "@/components/header";
-import { logOutAC } from "@/redux/reducer";
+import { logOutAC } from "@/redux/user-reducer";
 
 function AuthorizedUser() {
   const userName = useSelector((state: RootStateType) => state.userName);
