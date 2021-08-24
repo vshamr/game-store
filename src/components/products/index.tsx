@@ -74,7 +74,7 @@ const Products: React.FC = () => {
           )}
           <div className="games-wrapper">
             {games.map((game) => (
-              <GameCards key={game.id} {...game} />
+              <GameCards key={game.id} game={game} />
             ))}
           </div>
         </div>

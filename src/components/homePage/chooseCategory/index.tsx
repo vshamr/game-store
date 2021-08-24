@@ -27,7 +27,7 @@ function ChosenCategory() {
         </h3>
         <div className="games-wrapper">
           {games.map((game: Game) => (
-            <GameCards key={game.id} {...game} />
+            <GameCards key={game.id} game={game} />
           ))}
         </div>
       </div>

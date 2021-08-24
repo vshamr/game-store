@@ -11,16 +11,9 @@ type InitialStateType = typeof initialState;
 export const cartReducer = (state: InitialStateType = initialState, action) => {
   switch (action.type) {
     case CART_ADD_ITEM: {
-      if (state.cart.find((value) => value.title === action.payload.item.title)) {
-        return {
-          ...state,
-          cart: state.cart.push(action.payload.item),
-          totalQuantity: state.totalQuantity + 1,
-        };
-      }
       return {
         ...state,
-        cart: state.cart.filter((item, index) => index !== action.payload),
+        cart: [...state.cart, ...[action.payload]],
         totalQuantity: state.totalQuantity + 1,
       };
     }

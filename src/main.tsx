@@ -70,8 +70,7 @@ class AppContainer extends Component<AppProps, AppState> {
         <BrowserRouter>
           <Suspense fallback={<div>Loading...</div>}>
             <Provider store={store}>
-              <Header  />
-              <CartPage />
+              <Header />
               <Switch>
                 <Route exact path={Routes.HOME} render={() => <HomePage />} />
                 <Route exact path={Routes.PRODUCTS}>
@@ -83,9 +82,9 @@ class AppContainer extends Component<AppProps, AppState> {
                 <Route exact path={Routes.ABOUT}>
                   {this.redirectOnChoosenPage(<About />)}
                 </Route>
-                {/*  <Route exact path={Routes.CART}>
-                  {this.redirectOnChoosenPage(<CartPage cartItems={this.state.cartItems} />)}
-                </Route> */}
+                <Route exact path={Routes.CART}>
+                  {this.redirectOnChoosenPage(<CartPage />)}
+                </Route>
                 <Route exact path={Routes.SIGN_UP}>
                   {store.getState().isLoggedIn ? (
                     <Redirect to={Routes.PROFILE_PAGE} />

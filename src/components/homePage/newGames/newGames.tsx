@@ -9,7 +9,7 @@ const NewGames = ({ newGames }: Props) => (
   <div className="new-games">
     <div className="games-wrapper">
       {newGames.map((game: Game) => (
-        <GameCards key={game.id} {...game} />
+        <GameCards key={game.id} game={game} />
       ))}
     </div>
   </div>
