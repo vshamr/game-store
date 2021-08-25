@@ -9,7 +9,7 @@
 .cart__container {
   width: 100%;
   height: 20%;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 2px solid rgba(255, 192, 16, 0.7);
   border-radius: 10px;
   display: flex;
   justify-content: space-around;
@@ -28,20 +28,28 @@
 
 .cart__games-box {
   width: 100%;
+  height: 110px;
+  display: grid;
+  grid-template-columns: 1fr 0.02fr;
+  border-bottom: 2px solid rgba(255, 192, 16, 0.4);
+}
+
+.cart__games-container {
+  width: 90%;
   color: #ffffffc7;
   display: flex;
   justify-content: space-between;
-  border: 1px solid rgba(255, 255, 255, 0.7);
-  border-radius: 10px;
+  align-items: center;
+  margin-left: 40px;
 }
 
-.cart_btn-order {
+.cart__btn-order {
   text-align: center;
   padding-bottom: 20px;
   padding-top: 20px;
 }
 
-.cart_btn-order button {
+.cart__btn-order button {
   font-family: 'Teko', sans-serif;
   font-size: 25px;
   font-weight: 500;
@@ -51,12 +59,40 @@
   color: #FFF;
   text-transform: uppercase;
   background: none;
-  border: 1px solid #ffc010;
+  border: 1px solid rgba(255, 192, 16, 0.7);
   cursor: pointer;
 }
 
-.cart_btn-order button:hover {
+.cart__btn-order button:hover {
   background: #ffc010;
   font-weight: 500;
   transition: 0.5s ease;
+}
+
+.cart__btn-amount {
+  display: flex;
+  justify-content: space-between;
+  width: 4rem;
+}
+
+.cart__games-title {
+  width: 7em;
+  text-align: center;
+}
+
+.cart__btn-close {
+  display: flex;
+  align-items: center;
+  color: #ffffffc7;
+}
+
+.cart__btn-order-title{
+  font-family: 'Teko', sans-serif;
+  letter-spacing: 1.4px;
+  font-size: 20px;
+  color: #ffffffc7;
+}
+
+select {
+  border-radius: 10px;
 }

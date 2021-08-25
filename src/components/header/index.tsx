@@ -8,19 +8,11 @@ import AuthorizedUser from "@/components/loginization/authorizedUser";
 import UnauthorizedUser from "@/components/loginization/unauthorizedUser";
 import { Routes } from "@/constants/Routes";
 import { getTargetPageAC } from "@/redux/user-reducer";
-import { CgShoppingCart, TiArrowSortedDown, TiArrowSortedUp } from "react-icons/all";
-
-export type RootStateType = {
-  isLoggedIn: boolean;
-  userName: string;
-  userId: number;
-  userPassword: string;
-  cart: [];
-};
+import { GiShoppingCart, TiArrowSortedDown, TiArrowSortedUp } from "react-icons/all";
 
 function Header(): JSX.Element {
-  const authorizedUser = useSelector((state: RootStateType) => state.isLoggedIn);
-  const cart = useSelector((state: RootStateType) => state.cart);
+  const authorizedUser = useSelector((state) => state.userPage.isLoggedIn);
+  const cart = useSelector((state) => state.cartPage.cart);
   const dispatch = useDispatch();
 
   const [isDropDownOpen, setIsDropDownOpen] = useState(false);
@@ -58,11 +50,11 @@ function Header(): JSX.Element {
           <NavLink to={Routes.ABOUT} activeClassName="header_nav-activeLink">
             About
           </NavLink>
-          <NavLink to={Routes.CART} activeClassName="header_nav-activeLink">
-            <CgShoppingCart />
-           {/* {cart.length}*/}
-          </NavLink>
         </nav>
+        <NavLink to={Routes.CART} className="header__cart-btn">
+          <GiShoppingCart />
+          <span>{cart.length}</span>
+        </NavLink>
       </div>
     </header>
   );

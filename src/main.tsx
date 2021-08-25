@@ -12,7 +12,7 @@ import About from "@/components/about";
 import Footer from "@/components/footer";
 import ChosenCategory from "@/components/homePage/chooseCategory";
 import Products from "@/components/products";
-import CartPage from "@/components/products/cartPage/cartPage";
+import CartPage from "@/components/cartPage/cartPage";
 import { Routes } from "./constants/Routes";
 import someTypeScript from "./someTypeScript";
 import Header from "./components/header";
@@ -46,7 +46,7 @@ class AppContainer extends Component<AppProps, AppState> {
 
     store.subscribe(() => {
       this.setState({
-        authorizedUser: store.getState().isLoggedIn,
+        authorizedUser: store.getState().userPage.isLoggedIn,
       });
     });
   }
@@ -58,7 +58,7 @@ class AppContainer extends Component<AppProps, AppState> {
   }
 
   redirectOnChoosenPage(component: JSX.Element) {
-    if (store.getState().isLoggedIn) {
+    if (store.getState().userPage.isLoggedIn) {
       return component;
     }
     return <Redirect to={Routes.SIGN_IN} />;
@@ -86,7 +86,7 @@ class AppContainer extends Component<AppProps, AppState> {
                   {this.redirectOnChoosenPage(<CartPage />)}
                 </Route>
                 <Route exact path={Routes.SIGN_UP}>
-                  {store.getState().isLoggedIn ? (
+                  {store.getState().userPage.isLoggedIn ? (
                     <Redirect to={Routes.PROFILE_PAGE} />
                   ) : (
                     <Modal>
@@ -95,8 +95,8 @@ class AppContainer extends Component<AppProps, AppState> {
                   )}
                 </Route>
                 <Route exact path={Routes.SIGN_IN}>
-                  {store.getState().isLoggedIn ? (
-                    <Redirect to={store.getState().chosenLocation} />
+                  {store.getState().userPage.isLoggedIn ? (
+                    <Redirect to={store.getState().userPage.chosenLocation} />
                   ) : (
                     <Modal>
                       <SignIn />
