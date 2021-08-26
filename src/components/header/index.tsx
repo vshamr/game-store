@@ -12,7 +12,7 @@ import { GiShoppingCart, TiArrowSortedDown, TiArrowSortedUp } from "react-icons/
 
 function Header(): JSX.Element {
   const authorizedUser = useSelector((state) => state.userPage.isLoggedIn);
-  const cart = useSelector((state) => state.cartPage.cart);
+  const cart = useSelector((state) => state.cartPage.carts);
   const dispatch = useDispatch();
 
   const [isDropDownOpen, setIsDropDownOpen] = useState(false);

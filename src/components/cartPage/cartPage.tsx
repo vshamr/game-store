@@ -8,7 +8,7 @@ import "./styles.css";
 
 const CartPage: React.FC = () => {
   const dispatch = useDispatch();
-  const cart = useSelector((state) => state.cartPage.cart);
+  const cart = useSelector((state) => state.cartPage.carts);
 
   let itemsPrice = 0;
   const [itemCount, setItemCount] = useState(1);
@@ -23,10 +23,11 @@ const CartPage: React.FC = () => {
   if (cart.length === 0) {
     return <h3 className="cart__title">Cart is empty</h3>;
   }
+
   return (
     <div className="cart__box">
       <div className="cart__container">
-        <p>Name</p>
+        <p>Game</p>
         <p>Platform</p>
         <p>Order date</p>
         <p>Amount</p>
@@ -39,7 +40,10 @@ const CartPage: React.FC = () => {
           return (
             <div className="cart__games-box" key={index}>
               <div className="cart__games-container">
-                <div className="cart__games-title">{games.title}</div>
+                <div className="cart__games-category">
+                    <img className="cart__games-img" src={games.img} alt={games.title} />
+                    <div className="cart__games-title"> {games.title}</div>
+                </div>
                 <div>
                   <select>
                     <option>PC</option>
@@ -59,7 +63,7 @@ const CartPage: React.FC = () => {
                   </p>
                   <p>{itemCount}</p>
                   <p>
-                    <TiMinus onClick={() => setItemCount(itemCount > 0 && itemCount - 1)} />
+                    <TiMinus onClick={() => setItemCount(itemCount === 0 ? itemCount - 1 : 1)} />
                   </p>
                 </div>
                 <div>
@@ -76,7 +80,7 @@ const CartPage: React.FC = () => {
           <p className="cart__btn-order-title">Total: {itemsPrice}$</p>
           <button
             onClick={async () => {
-              const response = await axios.post(`http://localhost:3000/order`, { cart });
+              const response = await axios.post(`http://localhost:3000/order`, { carts: cart });
               alert(response.data);
             }}
           >

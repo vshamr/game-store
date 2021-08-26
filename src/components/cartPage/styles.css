@@ -28,19 +28,19 @@
 
 .cart__games-box {
   width: 100%;
-  height: 110px;
+  height: 130px;
+  padding-left: 30px;
+  padding-right: 30px;
   display: grid;
   grid-template-columns: 1fr 0.02fr;
   border-bottom: 2px solid rgba(255, 192, 16, 0.4);
 }
 
 .cart__games-container {
-  width: 90%;
   color: #ffffffc7;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1.4fr 1.2fr 1.2fr 1.2fr 0.4fr;
   align-items: center;
-  margin-left: 40px;
 }
 
 .cart__btn-order {
@@ -50,13 +50,13 @@
 }
 
 .cart__btn-order button {
-  font-family: 'Teko', sans-serif;
+  font-family: "Teko", sans-serif;
   font-size: 25px;
   font-weight: 500;
   letter-spacing: 1.4px;
   padding: 0.4rem 3.5rem;
   border-radius: 10px;
-  color: #FFF;
+  color: #fff;
   text-transform: uppercase;
   background: none;
   border: 1px solid rgba(255, 192, 16, 0.7);
@@ -75,9 +75,22 @@
   width: 4rem;
 }
 
+.cart__games-category {
+  width: 250px;
+  display: flex;
+  align-items: center;
+}
+
+.cart__games-img {
+  border-radius: 10px;
+  width: 95px;
+  height: 100px;
+}
+
 .cart__games-title {
-  width: 7em;
+  width: 8em;
   text-align: center;
+  padding-left: 20px;
 }
 
 .cart__btn-close {
@@ -86,8 +99,8 @@
   color: #ffffffc7;
 }
 
-.cart__btn-order-title{
-  font-family: 'Teko', sans-serif;
+.cart__btn-order-title {
+  font-family: "Teko", sans-serif;
   letter-spacing: 1.4px;
   font-size: 20px;
   color: #ffffffc7;
@@ -95,4 +108,30 @@
 
 select {
   border-radius: 10px;
+}
+
+@media (max-width: 1300px) {
+  .cart__games-container {
+    grid-template-columns: 1.2fr 1.2fr 1.2fr 1.2fr 0.4fr;
+  }
+  .cart__games-category {
+    width: 180px;
+  }
+  .cart__games-img {
+    width: 80px;
+  }
+  .cart__games-title {
+    padding-left: 5px;
+  }
+}
+@media (max-width: 1156px) {
+  .cart__games-box {
+    padding-left: 5px;
+  }
+  .cart__games-category {
+    width: 100px;
+  }
+  .cart__games-img {
+    display: none;
+  }
 }

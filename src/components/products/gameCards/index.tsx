@@ -6,7 +6,7 @@ import { setAddItemToCart } from "@/redux/cart-reducer";
 
 type GameCardsType = {
   game: {
-    img: any;
+    img: string;
     title: string;
     price: string;
     descr: string;
