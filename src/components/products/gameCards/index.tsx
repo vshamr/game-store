@@ -1,13 +1,26 @@
+import { useDispatch } from "react-redux";
+import { GiShoppingCart } from "react-icons/all";
+
 import "./styles.css";
+import { setAddItemToCart } from "@/redux/cart-reducer";
 
 type GameCardsType = {
-  img: any;
-  title: string;
-  price: string;
-  descr: string;
+  game: {
+    img: string;
+    title: string;
+    price: string;
+    descr: string;
+  };
 };
 
-function GameCards({ img, title, price, descr }: GameCardsType) {
+function GameCards({ game }: GameCardsType): JSX.Element {
+  const dispatch = useDispatch();
+  const { img, title, price, descr } = game;
+
+  function dispatchItem() {
+    dispatch(setAddItemToCart(game));
+  }
+
   return (
     <div className="gameCards">
       <div className="gameCards_content">
@@ -16,7 +29,9 @@ function GameCards({ img, title, price, descr }: GameCardsType) {
       </div>
       <div className="gameCards-title">
         <h4>{title}</h4>
-        <p>{price}</p>
+        <p>
+          ${price} <GiShoppingCart onClick={dispatchItem} />
+        </p>
       </div>
     </div>
   );

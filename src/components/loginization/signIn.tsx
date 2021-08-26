@@ -10,7 +10,7 @@ import { Routes } from "@/constants/Routes";
 import { InputText } from "@/components/loginization/inputText";
 import Warnings from "@/components/loginization/warnings";
 import { signInShema } from "@/constants/schemaValidation";
-import { logInAC, setUserNameAC } from "@/redux/reducer";
+import { logInAC, setUserNameAC } from "@/redux/user-reducer";
 
 export interface PersonInterface {
   id: number;
@@ -25,10 +25,10 @@ function SignIn() {
   const formik = useFormik({
     initialValues: {
       login: "",
-      password: ""
+      password: "",
     },
     validationSchema: signInShema,
-    onSubmit:async (values) => {
+    onSubmit: async (values) => {
       try {
         const data = await fetch(urlUsers);
         const response = await data.json();
@@ -41,38 +41,47 @@ function SignIn() {
           throw new Error("Wrong password");
         }
         dispatch(logInAC());
-        dispatch(setUserNameAC(values.login))
+        dispatch(setUserNameAC(values.login));
       } catch (error) {
         setWarning(error.message);
       }
-    }
+    },
   });
 
   return (
-
-      <div className="modal-container">
-        <Link to={Routes.HOME} className="modal-close">
-          <CgCloseR />
-        </Link>
-        <h3 className="modal-title">Authorization</h3>
-        {warning && <Warnings warning={warning} setWarning={setWarning} />}
-          <form onSubmit={formik.handleSubmit}>
-            <InputText label="login" type="text" name="login" value={formik.values.login} onChange={formik.handleChange}
-                       touched={formik.touched.login} error={formik.errors.login} />
-            <InputText label="password" type="password" name="password" value={formik.values.password}
-                       onChange={formik.handleChange} touched={formik.touched.password}
-                       error={formik.errors.password} />
-            <div className="modal-btn-container">
-              <button type="submit" className="modal-btn">
-                Sign In
-              </button>
-            </div>
-          </form>
-      </div>
-
+    <div className="modal-container">
+      <Link to={Routes.HOME} className="modal-close">
+        <CgCloseR />
+      </Link>
+      <h3 className="modal-title">Authorization</h3>
+      {warning && <Warnings warning={warning} setWarning={setWarning} />}
+      <form onSubmit={formik.handleSubmit}>
+        <InputText
+          label="login"
+          type="text"
+          name="login"
+          value={formik.values.login}
+          onChange={formik.handleChange}
+          touched={formik.touched.login}
+          error={formik.errors.login}
+        />
+        <InputText
+          label="password"
+          type="password"
+          name="password"
+          value={formik.values.password}
+          onChange={formik.handleChange}
+          touched={formik.touched.password}
+          error={formik.errors.password}
+        />
+        <div className="modal-btn-container">
+          <button type="submit" className="modal-btn">
+            Sign In
+          </button>
+        </div>
+      </form>
+    </div>
   );
 }
 
 export default SignIn;
-
-

@@ -57,7 +57,7 @@ function HomePage(): JSX.Element {
       </h2>
       <div className="gameCards_container">
         {games.map((game: Game) => (
-          <GameCards key={game.id} {...game} />
+          <GameCards key={game.id} game={game} />
         ))}
       </div>
       <NewGames newGames={newGames} />

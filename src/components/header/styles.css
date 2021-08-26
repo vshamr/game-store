@@ -22,6 +22,11 @@
   right: 0;
 }
 
+.header-cart {
+  font-size: 30px;
+  color: #ffffffc7;
+}
+
 .header_btn-signup {
   border: 1px solid #ffffffc7;
   border-radius: 6px;
@@ -67,6 +72,22 @@ span {
   background: rgba(255, 192, 16, 0.9);
 }
 
+.header__cart-btn {
+  position: absolute;
+  right: 30px;
+}
+
+.header__cart-btn svg {
+  color: #ffc010;
+  font-size: 38px;
+}
+
+.header__cart-btn span {
+  color: #ffffffc7;
+  position: relative;
+  top: -10px;
+}
+
 .header_authorization-item {
   height: 100%;
   width: 190px;
@@ -92,11 +113,21 @@ span {
 @media (max-width: 1000px) {
   .header_menu {
     display: block;
+    position: relative;
   }
 
   .header_nav-menu {
     width: 100%;
     justify-content: space-around;
+  }
+
+  .header__cart-btn {
+    right: 10px;
+    top: 14px;
+  }
+
+  .header__cart-btn svg {
+    font-size: 30px;
   }
 }
 
@@ -106,12 +137,15 @@ span {
     display: flex;
     justify-content: space-between;
   }
+
   .header_top-logo h1 {
     margin-left: 20px;
   }
+
   .header_nav-menu {
-    justify-content: space-between;
+    justify-content: space-around;
   }
+
   .header_authorization-item {
     margin-top: 15px;
     width: 130px;
@@ -125,24 +159,33 @@ span {
     display: block;
     min-height: 90px;
   }
+
   .header_top-logo h1 {
     text-align: center;
     margin: 0;
     padding-top: 10px;
   }
+
   .header_btn-authorization {
     min-width: 100%;
     justify-content: center;
     position: relative;
   }
+
   .header_btn-authorization a {
     margin: 0 10px 0 15px;
   }
+
   .header_btn-signup {
     border: none;
   }
+
   .header_authorization-item {
     margin-top: 15px;
+  }
+
+  .header__cart-btn {
+    top: -40px;
   }
 }
 

@@ -10,7 +10,7 @@ import { Routes, serverError } from "@/constants/Routes";
 import { InputText } from "@/components/loginization/inputText";
 import Warnings from "@/components/loginization/warnings";
 import { signUpShema } from "@/constants/schemaValidation";
-import { logInAC, setUserNameAC } from "@/redux/reducer";
+import { logInAC, setUserNameAC } from "@/redux/user-reducer";
 
 function SignUp() {
   const dispatch = useDispatch();
