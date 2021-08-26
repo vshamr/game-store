@@ -7,8 +7,8 @@ import Categories from "@/components/homePage/categories";
 import SearchBar from "@/components/searchBar";
 import Loader from "@/components/searchBar/loader";
 import GameCards from "@/components/products/gameCards";
-import Filter from "@/components/products/Filter/filter";
-import { ParamsAges, ParamsCategory, ParamsGenres } from "@/components/products/Filter/filterData";
+import Filter from "@/components/products/filter/filter";
+import { ParamsAges, ParamsCategory, ParamsGenres } from "@/components/products/filter/filterData";
 
 function getRequestUrl(genre: string, age: string | number, category: string, searchingText: string) {
   let location = "http://localhost:3000/games?";

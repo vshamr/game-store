@@ -10,11 +10,10 @@ import Warnings from "@/components/loginization/warnings";
 import { InputText } from "@/components/loginization/inputText";
 import Modal from "@/components/modal";
 import ChangePassword from "@/components/profilePage/changePassword";
-import { RootStateType } from "@/components/header";
 
 const ProfilePage = () => {
   const dispatch = useDispatch();
-  const userName = useSelector((state: RootStateType) => state.userName);
+  const userName = useSelector(state => state.userPage.userName);
   const [warning, setWarning] = useState("");
 
   const [showPasswordModal, setShowPasswordModal] = useState(false);

@@ -16,6 +16,7 @@ import CartPage from "@/components/cartPage/cartPage";
 import { Routes } from "./constants/Routes";
 import someTypeScript from "./someTypeScript";
 import Header from "./components/header";
+import EditPage from "@/components/editPage";
 
 const Modal = lazy(() => import("./components/modal"));
 const SignIn = lazy(() => import("./components/loginization/signIn"));

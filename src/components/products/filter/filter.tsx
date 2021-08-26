@@ -1,5 +1,5 @@
 import "./styles.css";
-import { ParamsAges, ParamsCategory, ParamsGenres } from "@/components/products/Filter/filterData";
+import { ParamsAges, ParamsCategory, ParamsGenres } from "@/components/products/filter/filterData";
 
 type FilterPropsType = {
   setAge: (age: ParamsAges) => void;

@@ -32,6 +32,7 @@ function GameCards({ game }: GameCardsType): JSX.Element {
         <p>
           ${price} <GiShoppingCart onClick={dispatchItem} />
         </p>
+        <button onClick={() => alert('edit')}>Edit</button>
       </div>
     </div>
   );

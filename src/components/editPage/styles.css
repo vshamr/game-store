@@ -1,0 +1,56 @@
+.edit {
+  position: relative;
+  width: 700px;
+  min-height: 600px;
+  left: 35%;
+  border-radius: 10px;
+  background: rgba(26, 26, 26, 0.9);
+}
+
+.edit__title {
+  color: #ffc010;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.edit__container {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  align-items: center;
+}
+
+.edit__img {
+  padding-left: 40px;
+  position: relative;
+  top: -115px;
+}
+
+.edit__info {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  padding-left: 40px;
+}
+
+.edit__info span {
+  width: 84px;
+}
+
+.edit__info input,
+textarea {
+  width: 65%;
+}
+
+.edit__info label {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 20px;
+}
+
+.edit__info textarea {
+  height: 100px;
+  resize: none;
+}
+
+
