@@ -16,6 +16,7 @@ import CartPage from "@/components/cartPage/cartPage";
 import { Routes } from "./constants/Routes";
 import someTypeScript from "./someTypeScript";
 import Header from "./components/header";
+import ModalEditItem from "@/components/editPage/modalEditItem";
 import EditPage from "@/components/editPage";
 
 const Modal = lazy(() => import("./components/modal"));
@@ -72,6 +73,7 @@ class AppContainer extends Component<AppProps, AppState> {
           <Suspense fallback={<div>Loading...</div>}>
             <Provider store={store}>
               <Header />
+              <EditPage />
               <Switch>
                 <Route exact path={Routes.HOME} render={() => <HomePage />} />
                 <Route exact path={Routes.PRODUCTS}>
