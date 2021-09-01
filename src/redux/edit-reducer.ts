@@ -1,3 +1,5 @@
+import { Game } from "@/constants/interfaces";
+
 const MODAL_EDIT = "MODAL-EDIT";
 
 const initialState = {
@@ -19,7 +21,7 @@ export const editReducer = (state: InitialStateType = initialState, action: Acti
   }
 };
 
-export const activeModalEdit = (value: boolean) => ({ type: MODAL_EDIT, value });
+export const activeModalEdit = (value: Game) => ({ type: MODAL_EDIT, value });
 
 export type ModalEditActionType = ReturnType<typeof activeModalEdit>;
 type ActionTypes = ModalEditActionType;

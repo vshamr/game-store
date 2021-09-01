@@ -3,6 +3,8 @@ import { GiShoppingCart } from "react-icons/all";
 
 import "./styles.css";
 import { setAddItemToCart } from "@/redux/cart-reducer";
+import ModalEditItem from "@/components/editPage/modalEditItem";
+import { activeModalEdit } from "@/redux/edit-reducer";
 
 type GameCardsType = {
   game: {
@@ -15,10 +17,15 @@ type GameCardsType = {
 
 function GameCards({ game }: GameCardsType): JSX.Element {
   const dispatch = useDispatch();
+  const admin = ADMIN_CHECKOUT();
   const { img, title, price, descr } = game;
 
   function dispatchItem() {
     dispatch(setAddItemToCart(game));
+  }
+  function editItem() {
+    dispatch(activeModalEdit(game));
+
   }
 
   return (
@@ -32,7 +39,7 @@ function GameCards({ game }: GameCardsType): JSX.Element {
         <p>
           ${price} <GiShoppingCart onClick={dispatchItem} />
         </p>
-        <button onClick={() => alert('edit')}>Edit</button>
+        <button onClick={() => <ModalEditItem />}>Edit</button>
       </div>
     </div>
   );

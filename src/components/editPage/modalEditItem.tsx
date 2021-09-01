@@ -2,14 +2,19 @@ import { useSelector } from "react-redux";
 
 import EditPage from "@/components/editPage/index";
 import { getUserById } from "@/api/editGameCard";
+import Modal from "@/components/modal";
 
 function ModalEditItem(): JSX.Element {
   const id = useSelector((state) => state.editPage.value);
   const data = getUserById(id);
 
-  const editModal = data.map((data) => <EditPage key={data.key} data={data} />);
+  const editModal = data.map((game) => (
+    <Modal>
+      <EditPage key={game.id} game={game} />{" "}
+    </Modal>
+  ));
 
-  return <div className="wrapper-modal-window">{editModal}</div>;
+  return <div>{editModal}</div>;
 }
 
 export default ModalEditItem;

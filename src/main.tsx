@@ -73,7 +73,6 @@ class AppContainer extends Component<AppProps, AppState> {
           <Suspense fallback={<div>Loading...</div>}>
             <Provider store={store}>
               <Header />
-              <EditPage />
               <Switch>
                 <Route exact path={Routes.HOME} render={() => <HomePage />} />
                 <Route exact path={Routes.PRODUCTS}>
