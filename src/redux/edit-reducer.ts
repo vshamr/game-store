@@ -1,19 +1,34 @@
 import { Game } from "@/constants/interfaces";
 
-const MODAL_EDIT = "MODAL-EDIT";
+const CURRENT_GAME_CARD = "CURRENT-GAME-CARD";
+const ADD_GAME = "ADD-GAME";
+const GET_PRODUCTS_ARRAY = "GET-PRODUCTS-ARRAY";
 
 const initialState = {
-  value: false,
+  currentGameCard: null,
+  products: [],
 };
 
 type InitialStateType = typeof initialState;
 
-export const editReducer = (state: InitialStateType = initialState, action: ActionTypes) => {
+export const editReducer = (state: InitialStateType = initialState, action) => {
   switch (action.type) {
-    case "MODAL-EDIT": {
+    case "CURRENT-GAME-CARD": {
       return {
         ...state,
-        value: !state.value,
+        currentGameCard: action.payload,
+      };
+    }
+    case "ADD-GAME": {
+      return {
+        ...state,
+        products: [...state.products, state.products.push(action.payload)],
+      };
+    }
+    case "GET-PRODUCTS-ARRAY": {
+      return {
+        ...state,
+        products: action.payload,
       };
     }
     default:
@@ -21,7 +36,6 @@ export const editReducer = (state: InitialStateType = initialState, action: Acti
   }
 };
 
-export const activeModalEdit = (value: Game) => ({ type: MODAL_EDIT, value });
-
-export type ModalEditActionType = ReturnType<typeof activeModalEdit>;
-type ActionTypes = ModalEditActionType;
+export const getCurrentGameCard = (item: Game) => ({ type: CURRENT_GAME_CARD, payload: item });
+export const addGameAC = (payload) => ({ type: ADD_GAME, payload: { ...payload } });
+export const getProductsArray = (payload) => ({ type: GET_PRODUCTS_ARRAY, payload: [...payload] });

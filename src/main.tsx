@@ -87,6 +87,7 @@ class AppContainer extends Component<AppProps, AppState> {
                 <Route exact path={Routes.CART}>
                   {this.redirectOnChoosenPage(<CartPage />)}
                 </Route>
+
                 <Route exact path={Routes.SIGN_UP}>
                   {store.getState().userPage.isLoggedIn ? (
                     <Redirect to={Routes.PROFILE_PAGE} />

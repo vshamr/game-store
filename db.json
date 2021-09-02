@@ -276,14 +276,9 @@
       "id": 1
     },
     {
-      "login": "ssss",
-      "password": "ssssss",
+      "login": "admin",
+      "password": "qqqqqq",
       "id": 2
-    },
-    {
-      "login": "q@q.ru",
-      "password": "zzzzzz",
-      "id": 3
     }
   ]
 }

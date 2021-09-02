@@ -8,7 +8,6 @@ import SearchBar from "@/components/searchBar";
 import Loader from "@/components/searchBar/loader";
 import NewGames from "@/components/homePage/newGames/newGames";
 import { Game } from "@/constants/interfaces";
-import EditPage from "@/components/editPage";
 
 function HomePage(): JSX.Element {
   const [newGames, setNewGames] = useState([]);

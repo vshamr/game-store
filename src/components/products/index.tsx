@@ -9,6 +9,7 @@ import Loader from "@/components/searchBar/loader";
 import GameCards from "@/components/products/gameCards";
 import Filter from "@/components/products/filter/filter";
 import { ParamsAges, ParamsCategory, ParamsGenres } from "@/components/products/filter/filterData";
+import EditPage from "@/components/editPage";
 
 function getRequestUrl(genre: string, age: string | number, category: string, searchingText: string) {
   let location = "http://localhost:3000/games?";

@@ -1,10 +1,12 @@
 import { useDispatch } from "react-redux";
-import { GiShoppingCart } from "react-icons/all";
+import { GiShoppingCart, GrEdit } from "react-icons/all";
 
 import "./styles.css";
 import { setAddItemToCart } from "@/redux/cart-reducer";
-import ModalEditItem from "@/components/editPage/modalEditItem";
-import { activeModalEdit } from "@/redux/edit-reducer";
+import { getCurrentGameCard } from "@/redux/edit-reducer";
+import EditPage from "@/components/editPage";
+import { useState } from "react";
+import Modal from "@/components/modal";
 
 type GameCardsType = {
   game: {
@@ -17,32 +19,59 @@ type GameCardsType = {
 
 function GameCards({ game }: GameCardsType): JSX.Element {
   const dispatch = useDispatch();
-  const admin = ADMIN_CHECKOUT();
   const { img, title, price, descr } = game;
+  const [showModal, setShowModal] = useState(false);
 
   function dispatchItem() {
     dispatch(setAddItemToCart(game));
   }
-  function editItem() {
-    dispatch(activeModalEdit(game));
 
+  function showModalAndDispatch() {
+    dispatch(getCurrentGameCard(game));
+    setShowModal(!showModal);
   }
 
-  return (
-    <div className="gameCards">
-      <div className="gameCards_content">
-        <img src={img} alt={title} />
-        <div className="gameCards-about">{descr}</div>
+  function modalRenderer() {
+    showModal ? <EditPage /> : null;
+  }
+
+  const login = localStorage.getItem("login");
+
+  if (login === "admin") {
+    return (
+      <div>
+        {modalRenderer()}
+        <div className="gameCards">
+          <div className="gameCards_content">
+            <img src={img} alt={title} />
+            <div className="gameCards-about">{descr}</div>
+          </div>
+          <div className="gameCards-title">
+            <h4>{title}</h4>
+            <p>
+              ${price} <GiShoppingCart onClick={dispatchItem} />
+            </p>
+            <GrEdit onClick={showModalAndDispatch} />
+          </div>
+        </div>
       </div>
-      <div className="gameCards-title">
-        <h4>{title}</h4>
-        <p>
-          ${price} <GiShoppingCart onClick={dispatchItem} />
-        </p>
-        <button onClick={() => <ModalEditItem />}>Edit</button>
+    )
+  } else {
+    return (
+      <div className="gameCards">
+        <div className="gameCards_content">
+          <img src={img} alt={title} />
+          <div className="gameCards-about">{descr}</div>
+        </div>
+        <div className="gameCards-title">
+          <h4>{title}</h4>
+          <p>
+            ${price} <GiShoppingCart onClick={dispatchItem} />
+          </p>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default GameCards;
