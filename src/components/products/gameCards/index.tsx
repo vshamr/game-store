@@ -6,7 +6,6 @@ import { setAddItemToCart } from "@/redux/cart-reducer";
 import { getCurrentGameCard } from "@/redux/edit-reducer";
 import EditPage from "@/components/editPage";
 import { useState } from "react";
-import Modal from "@/components/modal";
 
 type GameCardsType = {
   game: {
@@ -22,6 +21,9 @@ function GameCards({ game }: GameCardsType): JSX.Element {
   const { img, title, price, descr } = game;
   const [showModal, setShowModal] = useState(false);
 
+  const login = localStorage.getItem("login");
+  const isAdmin = login === "admin";
+
   function dispatchItem() {
     dispatch(setAddItemToCart(game));
   }
@@ -32,32 +34,14 @@ function GameCards({ game }: GameCardsType): JSX.Element {
   }
 
   function modalRenderer() {
-    showModal ? <EditPage /> : null;
+    return showModal ? <EditPage /> : null;
   }
 
-  const login = localStorage.getItem("login");
+  return (
+    <div>
+      {/* {isAdmin && */}
+      <div>{modalRenderer()}</div>
 
-  if (login === "admin") {
-    return (
-      <div>
-        {modalRenderer()}
-        <div className="gameCards">
-          <div className="gameCards_content">
-            <img src={img} alt={title} />
-            <div className="gameCards-about">{descr}</div>
-          </div>
-          <div className="gameCards-title">
-            <h4>{title}</h4>
-            <p>
-              ${price} <GiShoppingCart onClick={dispatchItem} />
-            </p>
-            <GrEdit onClick={showModalAndDispatch} />
-          </div>
-        </div>
-      </div>
-    )
-  } else {
-    return (
       <div className="gameCards">
         <div className="gameCards_content">
           <img src={img} alt={title} />
@@ -68,10 +52,12 @@ function GameCards({ game }: GameCardsType): JSX.Element {
           <p>
             ${price} <GiShoppingCart onClick={dispatchItem} />
           </p>
+          {/* {isAdmin && */}
+          <GrEdit onClick={showModalAndDispatch} />
         </div>
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default GameCards;

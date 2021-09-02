@@ -85,8 +85,7 @@ const ProfilePage = () => {
               </button>
               {showPasswordModal && (
                 <Modal>
-                  {" "}
-                  <ChangePassword setShowPasswordModal={setShowPasswordModal} />{" "}
+                  <ChangePassword setShowPasswordModal={setShowPasswordModal} />
                 </Modal>
               )}
             </div>

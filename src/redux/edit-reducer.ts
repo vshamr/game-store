@@ -22,7 +22,7 @@ export const editReducer = (state: InitialStateType = initialState, action) => {
     case "ADD-GAME": {
       return {
         ...state,
-        products: [...state.products, state.products.push(action.payload)],
+        products: [...state.products, state.products.unshift(action.payload)],
       };
     }
     case "GET-PRODUCTS-ARRAY": {
@@ -37,5 +37,5 @@ export const editReducer = (state: InitialStateType = initialState, action) => {
 };
 
 export const getCurrentGameCard = (item: Game) => ({ type: CURRENT_GAME_CARD, payload: item });
-export const addGameAC = (payload) => ({ type: ADD_GAME, payload: { ...payload } });
-export const getProductsArray = (payload) => ({ type: GET_PRODUCTS_ARRAY, payload: [...payload] });
+export const addGameAC = (item: Game) => ({ type: ADD_GAME, payload: { ...item } });
+export const getProductsArray = (item: Game) => ({ type: GET_PRODUCTS_ARRAY, payload: [...item] });

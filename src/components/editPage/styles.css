@@ -1,10 +1,10 @@
 .edit {
-  position: relative;
+  position: absolute;
   width: 700px;
   min-height: 600px;
-  left: 35%;
   border-radius: 10px;
-  background: rgba(26, 26, 26, 0.9);
+  background: #20132a;
+  z-index: 2;
 }
 
 .edit__title {
@@ -12,18 +12,20 @@
   text-align: center;
   padding-top: 30px;
   padding-bottom: 30px;
+  font-size: 25px;
 }
 
 .edit__container {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
-  align-items: center;
+}
+
+.edit__container img {
+  border-radius: 10px;
 }
 
 .edit__img {
-  padding-left: 40px;
-  position: relative;
-  top: -115px;
+  padding-left: 43px;
 }
 
 .edit__info {
@@ -40,12 +42,17 @@
 .edit__info input,
 textarea {
   width: 65%;
+  margin-right: 15px;
+  border: 2px solid #2d3547;
+  border-radius: 6px;
+  padding: 7px 10px;
 }
 
 .edit__info label {
   display: flex;
   justify-content: space-between;
-  padding-bottom: 20px;
+  padding-bottom: 15px;
+  color: #ffffffc7;
 }
 
 .edit__info textarea {
@@ -53,4 +60,41 @@ textarea {
   resize: none;
 }
 
+.edit__btn-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 10px;
+}
 
+.edit__btn-container button {
+  font-family: "Teko", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 1.4px;
+  padding: 0.3rem 2.7rem;
+  border-radius: 10px;
+  color: #fff;
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 192, 16, 0.7);
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+.submit-btn {
+  background: #ffc010;
+}
+
+.submit-btn:hover {
+  background: none;
+  transition: 0.5s ease;
+}
+
+.delete-btn {
+  background: none;
+}
+
+.delete-btn:hover {
+  background: #ffc010;
+  transition: 0.5s ease;
+}

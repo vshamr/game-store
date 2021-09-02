@@ -41,8 +41,8 @@ const CartPage: React.FC = () => {
             <div className="cart__games-box" key={index}>
               <div className="cart__games-container">
                 <div className="cart__games-category">
-                    <img className="cart__games-img" src={games.img} alt={games.title} />
-                    <div className="cart__games-title"> {games.title}</div>
+                  <img className="cart__games-img" src={games.img} alt={games.title} />
+                  <div className="cart__games-title"> {games.title}</div>
                 </div>
                 <div>
                   <select>

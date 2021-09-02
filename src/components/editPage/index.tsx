@@ -75,28 +75,28 @@ const EditPage = (): JSX.Element => {
       gameAge,
       gameCategory,
     });
-    dispatch(getProductsArray(response.data));
     alert("Game has been edited");
+    dispatch(getProductsArray(response.data));
   };
 
   const deleteGame = async () => {
-    confirm(`Are you sure  you want to delete the product ${gameTitle}?`).then(async (result) => {
-      if (result === true) {
-        await axios.delete(`http://localhost:3001/product/${currentGameCard.id}`).then((response) => {
-          alert("Deleted!");
-          dispatch(getProductsArray(response.data));
-        });
-      }
-    });
+    const isDelete = confirm(`Are you sure  you want to delete the product ${gameTitle}?`);
+    if (isDelete) {
+      await axios.delete(`http://localhost:3000/games/${currentGameCard.id}`).then((response) => {
+        alert("Deleted!");
+        dispatch(getProductsArray(response.data));
+      });
+    }
   };
 
   return (
     <div className="edit">
-      <CgCloseR onClick={() => setShowModal(!showModal)} />
+      <div className="modal-close">
+        <CgCloseR onClick={() => setShowModal(!showModal)} />
+      </div>
       <h2 className="edit__title">Edit Card</h2>
       <div className="edit__container">
         <div className="edit__img">
-          <p>Card image</p>
           {displayImage()}
         </div>
         <div className="edit__info">
@@ -129,26 +129,27 @@ const EditPage = (): JSX.Element => {
             <textarea id="descr" onChange={(e) => setGameDescr(e.target.value)} value={gameDescr} />
           </label>
         </div>
-
-        <div>
-          <button
-            type="submit"
-            onClick={() => {
-              currentGameCard === null ? addGame() : editGame();
-              setShowModal(!showModal);
-            }}
-          >
-            Submit
-          </button>
-          <button
-            onClick={() => {
-              setShowModal(!showModal);
-              deleteGame();
-            }}
-          >
-            Delete
-          </button>
-        </div>
+      </div>
+      <div className="edit__btn-container">
+        <button
+          className="submit-btn"
+          type="submit"
+          onClick={() => {
+            currentGameCard === null ? addGame() : editGame();
+            setShowModal(!showModal);
+          }}
+        >
+          Submit
+        </button>
+        <button
+          className="delete-btn"
+          onClick={() => {
+            setShowModal(!showModal);
+            deleteGame();
+          }}
+        >
+          Delete
+        </button>
       </div>
     </div>
   );
