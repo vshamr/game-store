@@ -8,11 +8,13 @@ import { addGameAC, getProductsArray } from "@/redux/edit-reducer";
 import { urlProducts } from "@/api";
 import { Game } from "@/constants/interfaces";
 
-const EditPage = (): JSX.Element => {
+type PropsType = {
+  setShowModal: Function;
+};
+
+const EditPage = ({ setShowModal }: PropsType) => {
   const dispatch = useDispatch();
   const currentGameCard = useSelector((state) => state.editPage.currentGameCard);
-
-  const [showModal, setShowModal] = useState(true);
 
   const [game, setGame] = useState<Game>({
     title: "",
@@ -63,11 +65,14 @@ const EditPage = (): JSX.Element => {
     }
   };
 
+  const closeModal = () => setShowModal(false);
+
   return (
     <div className="edit">
-      <div className="modal-close">
-        <CgCloseR onClick={() => setShowModal(!showModal)} />
-      </div>
+      <button onClick={closeModal} type="button" className="modal-close">
+        <CgCloseR />
+      </button>
+
       <h2 className="edit__title">Edit Card</h2>
       <div className="edit__container">
         <div className="edit__img">{displayImage()}</div>
@@ -141,7 +146,6 @@ const EditPage = (): JSX.Element => {
           type="submit"
           onClick={() => {
             currentGameCard === null ? addGame() : editGame();
-            setShowModal(!showModal);
           }}
         >
           Submit
@@ -149,7 +153,6 @@ const EditPage = (): JSX.Element => {
         <button
           className="delete-btn"
           onClick={() => {
-            setShowModal(!showModal);
             deleteGame();
           }}
         >

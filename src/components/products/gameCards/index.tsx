@@ -19,8 +19,8 @@ type GameCardsType = {
 function GameCards({ game }: GameCardsType): JSX.Element {
   const dispatch = useDispatch();
   const { img, title, price, descr } = game;
-  const [showModal, setShowModal] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     setIsAdmin(localStorage.getItem("login") == "\"admin\"");
@@ -37,7 +37,7 @@ function GameCards({ game }: GameCardsType): JSX.Element {
   }
 
   function modalRenderer() {
-    return showModal ? <EditPage /> : null;
+    return showModal && <EditPage setShowModal={setShowModal} />;
   }
 
   return (
