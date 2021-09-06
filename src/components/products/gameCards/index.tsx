@@ -1,8 +1,11 @@
-import { useDispatch } from "react-redux";
-import { GiShoppingCart } from "react-icons/all";
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { FiEdit3, GiShoppingCart } from "react-icons/all";
 
 import "./styles.css";
 import { setAddItemToCart } from "@/redux/cart-reducer";
+import { getCurrentGameCard } from "@/redux/edit-reducer";
+import EditPage from "@/components/editPage";
 
 type GameCardsType = {
   game: {
@@ -15,23 +18,45 @@ type GameCardsType = {
 
 function GameCards({ game }: GameCardsType): JSX.Element {
   const dispatch = useDispatch();
+  const isAdmin = useSelector((state) => state.userPage.isAdmin);
+
   const { img, title, price, descr } = game;
+  const [showModal, setShowModal] = useState(false);
 
   function dispatchItem() {
     dispatch(setAddItemToCart(game));
   }
 
+  function showModalAndDispatch() {
+    dispatch(getCurrentGameCard(game));
+    setShowModal(!showModal);
+  }
+
+  function modalRenderer() {
+    return showModal && <EditPage setShowModal={setShowModal} />;
+  }
+
   return (
-    <div className="gameCards">
-      <div className="gameCards_content">
-        <img src={img} alt={title} />
-        <div className="gameCards-about">{descr}</div>
-      </div>
-      <div className="gameCards-title">
-        <h4>{title}</h4>
-        <p>
-          ${price} <GiShoppingCart onClick={dispatchItem} />
-        </p>
+    <div>
+      {!isAdmin && modalRenderer()}
+
+      <div className="gameCards">
+        <div className="front">
+          <img src={img} alt={title} />
+          <div className="gameCards__about">
+            <h4>{title}</h4>
+            <p>${price}</p>
+          </div>
+        </div>
+        <div className="back center">
+          <div className="back-content">
+            <p className="gameCards-descr">{descr}</p>
+            <div className="gameCards-cart">
+              {!isAdmin.isAdmin && <FiEdit3 onClick={showModalAndDispatch} />}
+              <GiShoppingCart onClick={dispatchItem} />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -7,12 +7,13 @@ import ProductsDropDown from "@/components/header/drop-down";
 import AuthorizedUser from "@/components/loginization/authorizedUser";
 import UnauthorizedUser from "@/components/loginization/unauthorizedUser";
 import { Routes } from "@/constants/Routes";
-import { getTargetPageAC } from "@/redux/user-reducer";
+import { getTargetPage } from "@/redux/user-reducer";
 import { GiShoppingCart, TiArrowSortedDown, TiArrowSortedUp } from "react-icons/all";
+import { ReducersType } from "@/redux/redux-store";
 
 function Header(): JSX.Element {
-  const authorizedUser = useSelector((state) => state.userPage.isLoggedIn);
-  const cart = useSelector((state) => state.cartPage.carts);
+  const authorizedUser = useSelector((state: ReducersType) => state.userPage.isLoggedIn);
+  const cart = useSelector((state: ReducersType) => state.cartPage.carts);
   const dispatch = useDispatch();
 
   const [isDropDownOpen, setIsDropDownOpen] = useState(false);
@@ -23,7 +24,7 @@ function Header(): JSX.Element {
   const location = useLocation();
   useEffect(() => {
     if (!authorizedUser && location.pathname !== Routes.SIGN_IN) {
-      dispatch(getTargetPageAC(location.pathname));
+      dispatch(getTargetPage(location.pathname));
     }
   }, [location]);
 

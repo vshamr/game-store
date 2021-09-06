@@ -1,0 +1,100 @@
+.edit {
+  position: absolute;
+  width: 700px;
+  min-height: 600px;
+  border-radius: 10px;
+  background: #20132a;
+  z-index: 2;
+}
+
+.edit__title {
+  color: #ffc010;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  font-size: 25px;
+}
+
+.edit__container {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+}
+
+.edit__container img {
+  border-radius: 10px;
+}
+
+.edit__img {
+  padding-left: 43px;
+}
+
+.edit__info {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  padding-left: 40px;
+}
+
+.edit__info span {
+  width: 84px;
+}
+
+.edit__info input,
+textarea {
+  width: 65%;
+  margin-right: 15px;
+  border: 2px solid #2d3547;
+  border-radius: 6px;
+  padding: 7px 10px;
+}
+
+.edit__info label {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 15px;
+  color: #ffffffc7;
+}
+
+.edit__info textarea {
+  height: 100px;
+  resize: none;
+}
+
+.edit__btn-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.edit__btn-container button {
+  font-family: "Teko", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 1.4px;
+  padding: 0.3rem 2.7rem;
+  border-radius: 10px;
+  color: #fff;
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 192, 16, 0.7);
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+.submit-btn {
+  background: #ffc010;
+}
+
+.submit-btn:hover {
+  background: none;
+  transition: 0.5s ease;
+}
+
+.delete-btn {
+  background: none;
+}
+
+.delete-btn:hover {
+  background: #ffc010;
+  transition: 0.5s ease;
+}

@@ -5,10 +5,11 @@ import { CgCloseO, TiMinus, TiPlus } from "react-icons/all";
 import axios from "axios";
 
 import "./styles.css";
+import { ReducersType } from "@/redux/redux-store";
 
 const CartPage: React.FC = () => {
   const dispatch = useDispatch();
-  const cart = useSelector((state) => state.cartPage.carts);
+  const cart = useSelector((state: ReducersType) => state.cartPage.carts );
 
   let itemsPrice = 0;
   const [itemCount, setItemCount] = useState(1);
@@ -41,8 +42,8 @@ const CartPage: React.FC = () => {
             <div className="cart__games-box" key={index}>
               <div className="cart__games-container">
                 <div className="cart__games-category">
-                    <img className="cart__games-img" src={games.img} alt={games.title} />
-                    <div className="cart__games-title"> {games.title}</div>
+                  <img className="cart__games-img" src={games.img} alt={games.title} />
+                  <div className="cart__games-title"> {games.title}</div>
                 </div>
                 <div>
                   <select>

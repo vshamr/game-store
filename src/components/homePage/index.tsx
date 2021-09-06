@@ -1,7 +1,8 @@
+import { SyntheticEvent, useEffect, useState } from "react";
+
 import "../products/gameCards/styles.css";
 import GameCards from "@/components/products/gameCards";
 import Categories from "@/components/homePage/categories";
-import { SyntheticEvent, useEffect, useState } from "react";
 import useDebounce from "@/hooks/useDebounce";
 import { urlProducts } from "@/api";
 import SearchBar from "@/components/searchBar";
@@ -55,11 +56,9 @@ function HomePage(): JSX.Element {
       <h2 className="gameCards-top-title">
         <span>Top</span> games
       </h2>
-      <div className="gameCards_container">
-        {games.map((game: Game) => (
-          <GameCards key={game.id} game={game} />
-        ))}
-      </div>
+      {games.map((game: Game) => (
+        <GameCards key={game.id} game={game} />
+      ))}
       <NewGames newGames={newGames} />
     </div>
   );

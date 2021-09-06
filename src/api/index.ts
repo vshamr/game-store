@@ -4,7 +4,7 @@ export const urlUsers = `http://localhost:3000/users`;
 export const urlProducts = `http://localhost:3000/games`;
 
 export const instance = axios.create({
-  baseURL: "http://localhost:3000/"
+  baseURL: "http://localhost:3000/",
 });
 
 export const usersAPI = {

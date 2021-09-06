@@ -5,16 +5,16 @@ import { useFormik } from "formik";
 import "./styles.css";
 import { userPageShema } from "@/constants/schemaValidation";
 import { usersAPI } from "@/api";
-import { setUserNameAC, setUserProfileAC } from "@/redux/user-reducer";
+import { logIn, setUserProfile } from "@/redux/user-reducer";
 import Warnings from "@/components/loginization/warnings";
 import { InputText } from "@/components/loginization/inputText";
 import Modal from "@/components/modal";
 import ChangePassword from "@/components/profilePage/changePassword";
-import { RootStateType } from "@/components/header";
+import { ReducersType } from "@/redux/redux-store";
 
 const ProfilePage = () => {
   const dispatch = useDispatch();
-  const userName = useSelector((state: RootStateType) => state.userName);
+  const userName = useSelector((state: ReducersType) => state.userPage.userName);
   const [warning, setWarning] = useState("");
 
   const [showPasswordModal, setShowPasswordModal] = useState(false);
@@ -31,9 +31,8 @@ const ProfilePage = () => {
       try {
         const updatedUser = await usersAPI.getProfile({ ...values });
         const saveUserProfile = await usersAPI.saveProfile({ ...values });
-
-        dispatch(setUserNameAC(updatedUser.data.login));
-        dispatch(setUserProfileAC(saveUserProfile.data.values));
+        dispatch(logIn(updatedUser.data.login));
+        dispatch(setUserProfile(saveUserProfile.data.values));
       } catch (error) {
         setWarning(error.message);
       }
@@ -80,14 +79,15 @@ const ProfilePage = () => {
             </div>
             <Warnings warning={warning} setWarning={setWarning} />
             <div className="user-page_form-btn">
-              <button className="user-page-btn">Save profile</button>
-              <button className="user-page-btn" onClick={openPasswordModal}>
+              <button className="user-page-btn" type="button">
+                Save profile
+              </button>
+              <button className="user-page-btn" type="button" onClick={openPasswordModal}>
                 Change password
               </button>
               {showPasswordModal && (
                 <Modal>
-                  {" "}
-                  <ChangePassword setShowPasswordModal={setShowPasswordModal} />{" "}
+                  <ChangePassword setShowPasswordModal={setShowPasswordModal} />
                 </Modal>
               )}
             </div>
