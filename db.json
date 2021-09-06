@@ -230,12 +230,20 @@
     {
       "login": "q@q.ru",
       "password": "zzzzzz",
-      "id": 1
+      "id": 1,
+      "isAdmin": false
     },
     {
       "login": "admin",
       "password": "qqqqqq",
-      "id": 2
+      "id": 2,
+      "isAdmin": true
+    },
+    {
+      "login": "aaaa",
+      "password": "aaaaaa",
+      "isAdmin": false,
+      "id": 3
     }
   ]
 }

@@ -48,11 +48,17 @@ const EditPage = ({ setShowModal }: PropsType) => {
   };
 
   const editGame = async () => {
-    const response = await axios.put(urlProducts, {
-      game,
-    });
-    dispatch(getProductsArray(response.data.game));
-    alert("Game has been edited");
+    const isChanged = confirm(`Are you sure you want to change this game`);
+    if (isChanged) {
+      await axios
+        .put(urlProducts, {
+          game,
+        })
+        .then((response) => {
+          dispatch(getProductsArray(response.data));
+          alert("Game has been edited");
+        });
+    }
   };
 
   const deleteGame = async () => {

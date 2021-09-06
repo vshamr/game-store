@@ -8,7 +8,6 @@ import { InputText } from "@/components/loginization/inputText";
 import { setUserPasswordAC } from "@/redux/user-reducer";
 import { changePasswordShema } from "@/constants/schemaValidation";
 import { usersAPI } from "@/api";
-import { RootStateType } from "@/components/header";
 
 type ChangePasswordPropsType = {
   setShowPasswordModal: Function;
@@ -16,7 +15,7 @@ type ChangePasswordPropsType = {
 
 const ChangePassword = ({ setShowPasswordModal }: ChangePasswordPropsType) => {
   const dispatch = useDispatch();
-  const userId = useSelector((state: RootStateType) => state.userId);
+  const userId = useSelector((state) => state.userPage.userId);
   const [warning, setWarning] = useState("");
 
   const closePasswordModal = () => setShowPasswordModal(false);

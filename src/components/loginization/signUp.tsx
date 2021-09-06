@@ -10,19 +10,20 @@ import { Routes, serverError } from "@/constants/Routes";
 import { InputText } from "@/components/loginization/inputText";
 import Warnings from "@/components/loginization/warnings";
 import { signUpShema } from "@/constants/schemaValidation";
-import { logInAC, setUserNameAC } from "@/redux/user-reducer";
+import { logInAC, setIsAdmin, setUserNameAC } from "@/redux/user-reducer";
 
 function SignUp(): JSX.Element {
   const dispatch = useDispatch();
   const [warning, setWarning] = useState("");
 
   const formik = useFormik({
-    initialValues: { login: "", password: "", repeatedPassword: "" },
+    initialValues: { login: "", password: "", repeatedPassword: "", isAdmin: false },
     validationSchema: signUpShema,
     onSubmit: async (values) => {
-      const { login, password } = values;
+      const { login, password, isAdmin } = values;
       try {
-        const newUser = await axios.post(urlUsers, { login, password });
+        const newUser = await axios.post(urlUsers, { login, password, isAdmin });
+        dispatch(setIsAdmin());
         dispatch(logInAC());
         dispatch(setUserNameAC(newUser.data.login));
       } catch (error) {

@@ -3,11 +3,13 @@ const GET_TARGET_PAGE = "GET-TARGET-PAGE";
 const LOG_IN = "LOG-IN";
 const LOG_OUT = "LOG-OUT";
 const SET_USER_PASSWORD = "SET-USER-PASSWORD";
-const SAVE_USER_PROFILE = "SAVE-USER-PROFILE";
+const SET_IS_ADMIN = "SET-IS-ADMIN";
 
+const SAVE_USER_PROFILE = "SAVE-USER-PROFILE";
 const initialState = {
   userId: null,
   isLoggedIn: false,
+  isAdmin: false,
   userName: "",
   userPassword: "",
   chosenLocation: "",
@@ -41,6 +43,12 @@ export const userReducer = (state: InitialStateType = initialState, action: any)
         isLoggedIn: false,
       };
     }
+    case SET_IS_ADMIN: {
+      return {
+        ...state,
+        isAdmin: false,
+      };
+    }
     case SET_USER_PASSWORD: {
       return {
         ...state,
@@ -64,3 +72,4 @@ export const setUserProfileAC = (userName: string) => ({ type: SAVE_USER_PROFILE
 export const getTargetPageAC = (path: string) => ({ type: GET_TARGET_PAGE, path });
 export const logInAC = () => ({ type: LOG_IN });
 export const logOutAC = () => ({ type: LOG_OUT });
+export const setIsAdmin = () => ({ type: SET_IS_ADMIN});

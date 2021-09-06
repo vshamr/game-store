@@ -1,11 +1,11 @@
-import { useDispatch } from "react-redux";
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { FiEdit3, GiShoppingCart } from "react-icons/all";
 
 import "./styles.css";
 import { setAddItemToCart } from "@/redux/cart-reducer";
 import { getCurrentGameCard } from "@/redux/edit-reducer";
 import EditPage from "@/components/editPage";
-import { useEffect, useState } from "react";
 
 type GameCardsType = {
   game: {
@@ -18,14 +18,10 @@ type GameCardsType = {
 
 function GameCards({ game }: GameCardsType): JSX.Element {
   const dispatch = useDispatch();
-  const { img, title, price, descr } = game;
-  const [isAdmin, setIsAdmin] = useState(false);
-  const [showModal, setShowModal] = useState(false);
+  const isAdmin = useSelector((state) => state.userPage.isAdmin);
 
-  useEffect(() => {
-    setIsAdmin(localStorage.getItem("login") == "\"admin\"");
-  }, []);
-  console.log(isAdmin);
+  const { img, title, price, descr } = game;
+  const [showModal, setShowModal] = useState(false);
 
   function dispatchItem() {
     dispatch(setAddItemToCart(game));
@@ -42,7 +38,7 @@ function GameCards({ game }: GameCardsType): JSX.Element {
 
   return (
     <div>
-      {isAdmin && modalRenderer()}
+      {!isAdmin && modalRenderer()}
 
       <div className="gameCards">
         <div className="front">
@@ -56,7 +52,7 @@ function GameCards({ game }: GameCardsType): JSX.Element {
           <div className="back-content">
             <p className="gameCards-descr">{descr}</p>
             <div className="gameCards-cart">
-              {/*{isAdmin &&*/} <FiEdit3 onClick={showModalAndDispatch} />
+              {!isAdmin.isAdmin && <FiEdit3 onClick={showModalAndDispatch} />}
               <GiShoppingCart onClick={dispatchItem} />
             </div>
           </div>
