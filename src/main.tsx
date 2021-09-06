@@ -7,19 +7,19 @@ import store from "@/redux/redux-store";
 import "./styles/main.css";
 import "./styles/main.scss";
 import HomePage from "@/components/homePage";
-import ProfilePage from "@/components/profilePage";
-import About from "@/components/about";
-import Footer from "@/components/footer";
-import ChosenCategory from "@/components/homePage/chooseCategory";
-import Products from "@/components/products";
-import CartPage from "@/components/cartPage/cartPage";
 import { Routes } from "./constants/Routes";
 import someTypeScript from "./someTypeScript";
-import Header from "./components/header";
 
+const Header = lazy(() => import("./components/header"));
+const About = lazy(() => import("./components/about"));
+const ProfilePage = lazy(() => import("@/components/profilePage"));
+const ChosenCategory = lazy(() => import("@/components/homePage/chooseCategory"));
+const Products = lazy(() => import("@/components/products"));
+const CartPage = lazy(() => import("@/components/cartPage/cartPage"));
 const Modal = lazy(() => import("./components/modal"));
 const SignIn = lazy(() => import("./components/loginization/signIn"));
 const SignUp = lazy(() => import("./components/loginization/signUp"));
+const Footer = lazy(() => import("@/components/footer"));
 
 interface AppProps {
   nothing: boolean;
@@ -68,7 +68,7 @@ class AppContainer extends Component<AppProps, AppState> {
     return (
       <StrictMode>
         <BrowserRouter>
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={<div className="loading">Loading...</div>}>
             <Provider store={store}>
               <Header />
               <Switch>

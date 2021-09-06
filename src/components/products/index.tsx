@@ -1,4 +1,4 @@
-import { SyntheticEvent, useEffect, useState } from "react";
+import { SyntheticEvent, useEffect, useMemo, useState } from "react";
 import axios from "axios";
 
 import "./styles.css";
@@ -7,6 +7,7 @@ import Categories from "@/components/homePage/categories";
 import SearchBar from "@/components/searchBar";
 import Loader from "@/components/searchBar/loader";
 import GameCards from "@/components/products/gameCards";
+
 import Filter from "@/components/products/filter/filter";
 import { ParamsAges, ParamsCategory, ParamsGenres } from "@/components/products/filter/filterData";
 
@@ -41,6 +42,8 @@ const Products: React.FC = () => {
 
   const debouncedNameOfTheGame = useDebounce(searchingText, 300);
 
+  const gamesData = useMemo(() => games.map((game) => <GameCards key={game.id} game={game} />), [games]);
+
   useEffect(() => {
     (async () => {
       setIsSearching(true);
@@ -72,11 +75,7 @@ const Products: React.FC = () => {
           {debouncedNameOfTheGame.length !== 0 && games.length === 0 && (
             <div className="not-found">Nothing was found</div>
           )}
-          <div className="games-wrapper">
-            {games.map((game) => (
-              <GameCards key={game.id} game={game} />
-            ))}
-          </div>
+          <div className="games-wrapper">{gamesData}</div>
         </div>
       </div>
     </div>
