@@ -5,9 +5,10 @@ import { useFormik } from "formik";
 
 import Warnings from "@/components/loginization/warnings";
 import { InputText } from "@/components/loginization/inputText";
-import { setUserPasswordAC } from "@/redux/user-reducer";
+import { logIn } from "@/redux/user-reducer";
 import { changePasswordShema } from "@/constants/schemaValidation";
 import { usersAPI } from "@/api";
+import { ReducersType } from "@/redux/redux-store";
 
 type ChangePasswordPropsType = {
   setShowPasswordModal: Function;
@@ -15,7 +16,7 @@ type ChangePasswordPropsType = {
 
 const ChangePassword = ({ setShowPasswordModal }: ChangePasswordPropsType) => {
   const dispatch = useDispatch();
-  const userId = useSelector((state) => state.userPage.userId);
+  const userId = useSelector((state: ReducersType) => state.userPage.userId);
   const [warning, setWarning] = useState("");
 
   const closePasswordModal = () => setShowPasswordModal(false);
@@ -31,7 +32,7 @@ const ChangePassword = ({ setShowPasswordModal }: ChangePasswordPropsType) => {
 
       try {
         const updatedPassword = await usersAPI.changePassword(userId, { password });
-        dispatch(setUserPasswordAC(updatedPassword.data.password));
+        dispatch(logIn(updatedPassword.data.password));
       } catch (error) {
         setWarning(error.message);
       }

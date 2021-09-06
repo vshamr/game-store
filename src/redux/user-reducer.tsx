@@ -1,11 +1,8 @@
-const SET_USER_NAME = "SET-USER-NAME";
-const GET_TARGET_PAGE = "GET-TARGET-PAGE";
-const LOG_IN = "LOG-IN";
-const LOG_OUT = "LOG-OUT";
-const SET_USER_PASSWORD = "SET-USER-PASSWORD";
-const SET_IS_ADMIN = "SET-IS-ADMIN";
-
+const GET_TARGET_PAGE = "USER/GET-TARGET-PAGE";
+const LOG_IN = "USER/LOG-IN";
+const LOG_OUT = "USER/LOG-OUT";
 const SAVE_USER_PROFILE = "SAVE-USER-PROFILE";
+
 const initialState = {
   userId: null,
   isLoggedIn: false,
@@ -19,12 +16,6 @@ type InitialStateType = typeof initialState;
 
 export const userReducer = (state: InitialStateType = initialState, action: any) => {
   switch (action.type) {
-    case SET_USER_NAME: {
-      return {
-        ...state,
-        userName: action.userName,
-      };
-    }
     case GET_TARGET_PAGE: {
       return {
         ...state,
@@ -35,24 +26,15 @@ export const userReducer = (state: InitialStateType = initialState, action: any)
       return {
         ...state,
         isLoggedIn: true,
+        isAdmin: false,
+        userName: action.userName,
+        userPassword: action.userPassword,
       };
     }
     case LOG_OUT: {
       return {
         ...state,
         isLoggedIn: false,
-      };
-    }
-    case SET_IS_ADMIN: {
-      return {
-        ...state,
-        isAdmin: false,
-      };
-    }
-    case SET_USER_PASSWORD: {
-      return {
-        ...state,
-        userPassword: action.userPassword,
       };
     }
     case SAVE_USER_PROFILE: {
@@ -66,10 +48,7 @@ export const userReducer = (state: InitialStateType = initialState, action: any)
   }
 };
 
-export const setUserNameAC = (userName: string) => ({ type: SET_USER_NAME, userName });
-export const setUserPasswordAC = (userPassword: number) => ({ type: SET_USER_PASSWORD, userPassword });
-export const setUserProfileAC = (userName: string) => ({ type: SAVE_USER_PROFILE, userName });
-export const getTargetPageAC = (path: string) => ({ type: GET_TARGET_PAGE, path });
-export const logInAC = () => ({ type: LOG_IN });
-export const logOutAC = () => ({ type: LOG_OUT });
-export const setIsAdmin = () => ({ type: SET_IS_ADMIN});
+export const setUserProfile = (userName: string) => ({ type: SAVE_USER_PROFILE, userName });
+export const getTargetPage = (path: string) => ({ type: GET_TARGET_PAGE, path });
+export const logIn = (userName: string, userPassword: number | string) => ({ type: LOG_IN, userName, userPassword });
+export const logOut = () => ({ type: LOG_OUT });

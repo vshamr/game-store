@@ -7,6 +7,7 @@ import "./styles.css";
 import { addGameAC, getProductsArray } from "@/redux/edit-reducer";
 import { urlProducts } from "@/api";
 import { Game } from "@/constants/interfaces";
+import { ReducersType } from "@/redux/redux-store";
 
 type PropsType = {
   setShowModal: Function;
@@ -14,7 +15,7 @@ type PropsType = {
 
 const EditPage = ({ setShowModal }: PropsType) => {
   const dispatch = useDispatch();
-  const currentGameCard = useSelector((state) => state.editPage.currentGameCard);
+  const currentGameCard = useSelector((state: ReducersType) => state.editPage.currentGameCard);
 
   const [game, setGame] = useState<Game>({
     title: "",
@@ -36,13 +37,12 @@ const EditPage = ({ setShowModal }: PropsType) => {
     if (!game.img) {
       return <div>No picture</div>;
     }
-    return <img src={game.img} alt="Game card image" />;
+
+    return <img src={game.img} alt="Game card" />;
   };
 
   const addGame = async () => {
-    const response = await axios.post(urlProducts, {
-      game,
-    });
+    const response = await axios.post(urlProducts, { game });
     dispatch(addGameAC(response.data));
     alert("Game card has been created");
   };
@@ -50,14 +50,10 @@ const EditPage = ({ setShowModal }: PropsType) => {
   const editGame = async () => {
     const isChanged = confirm(`Are you sure you want to change this game`);
     if (isChanged) {
-      await axios
-        .put(urlProducts, {
-          game,
-        })
-        .then((response) => {
-          dispatch(getProductsArray(response.data));
-          alert("Game has been edited");
-        });
+      await axios.put(urlProducts, { game }).then((response) => {
+        dispatch(getProductsArray(response.data));
+        alert("Game has been edited");
+      });
     }
   };
 

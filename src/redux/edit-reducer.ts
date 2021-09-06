@@ -1,8 +1,8 @@
 import { Game } from "@/constants/interfaces";
 
-const CURRENT_GAME_CARD = "CURRENT-GAME-CARD";
-const ADD_GAME = "ADD-GAME";
-const GET_PRODUCTS_ARRAY = "GET-PRODUCTS-ARRAY";
+const CURRENT_GAME_CARD = "GAME/CURRENT-GAME-CARD";
+const ADD_GAME = "GAME/ADD-GAME";
+const GET_PRODUCTS_ARRAY = "GAME/GET-PRODUCTS-ARRAY";
 
 const initialState = {
   currentGameCard: null,
@@ -13,19 +13,19 @@ type InitialStateType = typeof initialState;
 
 export const editReducer = (state: InitialStateType = initialState, action) => {
   switch (action.type) {
-    case "CURRENT-GAME-CARD": {
+    case "GAME/CURRENT-GAME-CARD": {
       return {
         ...state,
         currentGameCard: action.payload,
       };
     }
-    case "ADD-GAME": {
+    case "GAME/ADD-GAME": {
       return {
         ...state,
         products: [...state.products, state.products.unshift(action.payload)],
       };
     }
-    case "GET-PRODUCTS-ARRAY": {
+    case "GAME/GET-PRODUCTS-ARRAY": {
       return {
         ...state,
         products: action.payload,

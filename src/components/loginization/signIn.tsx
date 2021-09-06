@@ -10,7 +10,7 @@ import { Routes } from "@/constants/Routes";
 import { InputText } from "@/components/loginization/inputText";
 import Warnings from "@/components/loginization/warnings";
 import { signInShema } from "@/constants/schemaValidation";
-import { logInAC, setUserNameAC } from "@/redux/user-reducer";
+import { logIn } from "@/redux/user-reducer";
 
 export interface PersonInterface {
   id: number;
@@ -18,7 +18,7 @@ export interface PersonInterface {
   password: string;
 }
 
-function SignIn() {
+function SignIn(): JSX.Element {
   const dispatch = useDispatch();
   const [warning, setWarning] = useState("");
 
@@ -40,8 +40,7 @@ function SignIn() {
         if (user.password !== values.password) {
           throw new Error("Wrong password");
         }
-        dispatch(logInAC());
-        dispatch(setUserNameAC(values.login));
+        dispatch(logIn(values.login, values.password));
       } catch (error) {
         setWarning(error.message);
       }

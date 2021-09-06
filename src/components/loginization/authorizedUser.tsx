@@ -4,13 +4,14 @@ import { BiExit, BiUser } from "react-icons/all";
 
 import "../header/styles.css";
 import { Routes } from "@/constants/Routes";
-import { logOutAC } from "@/redux/user-reducer";
+import { logOut } from "@/redux/user-reducer";
+import { ReducersType } from "@/redux/redux-store";
 
 function AuthorizedUser(): JSX.Element {
-  const userName = useSelector((state) => state.userPage.userName);
+  const userName = useSelector((state: ReducersType) => state.userPage.userName);
   const dispatch = useDispatch();
 
-  const handleLogOut = () => dispatch(logOutAC());
+  const handleLogOut = () => dispatch(logOut());
 
   return (
     <div className="header_authorization-item">

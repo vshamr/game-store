@@ -56,11 +56,9 @@ function HomePage(): JSX.Element {
       <h2 className="gameCards-top-title">
         <span>Top</span> games
       </h2>
-      <div>
-        {games.map((game: Game) => (
-          <GameCards key={game.id} game={game} />
-        ))}
-      </div>
+      {games.map((game: Game) => (
+        <GameCards key={game.id} game={game} />
+      ))}
       <NewGames newGames={newGames} />
     </div>
   );
