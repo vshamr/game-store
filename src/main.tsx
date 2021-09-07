@@ -19,6 +19,7 @@ const CartPage = lazy(() => import("@/components/cartPage/cartPage"));
 const Modal = lazy(() => import("./components/modal"));
 const SignIn = lazy(() => import("./components/loginization/signIn"));
 const SignUp = lazy(() => import("./components/loginization/signUp"));
+const EditPage = lazy(() => import("@/components/editPage"));
 const Footer = lazy(() => import("@/components/footer"));
 
 interface AppProps {
@@ -85,7 +86,18 @@ class AppContainer extends Component<AppProps, AppState> {
                 <Route exact path={Routes.CART}>
                   {this.redirectOnChoosenPage(<CartPage />)}
                 </Route>
-
+                <Route exact path={Routes.ADMIN}>
+                  {this.redirectOnChoosenPage(<EditPage />)}
+                </Route>
+                <Route exact path={Routes.ADMIN}>
+                  {store.getState().userPage.isLoggedIn ? (
+                    <Redirect to={Routes.PROFILE_PAGE} />
+                  ) : (
+                    <Modal>
+                      <SignUp />
+                    </Modal>
+                  )}
+                </Route>
                 <Route exact path={Routes.SIGN_UP}>
                   {store.getState().userPage.isLoggedIn ? (
                     <Redirect to={Routes.PROFILE_PAGE} />

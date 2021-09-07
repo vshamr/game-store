@@ -50,7 +50,7 @@ const EditPage = ({ setShowModal }: PropsType) => {
   const editGame = async () => {
     const isChanged = confirm(`Are you sure you want to change this game`);
     if (isChanged) {
-      await axios.put(urlProducts, { game }).then((response) => {
+      await axios.put(urlProducts, game).then((response) => {
         dispatch(getProductsArray(response.data));
         alert("Game has been edited");
       });

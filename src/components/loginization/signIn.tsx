@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useFormik } from "formik";
@@ -16,6 +16,7 @@ export interface PersonInterface {
   id: number;
   login: string;
   password: string;
+  isAdmin: false;
 }
 
 function SignIn(): JSX.Element {
