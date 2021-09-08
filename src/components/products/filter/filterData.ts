@@ -1,4 +1,4 @@
-export enum ParamsGenres {
+export const enum ParamsGenres {
   ALL = "All",
   RACING = "Racing",
   FIGHTING = "Fighting",
@@ -6,7 +6,7 @@ export enum ParamsGenres {
   STRATEGY = "Strategy",
 }
 
-export enum ParamsAges {
+export const enum ParamsAges {
   ALL = "All",
   SIX = "6",
   TWELVE = "12",
@@ -14,7 +14,7 @@ export enum ParamsAges {
   EIGHTEEN = "18",
 }
 
-export enum ParamsCategory {
+export const enum ParamsCategory {
   ALL = "All",
   PC = "pc",
   XBOX = "xbox",
