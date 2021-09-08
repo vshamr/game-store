@@ -7,8 +7,6 @@ import { setAddItemToCart } from "@/redux/cart-reducer";
 import { getCurrentGameCard } from "@/redux/edit-reducer";
 import EditPage from "@/components/editPage";
 import { ReducersType } from "@/redux/redux-store";
-import { urlUsers } from "@/api";
-import { PersonInterface } from "@/components/loginization/signIn";
 
 type GameCardsType = {
   game: {
@@ -23,7 +21,6 @@ function GameCards({ game }: GameCardsType): JSX.Element {
   const dispatch = useDispatch();
   const authorizedUser = useSelector((state: ReducersType) => state.userPage.isLoggedIn);
   const isAdmin = useSelector((state: ReducersType) => state.userPage.isAdmin);
-  console.log(isAdmin);
 
   const { img, title, price, descr } = game;
   const [showModal, setShowModal] = useState(false);
@@ -41,19 +38,9 @@ function GameCards({ game }: GameCardsType): JSX.Element {
     return showModal && <EditPage setShowModal={setShowModal} />;
   }
 
-  const adminCheckout = async () => {
-    const data = await fetch(urlUsers);
-    const response = await data.json();
-
-    const user = response.find((person: PersonInterface) => person.login === "admin");
-    return !!user;
-  };
-
-  const admin = adminCheckout();
-
   return (
     <div>
-      {authorizedUser && admin ? modalRender() : null}
+      {isAdmin && authorizedUser && modalRender()}
       <div className="gameCards">
         <div className="front">
           <img src={img} alt={title} />
@@ -66,7 +53,7 @@ function GameCards({ game }: GameCardsType): JSX.Element {
           <div className="back-content">
             <p className="gameCards-descr">{descr}</p>
             <div className="gameCards-cart">
-              {authorizedUser && admin ? <FiEdit3 onClick={showModalAndDispatch} /> : null}
+              {isAdmin && authorizedUser && <FiEdit3 onClick={showModalAndDispatch} />}
               <GiShoppingCart onClick={dispatchItem} />
             </div>
           </div>
@@ -76,4 +63,4 @@ function GameCards({ game }: GameCardsType): JSX.Element {
   );
 }
 
-export default GameCards;
+export default React.memo(GameCards);
