@@ -90,7 +90,7 @@ span {
 
 .header_authorization-item {
   height: 100%;
-  width: 190px;
+  min-width: 190px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -98,6 +98,13 @@ span {
   margin-right: 10px;
   position: absolute;
   right: 0;
+}
+
+.admin-icon {
+  margin: 0 20px 0 20px;
+  padding: 3px 10px 3px 10px;
+  border: 1px solid #ffffffc7;
+  border-radius: 10px;
 }
 
 .header_authorization-item svg {

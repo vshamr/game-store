@@ -4,7 +4,7 @@ import "./styles.css";
 import { CATEGORIES_DATA } from "@/constants/data";
 import { Routes } from "@/constants/Routes";
 
-const Categories = (): JSX.Element => (
+const Categories = () => (
   <div className="categories">
     <h2 className="categories-title">Categories</h2>
     <div className="categories_container">

@@ -7,6 +7,7 @@ export enum Routes {
   SIGN_IN = "/sign_in",
   PROFILE_PAGE = "/user",
   CART = "/cart",
+  ADMIN = "/admin",
 }
 
 export const serverError = 500;
