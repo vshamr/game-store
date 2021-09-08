@@ -6,7 +6,6 @@ import "./styles.css";
 import { setAddItemToCart } from "@/redux/cart-reducer";
 import { getCurrentGameCard } from "@/redux/edit-reducer";
 import EditPage from "@/components/editPage";
-import { ReducersType } from "@/redux/redux-store";
 
 type GameCardsType = {
   game: {
@@ -19,8 +18,7 @@ type GameCardsType = {
 
 function GameCards({ game }: GameCardsType): JSX.Element {
   const dispatch = useDispatch();
-  const authorizedUser = useSelector((state: ReducersType) => state.userPage.isLoggedIn);
-  const isAdmin = useSelector((state: ReducersType) => state.userPage.isAdmin);
+  const { isAdmin, isLoggedIn } = useSelector(({ userPage: { isLoggedIn, isAdmin } }) => ({ isLoggedIn, isAdmin }));
 
   const { img, title, price, descr } = game;
   const [showModal, setShowModal] = useState(false);
@@ -40,7 +38,7 @@ function GameCards({ game }: GameCardsType): JSX.Element {
 
   return (
     <div>
-      {isAdmin && authorizedUser && modalRender()}
+      {!isAdmin && isLoggedIn && modalRender()}
       <div className="gameCards">
         <div className="front">
           <img src={img} alt={title} />
@@ -53,7 +51,7 @@ function GameCards({ game }: GameCardsType): JSX.Element {
           <div className="back-content">
             <p className="gameCards-descr">{descr}</p>
             <div className="gameCards-cart">
-              {isAdmin && authorizedUser && <FiEdit3 onClick={showModalAndDispatch} />}
+              {!isAdmin && isLoggedIn && <FiEdit3 onClick={showModalAndDispatch} />}
               <GiShoppingCart onClick={dispatchItem} />
             </div>
           </div>

@@ -3,7 +3,6 @@ import axios from "axios";
 
 import "./styles.css";
 import useDebounce from "@/hooks/useDebounce";
-import Categories from "@/components/homePage/categories";
 import SearchBar from "@/components/searchBar";
 import Loader from "@/components/searchBar/loader";
 import GameCards from "@/components/products/gameCards";
@@ -65,18 +64,15 @@ const Products: React.FC = () => {
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => setSearchingText(e.target.value);
 
   return (
-    <div>
-      <Categories />
-      <div className="products">
-        <Filter setGenre={setGenre} setAge={setAge} setCategory={setCategory} />
-        <div className="products_container">
-          <SearchBar handleOnSubmit={handleOnSubmit} handleOnChange={handleOnChange} nameOfTheGame={searchingText} />
-          {isSearching && <Loader />}
-          {debouncedNameOfTheGame.length !== 0 && games.length === 0 && (
-            <div className="not-found">Nothing was found</div>
-          )}
-          <div className="games-wrapper">{gamesData}</div>
-        </div>
+    <div className="products">
+      <Filter setGenre={setGenre} setAge={setAge} setCategory={setCategory} />
+      <div className="products_container">
+        <SearchBar handleOnSubmit={handleOnSubmit} handleOnChange={handleOnChange} nameOfTheGame={searchingText} />
+        {isSearching && <Loader />}
+        {debouncedNameOfTheGame.length !== 0 && games.length === 0 && (
+          <div className="not-found">Nothing was found</div>
+        )}
+        <div className="games-wrapper">{gamesData}</div>
       </div>
     </div>
   );
