@@ -1,6 +1,5 @@
 .cart__box {
   margin: 5rem;
-  width: 80%;
   min-height: 200px;
   border-radius: 10px;
   background: rgba(26, 26, 26, 0.5);
@@ -133,5 +132,20 @@ select {
   }
   .cart__games-img {
     display: none;
+  }
+}
+
+@media (max-width: 680px) {
+  .cart__games-box {
+    padding-right: 0;
+  }
+  .cart__games-container {
+    font-size: 15px;
+  }
+  .cart__games-title {
+    width: 5em;
+  }
+  .cart__games-box select {
+    width: 50px;
   }
 }

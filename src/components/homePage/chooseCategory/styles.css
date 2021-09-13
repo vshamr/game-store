@@ -1,12 +1,6 @@
-.category-title {
-  margin-bottom: 1rem;
-  padding: 1rem 0;
-  font-size: var(--lmedium);
-  border-bottom: 2px solid var(--main-color);
+.chosenCategory__title {
+  text-align: center;
+  font-size: 30px;
+  color: #ffc010;
+  margin-top: 60px;
 }
-
-.category-title span {
-  text-transform: capitalize;
-}
-
-

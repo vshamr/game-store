@@ -1,11 +1,10 @@
 .categories {
   min-height: 360px;
-  background-image: url(../../../assets/images/bg_header.png);
-  background-color: rgba(26, 14, 34, 0.5);
+  background-color: rgba(26, 26, 26, 0.5);
 }
 
 .categories-title {
-  margin: 2.8em 0 1em 0;
+  margin: 2em 0 1em 0;
   height: 50px;
   display: flex;
   justify-content: center;

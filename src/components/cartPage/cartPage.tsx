@@ -1,15 +1,15 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setRemoveItemFromCart } from "@/redux/cart-reducer";
 import { CgCloseO, TiMinus, TiPlus } from "react-icons/all";
 import axios from "axios";
+import { setRemoveItemFromCart } from "@/redux/cart-reducer";
 
 import "./styles.css";
 import { ReducersType } from "@/redux/redux-store";
 
 const CartPage: React.FC = () => {
   const dispatch = useDispatch();
-  const cart = useSelector((state: ReducersType) => state.cartPage.carts );
+  const cart = useSelector((state: ReducersType) => state.cartPage.carts);
 
   let itemsPrice = 0;
   const [itemCount, setItemCount] = useState(1);
