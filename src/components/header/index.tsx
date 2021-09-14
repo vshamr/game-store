@@ -3,13 +3,13 @@ import { NavLink, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import "./styles.css";
-import ProductsDropDown from "@/components/header/drop-down";
-import AuthorizedUser from "@/components/loginization/authorizedUser";
-import UnauthorizedUser from "@/components/loginization/unauthorizedUser";
-import { Routes } from "@/constants/Routes";
-import { getTargetPage } from "@/redux/user-reducer";
 import { GiShoppingCart, TiArrowSortedDown, TiArrowSortedUp } from "react-icons/all";
 import { ReducersType } from "@/redux/redux-store";
+import { Routes } from "@/constants/Routes";
+import { getTargetPage } from "@/redux/user-reducer";
+import AuthorizedUser from "../loginization/authorizedUser";
+import UnauthorizedUser from "../loginization/unauthorizedUser";
+import ProductsDropDown from "./drop-down";
 
 function Header(): JSX.Element {
   const authorizedUser = useSelector((state: ReducersType) => state.userPage.isLoggedIn);

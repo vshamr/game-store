@@ -2,6 +2,7 @@ const GET_TARGET_PAGE = "USER/GET-TARGET-PAGE";
 const LOG_IN = "USER/LOG-IN";
 const LOG_OUT = "USER/LOG-OUT";
 const SAVE_USER_PROFILE = "SAVE-USER-PROFILE";
+const ADMIN = "ADMIN";
 
 const initialState = {
   userId: null,
@@ -43,6 +44,13 @@ export const userReducer = (state: InitialStateType = initialState, action: any)
         userName: action.userName,
       };
     }
+    case ADMIN: {
+      return {
+        ...state,
+        isAdmin: true,
+        isLoggedIn: true
+      }
+    }
     default:
       return state;
   }
@@ -52,3 +60,4 @@ export const setUserProfile = (userName: string) => ({ type: SAVE_USER_PROFILE, 
 export const getTargetPage = (path: string) => ({ type: GET_TARGET_PAGE, path });
 export const logIn = (userName: string, userPassword: number | string) => ({ type: LOG_IN, userName, userPassword });
 export const logOut = () => ({ type: LOG_OUT });
+export const adminAC = () => ({type: ADMIN})

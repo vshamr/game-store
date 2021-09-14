@@ -20,7 +20,7 @@ function AuthorizedUser(): JSX.Element {
       <Link to={Routes.PROFILE_PAGE}>
         <FaRegUser /> {userName}
       </Link>
-      {authorizedUser && isAdmin ? (
+      {authorizedUser && !isAdmin ? (
         <Link to={Routes.ADMIN}>
           <div className="admin-icon">
             <RiAdminFill /> admin

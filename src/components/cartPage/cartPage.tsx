@@ -2,9 +2,9 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { CgCloseO, TiMinus, TiPlus } from "react-icons/all";
 import axios from "axios";
-import { setRemoveItemFromCart } from "@/redux/cart-reducer";
 
 import "./styles.css";
+import { setRemoveItemFromCart } from "@/redux/cart-reducer";
 import { ReducersType } from "@/redux/redux-store";
 
 const CartPage: React.FC = () => {

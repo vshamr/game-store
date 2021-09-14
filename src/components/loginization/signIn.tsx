@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useFormik } from "formik";
@@ -43,6 +43,7 @@ function SignIn(): JSX.Element {
         }
         dispatch(logIn(values.login, values.password));
       } catch (error) {
+        // @ts-ignore
         setWarning(error.message);
       }
     },

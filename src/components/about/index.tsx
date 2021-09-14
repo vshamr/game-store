@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Flex from "@/components/about/flex";
+import Flex from "./flex";
 
 const StylesTitle = styled.h2`
   height: 50px;

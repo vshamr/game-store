@@ -48,9 +48,9 @@ function GameCards({ game }: GameCardsType): JSX.Element {
           </div>
         </div>
         <div className="back center">
-          <div className="back-content">
+          <div className="back__content">
             <p className="gameCards-descr">{descr}</p>
-            <div className="gameCards-cart">
+            <div className="gameCards__btn">
               {!isAdmin && isLoggedIn && <FiEdit3 onClick={showModalAndDispatch} />}
               <GiShoppingCart onClick={dispatchItem} />
             </div>

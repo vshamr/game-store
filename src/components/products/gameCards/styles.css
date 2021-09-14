@@ -40,7 +40,7 @@
   transform: perspective(600px) rotateY(0deg);
 }
 
-.back-content {
+.back__content {
   width: 100%;
   height: 90%;
   padding: 0 15px 0 15px;
@@ -63,12 +63,12 @@ img {
   border-bottom: 1px solid rgba(255, 255, 255, 0.7);
 }
 
-.gameCards-cart {
+.gameCards__btn {
   display: flex;
   justify-content: space-around;
 }
 
-.gameCards-cart svg {
+.gameCards__btn svg {
   font-size: 40px;
   color: #ffc010;
 }

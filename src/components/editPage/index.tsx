@@ -24,7 +24,7 @@ const EditPage = ({ setShowModal }: PropsType) => {
     age: "",
     price: "",
     img: "",
-    descr: "",
+    descr: ""
   });
 
   useEffect(() => {
@@ -70,96 +70,98 @@ const EditPage = ({ setShowModal }: PropsType) => {
   const closeModal = () => setShowModal(false);
 
   return (
-    <div className="edit">
-      <button onClick={closeModal} type="button" className="modal-close">
-        <CgCloseR />
-      </button>
+    <div>
+      <div className="edit__wrapper">
+        <button onClick={closeModal} type="button" className="modal-close">
+          <CgCloseR />
+        </button>
 
-      <h2 className="edit__title">Edit Card</h2>
-      <div className="edit__container">
-        <div className="edit__img">{displayImage()}</div>
-        <div className="edit__info">
-          <label htmlFor="name">
-            Name
-            <input
-              type="text"
-              id="name"
-              onChange={(e) => setGame({ ...game, title: e.target.value })}
-              value={game?.title || ""}
-            />
-          </label>
-          <label htmlFor="price">
-            Price
-            <input
-              type="number"
-              id="price"
-              onChange={(e) => setGame({ ...game, price: e.target.value })}
-              value={game?.price || ""}
-            />
-          </label>
-          <label htmlFor="image">
-            Image
-            <input
-              type="url"
-              id="image"
-              onChange={(e) => setGame({ ...game, img: e.target.value })}
-              value={game?.img || ""}
-            />
-          </label>
-          <label htmlFor="age">
-            Age
-            <input
-              type="text"
-              id="age"
-              onChange={(e) => setGame({ ...game, age: e.target.value })}
-              value={game?.age || ""}
-            />
-          </label>
-          <label htmlFor="descr">
-            Description
-            <textarea
-              id="descr"
-              onChange={(e) => setGame({ ...game, descr: e.target.value })}
-              value={game?.descr || ""}
-            />
-          </label>
-          <label htmlFor="genre">
-            Genre
-            <input
-              type="text"
-              id="genre"
-              onChange={(e) => setGame({ ...game, genre: e.target.value })}
-              value={game?.genre || ""}
-            />
-          </label>
-          <label htmlFor="">
-            Category
-            <select onChange={(e) => setGame({ ...game, category: e.target.value })} value={game?.category || ""}>
-              <option>XboxOne</option>
-              <option>Playstation</option>
-              <option>PC</option>
-            </select>
-          </label>
+        <h2 className="edit__title">Edit Card</h2>
+        <div className="edit__container">
+          <div className="edit__img">{displayImage()}</div>
+          <div className="edit__info">
+            <label htmlFor="name">
+              Name
+              <input
+                type="text"
+                id="name"
+                onChange={(e) => setGame({ ...game, title: e.target.value })}
+                value={game?.title || ""}
+              />
+            </label>
+            <label htmlFor="price">
+              Price
+              <input
+                type="number"
+                id="price"
+                onChange={(e) => setGame({ ...game, price: e.target.value })}
+                value={game?.price || ""}
+              />
+            </label>
+            <label htmlFor="image">
+              Image
+              <input
+                type="url"
+                id="image"
+                onChange={(e) => setGame({ ...game, img: e.target.value })}
+                value={game?.img || ""}
+              />
+            </label>
+            <label htmlFor="age">
+              Age
+              <input
+                type="text"
+                id="age"
+                onChange={(e) => setGame({ ...game, age: e.target.value })}
+                value={game?.age || ""}
+              />
+            </label>
+            <label htmlFor="descr">
+              Description
+              <textarea
+                id="descr"
+                onChange={(e) => setGame({ ...game, descr: e.target.value })}
+                value={game?.descr || ""}
+              />
+            </label>
+            <label htmlFor="genre">
+              Genre
+              <input
+                type="text"
+                id="genre"
+                onChange={(e) => setGame({ ...game, genre: e.target.value })}
+                value={game?.genre || ""}
+              />
+            </label>
+            <label htmlFor="">
+              Category
+              <select onChange={(e) => setGame({ ...game, category: e.target.value })} value={game?.category || ""}>
+                <option>XboxOne</option>
+                <option>Playstation</option>
+                <option>PC</option>
+              </select>
+            </label>
+          </div>
         </div>
-      </div>
-      <div className="edit__btn-container">
-        <button
-          className="submit-btn"
-          type="submit"
-          onClick={() => {
-            currentGameCard === null ? addGame() : editGame();
-          }}
-        >
-          Submit
-        </button>
-        <button
-          className="delete-btn"
-          onClick={() => {
-            deleteGame();
-          }}
-        >
-          Delete
-        </button>
+        <div className="edit__btn-container">
+          <button
+            className="submit-btn"
+            type="submit"
+            onClick={() => {
+              currentGameCard === null ? addGame() : editGame();
+            }}
+          >
+            Submit
+          </button>
+          <button
+            className="delete-btn"
+            onClick={() => {
+              deleteGame();
+            }}
+          >
+            Delete
+          </button>
+        </div>
       </div>
     </div>
   );
