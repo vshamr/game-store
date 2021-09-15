@@ -29,7 +29,7 @@
   transform: perspective(600px) rotateY(180deg);
   background-color: #1a0e22;
   border-radius: 10px;
-  box-shadow: 0 3px 8px 2px #ffc010 inset;
+  box-shadow: 0 1px 8px 1px #ffc010 inset;
 }
 
 .gameCards:hover > .front {

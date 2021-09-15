@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { CgCloseO, TiMinus, TiPlus } from "react-icons/all";
 import axios from "axios";
@@ -6,6 +6,7 @@ import axios from "axios";
 import "./styles.css";
 import { setRemoveItemFromCart } from "@/redux/cart-reducer";
 import { ReducersType } from "@/redux/redux-store";
+import { Game } from "@/constants/interfaces";
 
 const CartPage: React.FC = () => {
   const dispatch = useDispatch();
@@ -14,16 +15,24 @@ const CartPage: React.FC = () => {
   let itemsPrice = 0;
   const [itemCount, setItemCount] = useState(1);
 
-  let currentDate = new Date();
-  const dd = String(currentDate.getDate()).padStart(2, "0");
-  const mm = String(currentDate.getMonth() + 1).padStart(2, "0");
-  const yyyy = currentDate.getFullYear();
+  const date = new Date();
+  const dd = String(date.getDate()).padStart(2, "0");
+  const mm = String(date.getMonth() + 1).padStart(2, "0");
+  const yyyy = date.getFullYear();
 
-  currentDate = `${mm} / ${dd} / ${yyyy}`;
+  const currentDate = `${mm} / ${dd} / ${yyyy}`;
 
   if (cart.length === 0) {
     return <h3 className="cart__title">Cart is empty</h3>;
   }
+
+  const decrement = useMemo(
+    () => () => {
+      if (itemCount >= 1) setItemCount(itemCount - 1);
+      else setItemCount(itemCount);
+    },
+    [itemCount]
+  );
 
   return (
     <div className="cart__box">
@@ -35,7 +44,7 @@ const CartPage: React.FC = () => {
         <p>Price ($)</p>
       </div>
       <div className="cart__inner">
-        {cart.map((games, index) => {
+        {cart.map((games: Game, index: number) => {
           itemsPrice += games.price * itemCount;
 
           return (
@@ -64,7 +73,7 @@ const CartPage: React.FC = () => {
                   </p>
                   <p>{itemCount}</p>
                   <p>
-                    <TiMinus onClick={() => setItemCount(itemCount === 0 ? itemCount - 1 : 1)} />
+                    <TiMinus onClick={decrement} />
                   </p>
                 </div>
                 <div>
