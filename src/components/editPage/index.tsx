@@ -5,7 +5,7 @@ import axios from "axios";
 
 import "./styles.css";
 import { addGameAC, getProductsArray } from "@/redux/edit-reducer";
-import { urlProducts } from "@/api";
+import { editPageAPI, urlProducts } from "@/api";
 import { Game } from "@/constants/interfaces";
 import { ReducersType } from "@/redux/redux-store";
 
@@ -24,7 +24,7 @@ const EditPage = ({ setShowModal }: PropsType) => {
     age: "",
     price: "",
     img: "",
-    descr: ""
+    descr: "",
   });
 
   useEffect(() => {
@@ -42,7 +42,7 @@ const EditPage = ({ setShowModal }: PropsType) => {
   };
 
   const addGame = async () => {
-    const response = await axios.post(urlProducts, { game });
+    const response = await editPageAPI.addGame({game});
     dispatch(addGameAC(response.data));
     alert("Game card has been created");
   };
