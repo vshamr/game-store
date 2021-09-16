@@ -1,7 +1,7 @@
 .user-page {
-  margin: 100px 20px 0 20px;
+  margin-top: 70px;
   width: 100%;
-  height: 55vh;
+  height: 45vh;
   background-image: url(../../assets/images/bg_header.png);
   background-color: rgba(26, 14, 34, 0.3);
 }
@@ -11,14 +11,14 @@
   justify-content: center;
 }
 
-.user-page_inner {
+.user-page__inner {
   width: 800px;
   padding-top: 40px;
   display: grid;
-  grid-template-columns: 230px 1fr;
+  grid-template-columns: 250px 1fr;
 }
 
-.user-page_avatar {
+.user-page__no-avatar {
   min-height: 300px;
   width: 230px;
   margin-bottom: 2rem;
@@ -27,7 +27,24 @@
   background-image: url(../../assets/images/no_picture.jpg);
 }
 
-.user-page-btn {
+.user-page__avatar {
+  min-height: 300px;
+  width: 230px;
+  margin-bottom: 2rem;
+  border-radius: 1rem;
+  border: 2px solid #ffc010;
+
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.user-page__btn label {
+  width: 100%;
+}
+
+.user-page__btn {
   margin-bottom: 25px;
   padding: 20px 30px;
   border-radius: 10px;
@@ -38,32 +55,32 @@
   cursor: pointer;
 }
 
-.user-page-btn:hover {
+.user-page__btn:hover {
   background-color: #ffc010;
 }
 
-.user-page_form {
+.user-page__form {
   margin-left: 50px;
   display: flex;
   justify-content: space-between;
 }
 
-.user-page_form-btn {
+.user-page__form-btn {
   display: flex;
   flex-direction: column;
 }
 
-.user-page_form-box {
+.user-page__form-box {
   width: 50%;
 }
 
-.user-page_form-box div {
+.user-page__form-box div {
 
   margin-bottom: 15px;
   display: inline-block;
 }
 
-.user-page_form-box .modal-input input {
+.user-page__form-box .modal-input input {
   width: 100%;
   color: #fff;
   border: 2px solid #2d3547;
@@ -71,8 +88,8 @@
   background: rgba(26, 26, 26, 0.4);
 }
 
-.user-page_form-box label,
-.user-page_form-box .modal-input label {
+.user-page__form-box label,
+.user-page__form-box .modal-input label {
   font-family: "Barlow", sans-serif;
   letter-spacing: 0;
   font-size: 16px;
@@ -92,25 +109,25 @@
     margin-left: 0;
   }
 
-  .user-page_inner {
+  .user-page__inner {
     grid-template-columns: 3.5fr 1fr;
   }
 
-  .user-page_img {
+  .user-page__img {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  .user-page_form {
+  .user-page__form {
     flex-direction: column;
   }
 
-  .user-page_form-box {
+  .user-page__form-box {
     width: 250px;
   }
 
-  .user-page_form-btn {
+  .user-page__form-btn {
     width: 250px;
   }
 }
@@ -124,12 +141,12 @@
     height: 100vh;
   }
 
-  .user-page_inner {
+  .user-page__inner {
     display: flex;
     flex-direction: column;
   }
 
-  .user-page_form {
+  .user-page__form {
     align-items: center;
     margin-left: 0;
   }

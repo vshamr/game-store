@@ -1,4 +1,5 @@
 import axios from "axios";
+import { Game } from "@/constants/interfaces";
 
 export const instance = axios.create({
   baseURL: "http://localhost:3000/",
@@ -12,13 +13,19 @@ export const usersAPI = {
     return instance.post(`api/changePassword/users/${userId}`, { password });
   },
   saveProfile(values: {}) {
-    return instance.post(`/api/saveProfile/users`, { ...values });
+    return instance.post(`/api/saveProfile`, { ...values });
   },
 };
 
 export const editPageAPI = {
   addGame(game: {}) {
-    return instance.post(`users`, {game})
+    return instance.post(`games`, { game });
+  },
+  editGame(game: Game){
+    return instance.put(`games`, { game: game } )
+  },
+  deleteGame(currentGameCard: any) {
+    return instance.delete(`games/${currentGameCard.id}`)
   }
 }
 

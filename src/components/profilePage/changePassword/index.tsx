@@ -24,19 +24,19 @@ const ChangePassword = ({ setShowPasswordModal }: ChangePasswordPropsType) => {
   const formik = useFormik({
     initialValues: {
       password: "",
-      repeatPassword: "",
+      repeatPassword: ""
     },
     validationSchema: changePasswordShema,
     onSubmit: async (values) => {
       const { password } = values;
-
       try {
         const updatedPassword = await usersAPI.changePassword(userId, { password });
         dispatch(logIn(updatedPassword.data.password));
+        alert("Password has been changed");
       } catch (error) {
         setWarning(error.message);
       }
-    },
+    }
   });
 
   return (
@@ -67,7 +67,7 @@ const ChangePassword = ({ setShowPasswordModal }: ChangePasswordPropsType) => {
             error={formik.errors.repeatPassword}
           />
           <div className="modal-btn-container">
-            <button type="submit" className="modal-btn">
+            <button type="submit" className="modal-btn" >
               Submit
             </button>
           </div>

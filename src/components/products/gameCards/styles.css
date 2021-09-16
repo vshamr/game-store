@@ -51,9 +51,9 @@
   justify-content: space-around;
 }
 
-img {
+.gameCards__img {
   width: 100%;
-  max-height: 300px;
+  height: 280px;
   border-radius: 10px;
 }
 
@@ -102,6 +102,12 @@ h4 {
   justify-content: center;
   align-items: center;
   font-size: 48px;
+}
+
+.gameCards__about-inner {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
 }
 
 .games-wrapper {

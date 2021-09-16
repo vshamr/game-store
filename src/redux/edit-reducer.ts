@@ -38,4 +38,4 @@ export const editReducer = (state: InitialStateType = initialState, action) => {
 
 export const getCurrentGameCard = (item: Game) => ({ type: CURRENT_GAME_CARD, payload: item });
 export const addGameAC = (item: Game) => ({ type: ADD_GAME, payload: { ...item } });
-export const getProductsArray = (item: Game) => ({ type: GET_PRODUCTS_ARRAY, payload: [...item] });
+export const getProductsArray = (item: Array<Game>) => ({ type: GET_PRODUCTS_ARRAY, payload: [...item] });

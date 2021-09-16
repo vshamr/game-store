@@ -6,6 +6,7 @@ import "./styles.css";
 import { setAddItemToCart } from "@/redux/cart-reducer";
 import { getCurrentGameCard } from "@/redux/edit-reducer";
 import EditPage from "@/components/editPage";
+import Star from "@/components/products/gameCards/star";
 
 type GameCardsType = {
   game: {
@@ -13,6 +14,7 @@ type GameCardsType = {
     title: string;
     price: string;
     descr: string;
+    rating?: any;
   };
 };
 
@@ -22,6 +24,9 @@ function GameCards({ game }: GameCardsType): JSX.Element {
 
   const { img, title, price, descr } = game;
   const [showModal, setShowModal] = useState(false);
+
+  const ratingCounter = game.rating;
+  const stars = [...Array(parseInt(ratingCounter))].map((i) => <Star key={i} />);
 
   function dispatchItem() {
     dispatch(setAddItemToCart(game));
@@ -41,10 +46,13 @@ function GameCards({ game }: GameCardsType): JSX.Element {
       {!isAdmin && isLoggedIn && modalRender()}
       <div className="gameCards">
         <div className="front">
-          <img src={img} alt={title} />
+          <img className="gameCards__img" src={img} alt={title} />
           <div className="gameCards__about">
             <h4>{title}</h4>
-            <p>${price}</p>
+            <div className="gameCards__about-inner">
+              <p>{stars}</p>
+              <p>${price}</p>
+            </div>
           </div>
         </div>
         <div className="back center">
