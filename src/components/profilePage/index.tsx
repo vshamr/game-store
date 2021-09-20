@@ -7,16 +7,16 @@ import { userPageShema } from "@/constants/schemaValidation";
 import { usersAPI } from "@/api";
 import { logIn, setUserProfile } from "@/redux/user-reducer";
 import Warnings from "@/components/loginization/warnings";
-import { InputText } from "@/components/loginization/inputText";
 import Modal from "@/components/modal";
 import ChangePassword from "@/components/profilePage/changePassword";
 import { ReducersType } from "@/redux/redux-store";
+import InputText from "@/components/loginization/inputText";
 
 const ProfilePage = () => {
   const dispatch = useDispatch();
   const userName = useSelector((state: ReducersType) => state.userPage.userName);
   const [userImage, setUserImage] = useState(null);
-  const [newUserName, setNewUserName] = useState( userName )
+  const [newUserName, setNewUserName] = useState(userName);
   const [warning, setWarning] = useState("");
 
   const [showPasswordModal, setShowPasswordModal] = useState(false);
@@ -26,7 +26,7 @@ const ProfilePage = () => {
     initialValues: {
       login: "",
       phone: "",
-      address: ""
+      address: "",
     },
     validationSchema: userPageShema,
     onSubmit: async (values) => {
@@ -38,15 +38,14 @@ const ProfilePage = () => {
       } catch (error) {
         setWarning(error.message);
       }
-    }
+    },
   });
 
   const displayImage = (): JSX.Element => {
     if (userImage === null) {
       return <div className="user-page__no-avatar" />;
-    } else {
-      return <img className="user-page__avatar" src={userImage} alt="User image" />;
     }
+    return <img className="user-page__avatar" src={userImage} alt="User image" />;
   };
 
   return (
@@ -61,8 +60,8 @@ const ProfilePage = () => {
             <input
               id="file-upload"
               type="file"
-              onChange={(e): void => setUserImage(URL.createObjectURL(e.target.files[0]))}>
-            </input>
+              onChange={(e): void => setUserImage(URL.createObjectURL(e.target.files[0]))}
+            />
           </div>
           <form className="user-page__form" onSubmit={formik.handleSubmit}>
             <div className="user-page__form-box">

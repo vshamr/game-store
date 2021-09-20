@@ -46,7 +46,7 @@ function HomePage(): JSX.Element {
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => setNameOfGame(e.target.value);
 
   return (
-    <div>
+    <>
       <Categories />
       <div className="searchBar_homePage">
         <SearchBar handleOnSubmit={handleOnSubmit} handleOnChange={handleOnChange} nameOfTheGame={nameOfGame} />
@@ -60,7 +60,7 @@ function HomePage(): JSX.Element {
         <GameCards key={game.id} game={game} />
       ))}
       <NewGames newGames={newGames} />
-    </div>
+    </>
   );
 }
 

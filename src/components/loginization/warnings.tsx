@@ -12,7 +12,7 @@ const Warnings = ({ warning, setWarning }: WarningsPropsType) => {
     }, 1000);
   }, [warning]);
 
-  return <>{warning && <div className="modal-warning">{warning}</div>}</>;
+  return <>{warning && <div className="modal__warning">{warning}</div>}</>;
 };
 
 export default Warnings;

@@ -5,10 +5,10 @@
 }
 
 .filter_form {
-  margin: 70px 0 0 30px;
+  margin: 135px 0 0 30px;
   padding: 15px 30px 15px 15px;
   width: 350px;
-  min-height: 500px;
+  height: 650px;
   border-radius: 10px;
   background: rgba(26, 26, 26, 0.4);
   box-shadow: 0 1px 8px 1px #ffc010 inset;

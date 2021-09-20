@@ -7,10 +7,10 @@ import { CgCloseR } from "react-icons/all";
 import "../modal/styles.css";
 import { urlUsers } from "@/api";
 import { Routes } from "@/constants/Routes";
-import { InputText } from "@/components/loginization/inputText";
 import Warnings from "@/components/loginization/warnings";
 import { signInShema } from "@/constants/schemaValidation";
 import { logIn } from "@/redux/user-reducer";
+import InputText from "@/components/loginization/inputText";
 
 export interface PersonInterface {
   id: number;
@@ -26,7 +26,7 @@ function SignIn(): JSX.Element {
   const formik = useFormik({
     initialValues: {
       login: "",
-      password: "",
+      password: ""
     },
     validationSchema: signInShema,
     onSubmit: async (values) => {
@@ -50,37 +50,39 @@ function SignIn(): JSX.Element {
   });
 
   return (
-    <div className="modal-container">
-      <Link to={Routes.HOME} className="modal-close">
-        <CgCloseR />
-      </Link>
-      <h3 className="modal-title">Authorization</h3>
-      {warning && <Warnings warning={warning} setWarning={setWarning} />}
-      <form onSubmit={formik.handleSubmit}>
-        <InputText
-          label="login"
-          type="text"
-          name="login"
-          value={formik.values.login}
-          onChange={formik.handleChange}
-          touched={formik.touched.login}
-          error={formik.errors.login}
-        />
-        <InputText
-          label="password"
-          type="password"
-          name="password"
-          value={formik.values.password}
-          onChange={formik.handleChange}
-          touched={formik.touched.password}
-          error={formik.errors.password}
-        />
-        <div className="modal-btn-container">
-          <button type="submit" className="modal-btn">
-            Sign In
-          </button>
-        </div>
-      </form>
+    <div className="modal">
+      <div className="modal__container">
+        <Link to={Routes.HOME} className="modal__close-btn">
+          <CgCloseR />
+        </Link>
+        <h3 className="modal__title">Authorization</h3>
+        {warning && <Warnings warning={warning} setWarning={setWarning} />}
+        <form onSubmit={formik.handleSubmit}>
+          <InputText
+            label="login"
+            type="text"
+            name="login"
+            value={formik.values.login}
+            onChange={formik.handleChange}
+            touched={formik.touched.login}
+            error={formik.errors.login}
+          />
+          <InputText
+            label="password"
+            type="password"
+            name="password"
+            value={formik.values.password}
+            onChange={formik.handleChange}
+            touched={formik.touched.password}
+            error={formik.errors.password}
+          />
+          <div className="modal__btn-container">
+            <button type="submit" className="modal__btn">
+              Sign In
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }

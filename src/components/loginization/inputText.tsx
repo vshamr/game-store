@@ -8,12 +8,14 @@ type InputTextPropsType = {
   touched: boolean | undefined;
 };
 
-export const InputText = ({ label, type, name, value, onChange, touched, error }: InputTextPropsType) => (
+const InputText = ({ label, type, name, value, onChange, touched, error }: InputTextPropsType) => (
   <div>
-    {touched && error && <div className="modal-warning">{error}</div>}
-    <div className="modal-input">
+    {touched && error && <div className="modal__warning">{error}</div>}
+    <div className="modal__input">
       <label htmlFor={label}>{name}</label>
       <input id={label} type={type} value={value} onChange={onChange} />
     </div>
   </div>
 );
+
+export default InputText;

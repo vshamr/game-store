@@ -52,4 +52,3 @@ export const setUserProfile = (userName: string) => ({ type: EDIT_USER_PROFILE, 
 export const getTargetPage = (path: string) => ({ type: GET_TARGET_PAGE, path });
 export const logIn = (userName?: string, userPassword?: number | string) => ({ type: LOG_IN, userName, userPassword });
 export const logOut = () => ({ type: LOG_OUT });
-

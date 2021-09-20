@@ -1,14 +1,13 @@
-.modal-container {
+.modal {
+  margin: 100px auto 40px auto;
   width: 420px;
   min-height: 300px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: url(../../assets/images/categories_bg.png);
-  position: fixed;
+  background: rgba(26, 26, 26, 0.4);
+  border-radius: 10px;
+  box-shadow: 0 1px 8px 1px #ffc010 inset;
 }
 
-.modal-title {
+.modal__title {
   font-family: 'Teko', sans-serif;
   font-size: 40px;
   text-align: center;
@@ -17,34 +16,30 @@
   padding: 0.5rem;
 }
 
-.modal-input {
+.modal__input {
   margin-bottom: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.modal-input:nth-child(2) {
+.modal__input:nth-child(2) {
   margin-bottom: 2rem;
 }
 
-.modal-close {
-  position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
+.modal__close-btn {
+  top: 8px;
+  left: 91%;
   font-size: 1.5rem;
-  border: 0;
   color: rgba(255, 192, 16, 0.7);
-  background-color: transparent;
-  transition: 0.2s ease;
-  cursor: pointer;
+  position: relative;
 }
 
-.modal-close {
+.modal__close-btn:hover {
   color: #ffc010;
 }
 
-.modal-input label {
+.modal__input label {
   font-family: 'Teko', sans-serif;
   font-size: 20px;
   text-transform: uppercase;
@@ -53,7 +48,7 @@
   padding-left: 40px;
 }
 
-.modal-input input {
+.modal__input input {
   margin-right: 15px;
   color: black;
   outline: #ffc010;
@@ -62,7 +57,7 @@
   padding: 7px 10px;
 }
 
-.modal-btn {
+.modal__btn {
   font-family: 'Teko', sans-serif;
   font-size: 25px;
   font-weight: 500;
@@ -74,16 +69,16 @@
   cursor: pointer;
 }
 
-.modal-btn:hover {
+.modal__btn:hover {
   background-color: #ffc010;
 }
 
-.modal-btn-container {
+.modal__btn-container {
   padding: 10px 0 20px 0;
   text-align: center;
 }
 
-.modal-warning {
+.modal__warning {
   font-family: 'Teko', sans-serif;
   font-weight: 300;
   letter-spacing: 1px;
@@ -93,21 +88,21 @@
   top: 57px;
 }
 
-.user-page_form-box .modal-warning {
+.user-page__form-box .modal__warning {
   position: relative;
   top: 100px;
   left: 8px;
 }
 
 @media (max-width: 520px) {
-  .modal-input {
+  .modal__input {
     flex-direction: column;
   }
-  .modal-container {
+  .modal__container {
     width: 320px;
     min-height: 350px;
   }
-  .modal-input label {
+  .modal__input label {
     padding-left: 0;
   }
 }
